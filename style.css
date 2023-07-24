@@ -1,0 +1,70 @@
+/* Color */
+--black-color: #000000
+--background-color: #212121
+--border-color: #303030
+--gray-color : #AAAAAA
+--white-color : #FFFFFF
+
+/* Font Size */
+--font-small: 12px;
+--font-medium: 14px;
+
+/* Side bar layout
+display: flex;
+width: 240px;
+height: 968px;
+padding-right: 0px;
+flex-direction: column;
+justify-content: flex-end;
+align-items: flex-start;
+flex-shrink: 0; */
+
+/* Side bar menu layout
+display: flex;
+padding: 8px 8px 8px 24px;
+flex-direction: column;
+align-items: flex-start;
+gap: 10px; */
+
+/* Top menu button layout
+display: inline-flex;
+padding: 12px 12px 12px 24px;
+flex-direction: column;
+align-items: flex-start;
+gap: 10px; */
+
+/* Search box layout
+width: 1440px;
+height: 56px;
+flex-shrink: 0; */
+
+/* Profile layout
+display: flex;
+width: 204px;
+height: 40px;
+justify-content: center;
+align-items: flex-start;
+gap: 8px;
+flex-shrink: 0; */
+
+header {
+
+}
+
+body {
+    font-family: sans-serif 
+}
+
+/* 클래스나 아이디는 나중에 받으셔서 쓰시면될겁니다 */
+
+.profile {
+
+}
+
+.side bar {
+
+}
+
+.side bar menu {
+
+}
