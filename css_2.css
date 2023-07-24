@@ -1,4 +1,4 @@
-nav > border {                      /* Nav의 전체적인 보더라인 */
+nav {                      /* Nav의 전체적인 보더라인 */
     width: 1200px;
     height: 1px;
     background: var(--border-color, #303030);
@@ -28,7 +28,7 @@ nav > item {                        /* Nav의 다수의 item 아이콘 */
 }
 
 
-article > border {                  /* article의 전체적인 보더라인 */
+article {                  /* article의 전체적인 보더라인 */
     display: flex;
     width: 1151px;
     height: 1395px;
