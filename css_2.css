@@ -34,18 +34,6 @@
     text-decoration: none;
   }
 
-
-/* aside 바 (사이드바) -> 이건 원래 css_1 에서 하는게 맞음 */
-aside.sidebar {
-    width: 200px; /* Set the width of the sidebar */
-    background-color: #f1f1f1; /* Add background color to the sidebar */
-    border: 1px solid #ccc; /* Add a border around the sidebar */
-    padding: 5px; /* Add some padding to the content inside the sidebar */
-    box-sizing: border-box; /* Include padding and border in the total width */
-    margin-top: 0;
-}
-
-
 /* 비디오 썸네일 */
 .Thumbnail {
     display: flex;
