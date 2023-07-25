@@ -17,7 +17,7 @@
 //   linkcolor.forEach((1, => 1.classList.remove('active'))
 //   this.classList.add('active')
 // }
-
+//
 
 function searchYoutube() {
     const searchData = document.getElementById('search').value; // x에는 검색어 입력/input ID
