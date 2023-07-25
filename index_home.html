@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Youtube Home</title>
 </head>
+
 <body>
     <!-- 
         바탕과 아이콘이 둘 다 흰색이라서 아이콘들이 안보임. 
@@ -17,68 +19,131 @@
             <span>Youtube마크</span>
         </span>
         <span>
-        <textarea id="search" placeholder="검색"></textarea>
-        <button>검색버튼</button>
-        <button>음성검색버튼</button>
+            <textarea id="search" placeholder="검색"></textarea>
+            <button>검색버튼</button>
+            <button>음성검색버튼</button>
         </span>
     </header>
-    <nav>
+    <nav class="navgation">
         <!-- 영상 파트 위에 top menu bar 파트 -->
         <ul>
-            <li><a href="#">all</a></li>
-            <li><a href="#">item</a></li>
-            <li><a href="#">item</a></li>
-            <li><a href="#">item</a></li>
-            <li><a href="#">item</a></li>
+            <span><a href="#">all</a></span>
+            <span><a href="#">item</a></span>
+            <span><a href="#">item</a></span>
+            <span><a href="#">item</a></span>
+            <span><a href="#">item</a></span>
         </ul>
     </nav>
-    <aside>
+    <aside class="sidebar">
         <!-- 왼쪽 사이드바 파트 -->
-        <div>
+        <div class="sidebarTop">
             <ul>
                 <div>
                     <div><img src="Sidebar/home.svg"></div>
-                    <div><li><a href="#">Home</a></li></div>
+                    <div>
+                        <li><a href="#">Home</a></li>
+                    </div>
                 </div>
                 <div>
                     <div><img src="Sidebar/explore.svg"></div>
-                    <div><li><a href="#">Explore</a></li></div>
+                    <div>
+                        <li><a href="#">Explore</a></li>
+                    </div>
                 </div>
                 <div>
                     <div><img src="Sidebar/subscriptions.svg"></div>
-                    <div><li><a href="#">Subscriptions</a></li></div>
+                    <div>
+                        <li><a href="#">Subscriptions</a></li>
+                    </div>
                 </div>
             </ul>
         </div>
-        <div>
+
+        <div class="sidebarTop2">
             <ul>
                 <div>
                     <div><img src="Sidebar/library.svg"></div>
-                    <div><li><a href="#">Library</a></li></div>
+                    <div>
+                        <li><a href="#">Library</a></li>
+                    </div>
                 </div>
                 <div>
                     <div><img src="Sidebar/history.svg"></div>
-                    <div><li><a href="#">History</a></li></div>
+                    <div>
+                        <li><a href="#">History</a></li>
+                    </div>
                 </div>
                 <div>
                     <div><img src="Sidebar/video.svg"></div>
-                    <div><li><a href="#">Your Videos</a></li></div>
+                    <div>
+                        <li><a href="#">Your Videos</a></li>
+                    </div>
                 </div>
                 <div>
                     <div><img src="Sidebar/watch.svg"></div>
-                    <div><li><a href="#">watch Later</a></li></div>
+                    <div>
+                        <li><a href="#">watch Later</a></li>
+                    </div>
                 </div>
                 <div>
                     <div><img src="Sidebar/Like.svg"></div>
-                    <div><li><a href="#">Liked Videos</a></li></div>
+                    <div>
+                        <li><a href="#">Liked Videos</a></li>
+                    </div>
                 </div>
                 <div>
                     <div><img src="Sidebar/show.svg"></div>
-                    <span><li><a href="#">show</a></li></span>
+                    <span>
+                        <li><a href="#">Show More</a></li>
+                    </span>
                 </div>
             </ul>
         </div>
+
+        <div class="sidebarSub">
+            <ul>
+                <div>
+                    <div><img src="Sidebar/library.svg"></div>
+                    <div>
+                        <li><a href="#">Library</a></li>
+                    </div>
+                </div>
+                <div>
+                    <div><img src="Sidebar/history.svg"></div>
+                    <div>
+                        <li><a href="#">History</a></li>
+                    </div>
+                </div>
+                <div>
+                    <div><img src="Sidebar/video.svg"></div>
+                    <div>
+                        <li><a href="#">Your Videos</a></li>
+                    </div>
+                </div>
+                <div>
+                    <div><img src="Sidebar/watch.svg"></div>
+                    <div>
+                        <li><a href="#">watch Later</a></li>
+                    </div>
+                </div>
+                <div>
+                    <div><img src="Sidebar/Like.svg"></div>
+                    <div>
+                        <li><a href="#">Liked Videos</a></li>
+                    </div>
+                </div>
+                <div>
+                    <div><img src="Sidebar/show.svg"></div>
+                    <span>
+                        <li><a href="#">Show More</a></li>
+                    </span>
+                </div>
+            </ul>
+        </div>
+
+
     </aside>
+
     <section>
         <article>
             <!-- 각 영상들 파트 -->
@@ -123,4 +188,5 @@
         </article>
     </section>
 </body>
+
 </html>
