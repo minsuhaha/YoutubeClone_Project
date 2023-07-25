@@ -1,9 +1,26 @@
-{/* <input id=x>
-<div id=searchResult></div> */}
+// 네비게이션
+// const showMenu = (headerToggle,navbarID) =>{
+//   const toggleBtn = document.getElementById(headerToggle);
+
+//   if (headerToggle && navbarID) {
+//     toggleBtn.addEventListener('click',() => {
+//       nav.classList.toggle('show-menu')
+//       toggleBtn.classList.toggle('x-times')
+//     })
+//   }
+// }
+// showMenu('header-toggle', 'navbar')
+
+// const linkcolor = document.querySelectorAll('.nav_link');
+
+// function colorLink() {
+//   linkcolor.forEach((1, => 1.classList.remove('active'))
+//   this.classList.add('active')
+// }
 
 
 function searchYoutube() {
-    const searchData = document.getElementById('x').value; // x에는 검색어 입력/input ID
+    const searchData = document.getElementById('search').value; // x에는 검색어 입력/input ID
     const apiUrl = `http://oreumi.appspot.com/video/getVideoInfo?video_id=${searchData}`;
   
     fetch(apiUrl)
