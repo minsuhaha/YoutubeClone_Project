@@ -5,43 +5,45 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="../CSS/css_1.css">
+    <link rel="stylesheet" href="../CSS/css_2.css">
 </head>
 
 <body>
     <header>
-        <!-- 검색바 파트 -->
-        <span>
-            <button type="button"><img src="Image/SearchBar/Vector-4.png" alt=""></button>
-            <button type="button"><img src="Image/SearchBar/Group.png" alt=""></button>
-        </span>
-        <span>
-            <textarea id="search" placeholder="검색"></textarea>
-            <button><img src="Image/SearchBar/search.png" alt=""></button>
-            <button><img src="Image/SearchBar/Vector.png" alt=""></button>
-        </span>
-        <span>
-            <button type="button"><img src="Image/SearchBar/Vector-3.png" alt=""></button>
-            <button type="button"><img src="Image/SearchBar/Vector-2.png" alt=""></button>
-            <button type="button"><img src="Image/SearchBar/Vector-1.png" alt=""></button>
-            <button type="button"><img src="Image/SearchBar/User-Avatar.svg" alt=""></button>
-        </span>
+        <!-- 네비게이션바 파트 -->
+        <div class="yt_button">
+            <a href="#"><img class="hamburger_icon" src="../Image/searchBar/Vector-4.png"></a>
+            <a href="#"><img class="yt_logo" src="../Image/searchBar/Youtube-Logo.svg"></a>
+        </div>
+        <div class="search_box_area">
+            <input class="search_box" id="search" placeholder=" Search">
+            <div id="search_box_btn"><input class="search_box_icon" type="image" src="../Image/searchBar/search.png"></div>
+            <input class="voice_box" type="image" src="../Image/searchBar/Vector.png">
+        </div>
+        <div class="profile_main">
+            <a href="#"><img class="profile_box" src="../Image/searchBar/Vector-3.svg"></a>
+            <a href="#"><img class="profile_box" src="../Image/searchBar/Vector-2.svg"></a>
+            <a href="#"><img class="profile_box" src="../Image/searchBar/Vector-1.svg"></a>
+            <a href="#"><img class="profile_user" src="../Image/searchBar/User-Avatar.svg"></a>
+        </div>
     </header>
     <section class="Channel">
         <!-- 상단 채널 부분 -->
         <section>
             <div>
-                <img src="Image/Channel/image 2.png" alt="">
+                <img src="../Image/Channel/image 2.png" alt="">
             </div>
             <div>
                 <button>
-                    <img src="Image/Sidebar/Marcus Levin.png" alt="">
+                    <img src="../Image/Sidebar/Marcus Levin.png" alt="">
                 </button>
                 <span>
                     <span>Channelname</span>
                     <span>Times</span>
                 </span>
-                <button><img src="Image/Channel/Subscribes-Btn.png"></button>
-                <button><img src="Image/Channel/leftArrow.png"></button>
+                <button><img src="../Image/Channel/Subscribes-Btn.png"></button>
+                <button><img src="../Image/Channel/leftArrow.png"></button>
             </div>
             <!--  채널명 아래 버튼 부분 -->
             <div>
@@ -52,7 +54,7 @@
                     <span>COMMUNITY</span>
                     <span>CHANNELS</span>
                     <span>ABOUT</span>
-                    <button><img src="Image/SearchBar/search.png"></button>
+                    <button><img src="../Image/SearchBar/search.png"></button>
                 </ul>
             </div>
         </section>
@@ -69,7 +71,7 @@
 
             <div>
                 <span>Title</span>
-                <span><button><img src="Image/Channel/leftTriangle.png"></button><span>PLAY ALL</span>
+                <span><button><img src="../Image/Channel/leftTriangle.png"></button><span>PLAY ALL</span>
             </div>
             <div>
                 <span>
@@ -111,19 +113,19 @@
 
         <div>
             <ul>
-                <li><img src="Image/Sidebar/home.svg"><a href="#">Home</a></li>
-                <li><img src="Image/Sidebar/explore.svg"><a href="#">Explore</a></li>
-                <li><img src="Image/Sidebar/subscriptions.svg"><a href="#">Subscriptions</a></li>
+                <li><img src="../Image/Sidebar/home.svg"><a href="#">Home</a></li>
+                <li><img src="../Image/Sidebar/explore.svg"><a href="#">Explore</a></li>
+                <li><img src="../Image/Sidebar/subscriptions.svg"><a href="#">Subscriptions</a></li>
             </ul>
         </div>
 
         <div>
             <ul>
-                <li><img src="Image/Sidebar/library.svg"><a href="#">Library</a></li>
-                <li><img src="Image/Sidebar/history.svg"><a href="#">History</a></li>
-                <li><img src="Image/Sidebar/video.svg"><a href="#">Your Videos</a></li>
-                <li><img src="Image/Sidebar/watch.svg"><a href="#">watch Later</a></li>
-                <li><img src="Image/Sidebar/Like.svg"><a href="#">Liked Videos</a></li>
+                <li><img src="../Image/Sidebar/library.svg"><a href="#">Library</a></li>
+                <li><img src="../Image/Sidebar/history.svg"><a href="#">History</a></li>
+                <li><img src="../Image/Sidebar/video.svg"><a href="#">Your Videos</a></li>
+                <li><img src="../Image/Sidebar/watch.svg"><a href="#">watch Later</a></li>
+                <li><img src="../Image/Sidebar/Like.svg"><a href="#">Liked Videos</a></li>
                 <li>
                     <span>Show More<button class="showMore"><img src="Image/Sidebar/show.svg"></button></span>
                 </li>
@@ -134,29 +136,29 @@
         <div>
             <ul><span>Subscriptions</span>
                 <li>
-                    <img src="Image/Sidebar/James Gouse.png"><span><a href="#">James Gouse</a></span>
+                    <img src="../Image/Sidebar/James Gouse.png"><span><a href="#">James Gouse</a></span>
                 </li>
                 <li>
-                    <img src="Image/Sidebar/Alan Cooper.png"><span><a href="#">Alan Cooper</a></span>
+                    <img src="../Image/Sidebar/Alan Cooper.png"><span><a href="#">Alan Cooper</a></span>
                 </li>
                 <li>
-                    <img src="Image/Sidebar/Marcus Levin.png">
+                    <img src="../Image/Sidebar/Marcus Levin.png">
                     <span><a href="#">Marcus Levin</a></span>
                 </li>
                 <li>
-                    <img src="Image/Sidebar/Alexis Sears.png">
+                    <img src="../Image/Sidebar/Alexis Sears.png">
                     <span><a href="#">Alexis Sears</a></span>
                 </li>
                 <li>
-                    <img src="Image/Sidebar/Jesica Lambert.png">
+                    <img src="../Image/Sidebar/Jesica Lambert.png">
                     <span><a href="#">Jesica Lambert</a></span>
                 </li>
                 <li>
-                    <img src="Image/Sidebar/Anna White.png">
+                    <img src="../Image/Sidebar/Anna White.png">
                     <span><a href="#">Anna White</a></span>
                 </li>
                 <li>
-                    <img src="Image/Sidebar/Skylar Dias.png">
+                    <img src="../Image/Sidebar/Skylar Dias.png">
                     <span><a href="#">Skylar Dias</a></span>
                 </li>
                 <li>
@@ -168,13 +170,13 @@
             <ul>
                 <li>MORE FROM YOUTUBE</li>
                 <li>
-                    <img src="Image/Sidebar/premium.svg" alt=""><a href="">Youtube Premium</a>
+                    <img src="../Image/Sidebar/premium.svg" alt=""><a href="">Youtube Premium</a>
                 </li>
                 <li>
-                    <img src="Image/Sidebar/gaming.svg" alt=""><a href="">Gaming</a>
+                    <img src="../Image/Sidebar/gaming.svg" alt=""><a href="">Gaming</a>
                 </li>
                 <li>
-                    <img src="Image/Sidebar/live.svg" alt=""><a href="">Live</a>
+                    <img src="../Image/Sidebar/live.svg" alt=""><a href="">Live</a>
                 </li>
             </ul>
         </div>
