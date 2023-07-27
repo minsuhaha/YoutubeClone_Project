@@ -4,7 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>YouTube</title>
+    <link rel="shortcut icon" href="../Image/SearchBar/Group.png">
     <link rel="stylesheet" href="../CSS/css_1.css">
     <link rel="stylesheet" href="../CSS/css_2.css">
 </head>
@@ -104,83 +105,164 @@
     </section>
 
 
-
-
-
-
     <!-- 왼쪽 사이드바 파트 -->
-    <aside class="sidebar">
-
-        <div>
-            <ul>
-                <li><img src="../Image/Sidebar/home.svg"><a href="#">Home</a></li>
-                <li><img src="../Image/Sidebar/explore.svg"><a href="#">Explore</a></li>
-                <li><img src="../Image/Sidebar/subscriptions.svg"><a href="#">Subscriptions</a></li>
-            </ul>
+     <!-- 사이드바 파트 -->
+     <aside class="sidebar">
+        <!-- sidebar Top -->
+        <div class="sidebar_top">
+            <div>
+                <img src="../Image/Sidebar/home.svg">
+                <a href="#">Home</a>
+            </div>
+            <div>
+                <img src="../Image/Sidebar/explore.svg">
+                <a href="#">Explore</a>
+            </div>
+            <div>
+                <img src="../Image/Sidebar/subscriptions.svg">
+                <a href="#">Subscriptions</a>
+            </div>
         </div>
 
-        <div>
-            <ul>
-                <li><img src="../Image/Sidebar/library.svg"><a href="#">Library</a></li>
-                <li><img src="../Image/Sidebar/history.svg"><a href="#">History</a></li>
-                <li><img src="../Image/Sidebar/video.svg"><a href="#">Your Videos</a></li>
-                <li><img src="../Image/Sidebar/watch.svg"><a href="#">watch Later</a></li>
-                <li><img src="../Image/Sidebar/Like.svg"><a href="#">Liked Videos</a></li>
-                <li>
-                    <span>Show More<button class="showMore"><img src="Image/Sidebar/show.svg"></button></span>
-                </li>
-        </div>
-        </ul>
+        <div class="sidebar_top">
+            <div>
+                <img src="../Image/Sidebar/library.svg">
+                <a href="#">Library</a>
+            </div>
+            <div>
+                <img src="../Image/Sidebar/history.svg">
+                <a href="#">History</a>
+            </div>
+            <div>
+                <img src="../Image/Sidebar/video.svg">
+                <a href="#">Your Videos</a>
+            </div>
+            <div>
+                <img src="../Image/Sidebar/watch.svg">
+                <a href="#">watch Later</a>
+            </div>
+            <div>
+                <img src="../Image/Sidebar/Like.svg">
+                <a href="#">Liked Videos</a>
+            </div>
+            <div>
+                <img src="../Image/Sidebar/show.svg">
+                <a href="#">Show More</a>
+            </div>
         </div>
 
-        <div>
-            <ul><span>Subscriptions</span>
-                <li>
-                    <img src="../Image/Sidebar/James Gouse.png"><span><a href="#">James Gouse</a></span>
-                </li>
-                <li>
-                    <img src="../Image/Sidebar/Alan Cooper.png"><span><a href="#">Alan Cooper</a></span>
-                </li>
-                <li>
+          <!-- sidebar Sub -->
+        <div class="sidebarSub">
+            <div class="subTitle"><a href="">SUBSCRIPTIONS</a></div>
+                <div>
+                    <img src="../Image/Sidebar/James Gouse.png">
+                    <a href="#">James Gouse</a>
+                </div>
+                <div>
+                    <img src="../Image/Sidebar/Alan Cooper.png">
+                    <a href="#">Alan Cooper</a>
+                </div>
+                <div>
                     <img src="../Image/Sidebar/Marcus Levin.png">
-                    <span><a href="#">Marcus Levin</a></span>
-                </li>
-                <li>
+                    <a href="#">Marcus Levin</a>
+                </div>
+                <div>
                     <img src="../Image/Sidebar/Alexis Sears.png">
-                    <span><a href="#">Alexis Sears</a></span>
-                </li>
-                <li>
+                    <a href="#">Alexis Sears</a>
+                </div>
+                <div>
                     <img src="../Image/Sidebar/Jesica Lambert.png">
-                    <span><a href="#">Jesica Lambert</a></span>
-                </li>
-                <li>
+                    <a href="#">Jesica Lambert</a>
+                </div>
+                <div>
                     <img src="../Image/Sidebar/Anna White.png">
-                    <span><a href="#">Anna White</a></span>
-                </li>
-                <li>
+                    <a href="#">Anna White</a>
+                </div>
+                <div>
                     <img src="../Image/Sidebar/Skylar Dias.png">
-                    <span><a href="#">Skylar Dias</a></span>
-                </li>
-                <li>
-                    <span>Show More<button class="showMore"></button></span>
-                </li>
-            </ul>
+                    <a href="#">Skylar Dias</a>
+                </div>
+                <div>
+                    <img src="../Image/Sidebar/show.svg">
+                    <a href="#">Show 10 More</a>
+            </div>
         </div>
-        <div>
-            <ul>
-                <li>MORE FROM YOUTUBE</li>
-                <li>
-                    <img src="../Image/Sidebar/premium.svg" alt=""><a href="">Youtube Premium</a>
-                </li>
-                <li>
-                    <img src="../Image/Sidebar/gaming.svg" alt=""><a href="">Gaming</a>
-                </li>
-                <li>
-                    <img src="../Image/Sidebar/live.svg" alt=""><a href="">Live</a>
-                </li>
-            </ul>
+        
+        <!-- sidebar More -->
+        <div class="sidebarMore">
+            <div class="subTitle"><a href="">MORE FROM YOUTUBE</a></div>
+                <div>
+                    <img src="../Image/Sidebar/premium.svg" alt="">
+                    <a href="#">Youtube Premium</a>
+                </div>
+                <div>
+                    <img src="../Image/Sidebar/gaming.svg" alt="">
+                    <a href="">Gaming</a>
+                </div>
+                <div>
+                    <img src="../Image/Sidebar/live.svg" alt="">
+                    <a href="">Live</a>
+                </div>
+                <div>
+                    <img src="../Image/Sidebar/show.svg">
+                    <a href="#" id="show-more">Show More</a>
+                </div>
+
+                <!-- sidebar More 안에 sidebar hidden -->
+                <div class='sidebar_hidden'>
+                    <div>
+                        <img src="../Image/Sidebar/settings.svg" alt="">
+                        <a href="">Settings</a>
+                    </div>
+        
+                    <div>
+                        <img src="../Image/Sidebar/reporthistory.svg" alt="">
+                        <a href="">Report history</a>
+                    </div>
+        
+                    <div>
+                        <img src="../Image/Sidebar/help.svg" alt="">
+                        <a href="">Help</a>
+                    </div>
+        
+                    <div>
+                        <img src="../Image/Sidebar/feedback.svg" alt="">
+                        <a href="">Send feedback</a>
+                    </div>
+                </div>
         </div>
+        
+        <!-- 이거 없으면 hidden부분이 다 나오지 않음 왜지?-->
+        <div class="sidebarMore">
+            <div>
+                <p></p>
+            </div>
+            <div>
+                <p></p>
+            </div>
+            <div>
+                <p></p>
+            </div>
+        </div>
+
     </aside>
 </body>
 
+
+<!--script 코드 -->
+<script>
+    document.getElementById('show-more').addEventListener('click', function(e) {
+        e.preventDefault();
+        var hiddenPart = document.querySelector('.sidebar_hidden');
+        if(hiddenPart.style.display == 'none') {
+            hiddenPart.style.display = 'block';
+        } else {
+            hiddenPart.style.display = 'none';
+        }
+});
+</script>
+<script src="hamburger.js"></script>
+<script src="showMore.js"></script>
+<script src="/js/test.js"></script>
+<script src="/js/test2.js"> </script>
 </html>

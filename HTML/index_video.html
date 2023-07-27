@@ -7,14 +7,16 @@
     <title>Document</title>
     <link rel="stylesheet" href="../CSS/css_1.css">
     <link rel="stylesheet" href="../CSS/css_2.css">
+    <link rel="stylesheet" href="../CSS/css_video.css">
+    <script src="../js/video_css.js"></script>
 </head>
 
-<body>
+<body onload="displayVideos(videoIds);">
     <header>
         <!-- 네비게이션바 파트 -->
         <div class="yt_button">
             <a href="#"><img class="hamburger_icon" src="../Image/searchBar/Vector-4.png"></a>
-            <a href="#"><img class="yt_logo" src="../Image/searchBar/Youtube-Logo.svg"></a>
+            <a href="#"><img class="yt_logo" src="../Image/searchBar/logo_2.png"></a>
         </div>
         <div class="search_box_area">
             <input class="search_box" id="search" placeholder=" Search">
@@ -28,40 +30,21 @@
             <a href="#"><img class="profile_user" src="../Image/searchBar/User-Avatar.svg"></a>
         </div>
     </header>
-
-    <section><!-- 비디오부터 댓글 전체 섹션-->
+<main>
+    <section class="primary"><!-- 비디오부터 댓글 전체 섹션-->
         <!-- 비디오부터 좋아요 버튼까지-->
-        <div>
-            <video controls src=""></video>
-            <div>
-                VideoTitle
+        <!-- 비디오 플레이어 -->
+        <article> 
+            <div id="videoContainer">
             </div>
-            <div>
-                <span>InfoText</span>
-                <button><img src="Image/Channel/Vector.png"></button><span>1.7K</span>
-                <button><img src="Image/Channel/Vector-1.png"></button><span>632</span>
-                <button><img src="Image/Channel/Vector-2.png"></button><span>SHARE</span>
-                <button><img src="Image/Channel/Vector-3.png"></button><span>SAVE</span>
-                <button><img src="Image/Channel/Vector-4.png"></button>
+            <!--채널  정보,show more 버튼까지 -->
+            
+        </article>
+        <!-- 영상설명 -->
+        <article>
+            <div id="videoDesc" class="channel_desc_area">
             </div>
-        </div>
-
-        <!--채널  정보,show more 버튼까지 -->
-        <div>
-            <button>
-                <img src="Image/Sidebar/Marcus Levin.png" alt="">
-            </button>
-            <span>
-                <span>Channelname</span>
-                <span>Times</span>
-                <button><img src="Image/Channel/Subscribes-Btn.png"></button>
-            </span>
-            <div>
-                Video-desc
-            </div>
-            <button>SHOW MORE</button>
-        </div>
-
+        </article>
         <!--댓글 정보, 정렬, 입력 부분-->
         <div>
             <div>
@@ -75,6 +58,8 @@
         </div>
 
         </div>
+    </section>
+</main>
 </body>
 
 </html>
