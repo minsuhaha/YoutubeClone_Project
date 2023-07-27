@@ -1,0 +1,159 @@
+
+/* 영상 및 info 전체 박스 css */
+.primary{
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top:56px;
+    padding-top: 24px;
+    padding-left: 24px;
+    border: 1px solid black;
+    color: white;
+    font-weight: 600;
+    font-size:x-large;
+}
+
+/* 영상부분 css */
+.video {
+    width: 640px;
+    height: 360px;
+}
+
+/* 영상 밑 info 전체 박스 css */
+.info_box{
+    width: 640px;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    /* border: 1px solid black; */
+}
+
+/* 영상 제목 css */
+.info_title{
+    width: 379px;
+    height: 21px;
+    padding-top: 3px;
+    padding-bottom: 2px;
+    font-size: xx-large;
+    /* border: 1px solid black; */
+}
+
+/* 제목 밑 view와 구독관련 버튼 박스 css */
+.info_bottom{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 91px;
+    width: 640px;
+    height: 40px;
+    /* border: 1px solid black; */
+}
+
+/* view와 등록일 css */
+.info_view{
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: flex-start;
+    width: 180px;
+    height: 16px;
+    padding: 12px 0px;
+    font-size:x-large;
+    gap:5px;
+    
+}
+
+/* 구독 관련 전체 박스 css */
+.info_icon{
+    display: flex;
+    width: 400px;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0px;
+    height: 40px;
+    /* border:  1px solid black; */
+}
+
+/* 구독 박스 아이콘 css */
+.info_icon>button>img{
+    padding: 6px 0px;
+    /* border:  1px solid black; */
+}
+
+/* 구독 박스 글자 css */
+.info_icon>button>span{
+    align-items: center;
+    justify-content: center;
+    padding: 6px 6px 6px 6px;
+    color: white;
+    font-weight: 600;
+    font-size:x-large;
+    font-family: 'iceJaram-Rg';
+    /* border:  1px solid black; */
+}
+
+/* 구독 박스 아이콘+글자=버튼 박스 css */
+.info_icon>button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border:1px solid black; */
+    border:0;
+    background-color: #83C9E7;
+}
+
+/* 버튼 박스에 호버시 색상 변경 */
+.info_icon>button:hover{
+    background-color: #44ADDA;
+}
+
+/* 버튼 박스 클릭시 색상 변경 */
+.info_icon>button:active{
+    background-color: #1263CE;
+    box-shadow: 1px 1px 1px black;
+    transition-duration: 0.1s;
+}
+.info_icon>button:focus{
+    background-color: #44ADDA;
+}
+
+.channel_desc_area{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 640px;
+    height: 149px;
+    padding-bottom: 16px;
+    margin-bottom: 1px;
+    border:1px solid black;
+}
+
+.channel_title{
+    display: flex;
+    padding-top: 16px;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+
+}
+
+.channel_title>button{
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.channel_icon{
+    display: flex;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+}
+
+.channel_title>span{
+    display: inline-flex;
+    padding: 11px 0px 10px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    /* border:1px solid black; */
+}
