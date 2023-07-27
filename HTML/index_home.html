@@ -150,9 +150,10 @@
                     <a href="">Live</a>
                 </div>
                 <div>
-                    <img src="../Image/Sidebar/show.svg">
+                    <img src="../Image/Sidebar/show.svg" id="arrow-img">
                     <a href="#" id="show-more">Show More</a>
                 </div>
+
 
                 <!-- sidebar More 안에 sidebar hidden -->
                 <div class='sidebar_hidden'>
@@ -202,19 +203,6 @@
         </section>
     </main>
 </body>
-
-    <!--script 코드 -->
-    <script>
-        document.getElementById('show-more').addEventListener('click', function(e) {
-            e.preventDefault();
-            var hiddenPart = document.querySelector('.sidebar_hidden');
-            if(hiddenPart.style.display == 'none') {
-                hiddenPart.style.display = 'block';
-            } else {
-                hiddenPart.style.display = 'none';
-            }
-    });
-    </script>
     <script src="/js/test.js"></script>
     <script src="/js/test2.js"> </script>
 </html>
