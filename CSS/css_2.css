@@ -2,19 +2,47 @@
 .navigation {
     position: fixed;
     display: flex;
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+    /* justify-content: center; */
+    justify-content: flex-end;
+    align-items: center;
+    top: 56px; /* header 아래에 위치하도록 설정 */
+    background-color: #212121;
+=======
     justify-content: left;
     align-items: center;
     top: 56px; /* header 아래에 위치하도록 설정 */
     background-color: #44ADDA;
+>>>>>>> Stashed changes
+=======
+    justify-content: left;
+    align-items: center;
+    top: 56px; /* header 아래에 위치하도록 설정 */
+    background-color: #44ADDA;
+>>>>>>> a88b3fe4b42f134fb020e4e132bf6d839b988160
     width: 100%;
     height: 60px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 5px;
     color: #fff;
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+    left: 0;
+    border-bottom: 1px 1px solid #303030;
+}
+
+=======
     left: 240px;
     border-bottom: 1px 1px solid #303030;
 }
 
+=======
+    left: 240px;
+    border-bottom: 1px 1px solid #303030;
+}
+
+>>>>>>> a88b3fe4b42f134fb020e4e132bf6d839b988160
 .items {
     white-space: nowrap;
     overflow: hidden;
@@ -24,13 +52,25 @@
     overflow-x: auto;
 }
 
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+=======
+>>>>>>> a88b3fe4b42f134fb020e4e132bf6d839b988160
 
 /* nav 바 item */
 .item {
     width: 60px;
     height: 40px;
     border-radius: 45%;
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+    background-color: #AAAAAA;
+=======
     background-color: #1263CE;
+>>>>>>> Stashed changes
+=======
+    background-color: #1263CE;
+>>>>>>> a88b3fe4b42f134fb020e4e132bf6d839b988160
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -46,7 +86,15 @@
     line-height: 20px;
     color: white;
     text-decoration: none;
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+  }
+=======
 }
+>>>>>>> Stashed changes
+=======
+}
+>>>>>>> a88b3fe4b42f134fb020e4e132bf6d839b988160
 
 /* 비디오 썸네일 */
 .Thumbnail {
@@ -56,29 +104,62 @@
     margin-top: 130px;
     margin-left: 270px;
     flex: 1;
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+}
+
+.Thumbnail_art {
+    width: 200px;
+    height: 150px;
+=======
     color: white;
 }
 
 .Thumbnail_art {
     width: 250px;
     height: 300px;
+>>>>>>> Stashed changes
+=======
+    color: white;
+}
+
+.Thumbnail_art {
+    width: 250px;
+    height: 300px;
+>>>>>>> a88b3fe4b42f134fb020e4e132bf6d839b988160
     border: 1px solid #ccc;
     border-radius: 4px;
     padding: 30px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
+=======
+>>>>>>> a88b3fe4b42f134fb020e4e132bf6d839b988160
 .Thumbnail_art > p{
     font-size: 20px;
 }
 
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+=======
+>>>>>>> a88b3fe4b42f134fb020e4e132bf6d839b988160
 .Thumbnail_img {
     width: 100%;
 }
 
 .Thumbnail_h3 {
     margin: 8px 0;
+<<<<<<< HEAD
+<<<<<<< Updated upstream
+=======
     /* font-size: px; */
+>>>>>>> Stashed changes
+=======
+    /* font-size: px; */
+>>>>>>> a88b3fe4b42f134fb020e4e132bf6d839b988160
 }
 
 main {
