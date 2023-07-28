@@ -8,14 +8,16 @@
     <link rel="shortcut icon" href="../Image/SearchBar/Group.png">
     <link rel="stylesheet" href="../CSS/css_1.css">
     <link rel="stylesheet" href="../CSS/css_2.css">
+    <link rel="stylesheet" href="../CSS/channel.css">
 </head>
 
 <body>
     <header>
         <!-- 네비게이션바 파트 -->
         <div class="yt_button">
-            <a href="#"><img class="hamburger_icon" src="../Image/searchBar/Vector-4.png"></a>
-            <a href="#"><img class="yt_logo" src="../Image/searchBar/Youtube-Logo.svg"></a>
+            <button href="#" id='hamburger' onclick="toggleSidebar()"><img class="hamburger_icon"
+                    src="../Image/searchBar/Vector-4.png"></button>
+            <a href="#"><img class="yt_logo" src="../Image/searchBar/logo_2.png"></a>
         </div>
         <div class="search_box_area">
             <input class="search_box" id="search" placeholder=" Search">
@@ -32,43 +34,53 @@
     <section class="Channel">
         <!-- 상단 채널 부분 -->
         <section>
-            <div>
-                <img src="../Image/Channel/image 2.png" alt="">
+            <div class="Channel-Cover">
+                <img src="../Image/Channel/image 2.png" class="cover-image" alt="">
             </div>
-            <div>
-                <button>
-                    <img src="../Image/Sidebar/Marcus Levin.png" alt="">
-                </button>
-                <span>
-                    <span>Channelname</span>
-                    <span>Times</span>
-                </span>
-                <button><img src="../Image/Channel/Subscribes-Btn.png"></button>
-                <button><img src="../Image/Channel/leftArrow.png"></button>
+
+            <div class="Channel-Title">
+                <div class="channel-content">
+                    <div class = "Channel-Profile" >
+                        <a href="#"><img src="../Image/Sidebar/James Gouse.png" alt=""></a>
+                    </div>
+                    <div class="Channel-Profile-Name">
+                        <span>Channelname</span>
+                        <span>Times</span>
+                    </div>
+                    <div class="Channel-Subscribe">
+                        <a href="#"><img src="../Image/Channel/Subscribes-Btn.png" alt=""></a>
+                    </div>
+                </div>
             </div>
             <!--  채널명 아래 버튼 부분 -->
-            <div>
-                <ul>
-                    <span>HOME</span>
-                    <span>VIDEOS</span>
-                    <span>PLAYLISTS</span>
-                    <span>COMMUNITY</span>
-                    <span>CHANNELS</span>
-                    <span>ABOUT</span>
-                    <button><img src="../Image/SearchBar/search.png"></button>
-                </ul>
-            </div>
+            <div class="ChannelToolbar">
+                <div>
+                    <ul>
+                        <a href="#">HOME</a>
+                        <a href="#">VIDEOS</a>
+                        <a href="#">PLAYLISTS</a>
+                        <a href="#">COMMUNITY</a>
+                        <a href="#">CHANNELS</a>
+                        <a href="#">ABOUT</a>
+                        
+                        <div class="ChannelToolbar-Button">
+                            <div><img src="../Image/SearchBar/search.png"></img></div>
+                            <div><img src="../Image/Channel/leftArrow.png"></img></div>
+                        </div>
+                </div>
+            </div>    
         </section>
         <!-- 중간 small Video 부분-->
-        <section>
+        <!-- <section>
             <video controls src=""></video>
             <span>
                 <div>VideoTitle</div>
+                <div>Time</div>
                 <div>Descriptions</div>
             </span>
-        </section>
+        </section> -->
         <!-- 하단 Play Lists 부분 -->
-        <section>
+        <!-- <section>
 
             <div>
                 <span>Title</span>
@@ -78,36 +90,82 @@
                 <span>
                     <video controls src=""></video>
                     <div>Title</div>
+                    <div>Channelname</div>
                     <div>Views</div>
                 </span>
                 <span>
                     <video controls src=""></video>
                     <div>Title</div>
+                    <div>Channelname</div>
                     <div>Views</div>
                 </span>
                 <span>
                     <video controls src=""></video>
                     <div>Title</div>
+                    <div>Channelname</div>
                     <div>Views</div>
                 </span>
                 <span>
                     <video controls src=""></video>
                     <div>Title</div>
+                    <div>Channelname</div>
                     <div>Views</div>
                 </span>
                 <span>
                     <video controls src=""></video>
                     <div>Title</div>
+                    <div>Channelname</div>
                     <div>Views</div>
                 </span>
             </div>
         </section>
+    </section> -->
+    <!-- Play Lists 2 지속적 추가 가능 -->
+    <!-- <section>
+
+        <div>
+            <span>Title</span>
+            <span><button><img src="../Image/Channel/leftTriangle.png"></button><span>PLAY ALL</span>
+        </div>
+        <div>
+            <span>
+                <video controls src=""></video>
+                <div>Title</div>
+                <div>Channelname</div>
+                <div>Views</div>
+            </span>
+            <span>
+                <video controls src=""></video>
+                <div>Title</div>
+                <div>Channelname</div>
+                <div>Views</div>
+            </span>
+            <span>
+                <video controls src=""></video>
+                <div>Title</div>
+                <div>Channelname</div>
+                <div>Views</div>
+            </span>
+            <span>
+                <video controls src=""></video>
+                <div>Title</div>
+                <div>Channelname</div>
+                <div>Views</div>
+            </span>
+            <span>
+                <video controls src=""></video>
+                <div>Title</div>
+                <div>Channelname</div>
+                <div>Views</div>
+            </span>
+        </div>
     </section>
+</section> -->
 
 
     <!-- 왼쪽 사이드바 파트 -->
      <!-- 사이드바 파트 -->
-     <aside class="sidebar">
+    <aside class="sidebar">
         <!-- sidebar Top -->
         <div class="sidebar_top">
             <div>
@@ -203,8 +261,9 @@
                     <img src="../Image/Sidebar/live.svg" alt="">
                     <a href="">Live</a>
                 </div>
+
                 <div>
-                    <img src="../Image/Sidebar/show.svg">
+                    <img src="../Image/Sidebar/show.svg" id="arrow-img">
                     <a href="#" id="show-more">Show More</a>
                 </div>
 
@@ -231,12 +290,9 @@
                     </div>
                 </div>
         </div>
-        
-        <!-- 이거 없으면 hidden부분이 다 나오지 않음 왜지?-->
-        <div class="sidebarMore">
-            <div>
-                <p></p>
-            </div>
+       
+        <!-- sidebar footer 부분 -->
+        <div class="sidebarFooter">
             <div>
                 <p></p>
             </div>
@@ -247,22 +303,9 @@
 
     </aside>
 </body>
-
-
-<!--script 코드 -->
-<script>
-    document.getElementById('show-more').addEventListener('click', function(e) {
-        e.preventDefault();
-        var hiddenPart = document.querySelector('.sidebar_hidden');
-        if(hiddenPart.style.display == 'none') {
-            hiddenPart.style.display = 'block';
-        } else {
-            hiddenPart.style.display = 'none';
-        }
-});
 </script>
-<script src="hamburger.js"></script>
-<script src="showMore.js"></script>
+<script src="/js/hamburger.js"></script>
+<script src="/js/showMore.js"></script>
 <script src="/js/test.js"></script>
 <script src="/js/test2.js"> </script>
 </html>
