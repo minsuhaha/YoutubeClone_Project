@@ -79,6 +79,8 @@ header {
     background: var(--background-color, #4b89dc);
     top: 0;
     left: 0;
+    /* 스크롤시 헤더는 상단위에 고정되어있는 상태에서 헤더 밑으로 스크롤*/
+    z-index: 9999
     /* 추가 */
 }
 
