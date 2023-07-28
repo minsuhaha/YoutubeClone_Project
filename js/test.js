@@ -60,6 +60,45 @@
         xhr.open('GET', apiUrl, true); 
         xhr.send();
     }
-    
+
+
+
     let videoIds = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19]; // 여기에 비디오 id 작성해주시면 됩니다!
     displayVideos(videoIds);
+
+ 
+    
+
+    
+// 검색기능 관련 멘토님 참고 코드
+// let videoAll = [];
+// let titles = [];
+// fetch("http://oreumi.appspot.com/video/getVideoList")
+//     .then((response) => response.json())
+//     .then((data) => {
+//         videoAll = data;
+//         getVideo(videoAll);
+//     });
+
+// function getVideo(videoList) {
+//     for (let i = 0; i < videoList.length; i++) {
+//         fetch(`http://oreumi.appspot.com/video/getVideoInfo?video_id=${videoList[i].video_id}`)
+//             .then((response) => response.json())
+//             .then((data) => {
+//                 titles.push(data.video_title);
+//                 search()
+//             });
+//     }
+// }
+// function search() {
+//     let text = document.getElementsByClassName("search_box")[0].value;
+
+//     let value = videoAll.searchFilter((videoSearched.video_title, text ) => {
+//         return element === Value;
+//     });
+    
+//     // innerHTML ~~~~
+
+
+// }
+// document.getElementById("keyword").addEventListener("click", search);
