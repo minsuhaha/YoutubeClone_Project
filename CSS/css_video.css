@@ -1,56 +1,37 @@
-<<<<<<< HEAD
 /* 영상 및 info 전체 박스 css */
 .primary {
-    position: fixed;
     display: flex;
     flex-direction: column;
-    top: 56px;
-=======
-
-/* 영상 및 info 전체 박스 css */
-.primary{
-    position: fixed;
-    display: flex;
-    flex-direction: column;
-    top:56px;
->>>>>>> a88b3fe4b42f134fb020e4e132bf6d839b988160
-    padding-top: 24px;
-    padding-left: 24px;
-    border: 1px solid black;
+    margin-top: 54px;
+    padding-left: 20px;
+    width: 75%;
     color: white;
     font-weight: 600;
-<<<<<<< HEAD
     font-size: x-large;
-=======
-    font-size:x-large;
->>>>>>> a88b3fe4b42f134fb020e4e132bf6d839b988160
+    /* border: 1px solid black; */
 }
 
 /* 영상부분 css */
 .video {
-    width: 640px;
-    height: 360px;
+    width: 100%;
+    height: auto;
 }
 
 /* 영상 밑 info 전체 박스 css */
-<<<<<<< HEAD
+
 .info_box {
-=======
-.info_box{
->>>>>>> a88b3fe4b42f134fb020e4e132bf6d839b988160
-    width: 640px;
+    width: 100%;
     padding-top: 10px;
     padding-bottom: 8px;
     /* border: 1px solid black; */
+    border-bottom: 1px solid #303030;
 }
 
 /* 영상 제목 css */
-<<<<<<< HEAD
+
 .info_title {
-=======
-.info_title{
->>>>>>> a88b3fe4b42f134fb020e4e132bf6d839b988160
-    width: 379px;
+
+    width: 100%;
     height: 21px;
     padding-top: 3px;
     padding-bottom: 2px;
@@ -59,33 +40,26 @@
 }
 
 /* 제목 밑 view와 구독관련 버튼 박스 css */
-<<<<<<< HEAD
+
 .info_bottom {
-=======
-.info_bottom{
->>>>>>> a88b3fe4b42f134fb020e4e132bf6d839b988160
+
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 91px;
-    width: 640px;
+    width: 100%;
     height: 40px;
     /* border: 1px solid black; */
 }
 
 /* view와 등록일 css */
-<<<<<<< HEAD
 .info_view {
-=======
-.info_view{
->>>>>>> a88b3fe4b42f134fb020e4e132bf6d839b988160
     /* border: 1px solid black; */
     display: flex;
     align-items: flex-start;
-    width: 180px;
+    width: 100%;
     height: 16px;
     padding: 12px 0px;
-<<<<<<< HEAD
     font-size: x-large;
     gap: 5px;
 
@@ -93,175 +67,135 @@
 
 /* 구독 관련 전체 박스 css */
 .info_icon {
-=======
-    font-size:x-large;
-    gap:5px;
-    
-}
-
-/* 구독 관련 전체 박스 css */
-.info_icon{
->>>>>>> a88b3fe4b42f134fb020e4e132bf6d839b988160
     display: flex;
-    width: 400px;
+    /* width: 100%; */
     align-items: center;
     justify-content: flex-end;
     gap: 0px;
     height: 40px;
-    /* border:  1px solid black; */
+    /* border:  1px solid black;  */
 }
 
 /* 구독 박스 아이콘 css */
-<<<<<<< HEAD
 .info_icon>button>img {
-=======
-.info_icon>button>img{
->>>>>>> a88b3fe4b42f134fb020e4e132bf6d839b988160
-    padding: 6px 0px;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 6px 6px 6px;
     /* border:  1px solid black; */
 }
 
 /* 구독 박스 글자 css */
-<<<<<<< HEAD
 .info_icon>button>span {
-=======
-.info_icon>button>span{
->>>>>>> a88b3fe4b42f134fb020e4e132bf6d839b988160
     align-items: center;
     justify-content: center;
     padding: 6px 6px 6px 6px;
     color: white;
     font-weight: 600;
-<<<<<<< HEAD
     font-size: x-large;
-=======
-    font-size:x-large;
->>>>>>> a88b3fe4b42f134fb020e4e132bf6d839b988160
     font-family: 'iceJaram-Rg';
     /* border:  1px solid black; */
 }
 
 /* 구독 박스 아이콘+글자=버튼 박스 css */
-<<<<<<< HEAD
 .info_icon>button {
-=======
-.info_icon>button{
->>>>>>> a88b3fe4b42f134fb020e4e132bf6d839b988160
     display: flex;
     align-items: center;
     justify-content: center;
     /* border:1px solid black; */
-<<<<<<< HEAD
     border: 0;
-=======
-    border:0;
->>>>>>> a88b3fe4b42f134fb020e4e132bf6d839b988160
     background-color: #83C9E7;
 }
 
 /* 버튼 박스에 호버시 색상 변경 */
-<<<<<<< HEAD
 .info_icon>button:hover {
-=======
-.info_icon>button:hover{
->>>>>>> a88b3fe4b42f134fb020e4e132bf6d839b988160
     background-color: #44ADDA;
 }
 
 /* 버튼 박스 클릭시 색상 변경 */
-<<<<<<< HEAD
 .info_icon>button:active {
-=======
-.info_icon>button:active{
->>>>>>> a88b3fe4b42f134fb020e4e132bf6d839b988160
     background-color: #1263CE;
     box-shadow: 1px 1px 1px black;
     transition-duration: 0.1s;
 }
-<<<<<<< HEAD
+
+
+.info_icon>button:focus {
+    background-color: #44ADDA;
+}
+
 
 .info_icon>button:focus {
     background-color: #44ADDA;
 }
 
 .channel_desc_area {
-=======
-.info_icon>button:focus{
-    background-color: #44ADDA;
-}
-
-.channel_desc_area{
->>>>>>> a88b3fe4b42f134fb020e4e132bf6d839b988160
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
-    width: 640px;
+    width: 100%;
     height: 149px;
     padding-bottom: 16px;
     margin-bottom: 1px;
-<<<<<<< HEAD
-    border: 1px solid black;
+    /* border: 1px solid black; */
 
 }
+
+
+/* .channel_title>button {
+
+    border: 1px solid black;
+} */
 
 .channel_title {
-    padding-top: 16px;
-    flex-direction: row;
-    /* align-items: flex-start; */
-    gap: 10px;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.channel_title>button {
-=======
-    border:1px solid black;
-}
-
-.channel_title{
     display: flex;
-    padding-top: 16px;
+    padding: 16px;
+    width: 100%;
     flex-direction: row;
     align-items: flex-start;
     gap: 10px;
-
+    align-items: center;
+    justify-content: space-between;
+    /* border: 1px solid black; */
 }
 
-.channel_title>button{
->>>>>>> a88b3fe4b42f134fb020e4e132bf6d839b988160
+/* .channel_title>button {
+
     border: 0;
     background-color: transparent;
     cursor: pointer;
-}
+} */
 
-<<<<<<< HEAD
-.channel_icon {
-=======
-.channel_icon{
->>>>>>> a88b3fe4b42f134fb020e4e132bf6d839b988160
+
+/* .channel_icon {
+
     display: flex;
     width: 48px;
     height: 48px;
     justify-content: center;
     align-items: center;
-}
+} */
 
-<<<<<<< HEAD
-.channel_title>span {
-=======
-.channel_title>span{
->>>>>>> a88b3fe4b42f134fb020e4e132bf6d839b988160
+
+/* .channel_title>span {
+
     display: inline-flex;
-    padding: 11px 0px 10px 0px;
-    flex-direction: column;
+    padding: 0px 0px 10px 0px;
+    flex-direction: row;
     align-items: flex-start;
-    /* border:1px solid black; */
-<<<<<<< HEAD
-}
+    border:1px solid black;
 
-.subscribes_btn {
-    margin-left: 350px;
+} */
+
+#subscribe-button {
+    background-color: #cc0000; 
+    color: #fff;
+    display: inline-block; 
+    padding: 10px 16px; 
+    align-items: right; 
+    gap: 10px; 
+    font-size: 14px; 
+    font-weight: 700;
 }
 
 .channel_btn {
@@ -284,13 +218,14 @@
 
 /* .video_desc를 flexbox 레이아웃으로 설정 */
 .video_desc {
-    padding: 12px 64px;
-
+    padding: 12px;
+    width: 100%;
+    border-bottom: 1px solid #303030;
 }
 
 .video_desc>span {
     display: block;
-    max-width: 476px;
+    /* max-width: 476px; */
     /* 최대 너비 설정 */
     word-wrap: break-word;
     line-height: 0.6;
@@ -308,7 +243,8 @@
     color: red;
     font-size: 14px;
     font-weight: bold;
-    padding-left: 0px;
+    margin-top: 15px;
+    padding-left: 40px;
 
 }
 
@@ -322,13 +258,27 @@
     padding-left: 40px;
 }
 
+#commentInput {
+    display: inline-block;
+    background-color: #83C9E7;
+    border: none;
+    width: 90%;
+    height: 20px;
+    border-bottom: 1px solid #303030;
+    font-style: white;
+}
+
+
 .comment {
     display: flex;
     justify-content: flex-end;
 }
 
 #comment_btn {
+    pointer-events: auto;
     margin-right: 10px;
+    background-color: transparent;
+    border: none;
     cursor: pointer;
     border-radius: 30px;
 }
@@ -349,6 +299,15 @@
 
 #cancel_btn:hover {
     background-color: rgba(16, 81, 221, 0.568);
-=======
->>>>>>> a88b3fe4b42f134fb020e4e132bf6d839b988160
+}
+
+.Content {
+    display: flex;
+    width: 25%;
+    height: auto;
+    margin-top: 54px;
+}
+
+.Content>div>span {
+    display: inline;
 }

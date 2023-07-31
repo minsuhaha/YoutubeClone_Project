@@ -82,12 +82,12 @@ function createVideoItem2(video_id,container) {
             <div class="channel_title">
                     <button class="channel_btn"><img src="../Image/Sidebar/Marcus Levin.png" alt=""></button>
                     <span class="channel_name">${data.video_channel}</span>
-                    <button class="subscribes_btn"><img src="../Image/Channel/Subscribes-Btn.png"></button>
-                </div>
-                    <div class="video_desc">
-                    <span>vidio_desssssssssssssssc</span>
+                    <button id="subscribe-button">SUBSCRIBES</button>
+            </div>
+            <div class="video_desc">
+                    <span>${data.video_detail}</span>
                     <button class="showmore_btn">SHOW MORE</button>
-                    </div>      
+            </div>      
             `;
             // console.log(data.video_link);
             container.appendChild(videoDiv2);
@@ -111,3 +111,14 @@ window.onload=function(){
     displayVideos(videoIds);
     displayVideos2(videoIds);
 }
+
+const subs_Btn = document.getElementById('subscribe-button');
+
+subs_Btn.addEventListener('click', function(b) {
+    if(subs_Btn.innerText === 'SUBSCRIBES'){
+        subs_Btn.innerText = '1 SUBSCRIBED';
+        b.target.style.backgroundColor = 'darkgray';
+    } else {
+        subs_Btn.innerText = 'SUBSCRIBES';
+        b.target.style.backgroundColor = '#cc0000';
+    }});

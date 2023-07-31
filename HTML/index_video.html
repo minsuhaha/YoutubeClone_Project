@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../CSS/css_2.css">
     <link rel="stylesheet" href="../CSS/css_video.css">
     <script src="../js/video_css.js"></script>
+
 </head>
 
 <body>
@@ -36,32 +37,20 @@
         <!-- 비디오 플레이어 -->
         <article> 
             <div id="videoContainer">
-                <video controls src=""></video>
+                <!-- <video controls src=""></video> -->
                 <!-- 비디오 플레이어를 여기에 삽입 -->
-            </div>
-            <div>               
-                <div>Title</div>
-                <div>InfoText</div> <!-- view 날짜 -->
-                <button>Like</button>
-                <button>Dislike</button>
-                <button>Share</button>
-                <button>Save</button>
-                <button>...</button>
-            <!--채널  정보,show more 버튼까지 -->
             </div>
         </article>
         <!-- 영상설명 -->
         <article>
-            <div>
+            <!-- <div>
                 <img src="../Image/Sidebar/Marcus Levin.png">
                 <a href="#">Marcus Levin</a>
             </div>
             <div>User</div>
-            <div>Subscriber</div>
-            <div id="videoDesc" class="channel_desc_area">
-                 <!-- 영상 설명 내용을 여기에 삽입 -->
-            </div>
-            <button><img src="../Image/Channel/Subscribes-Btn.png"></button>
+            <div>Subscriber</div> -->
+            <!-- 영상 설명 내용을 여기에 삽입 -->
+            <div id="videoDesc" class="channel_desc_area"></div>
         </article>
         <!--댓글 정보, 정렬, 입력 부분-->
         <div>
@@ -72,7 +61,7 @@
             </div>
             <div>
                 <button class="channel_btn"><img src="../Image/Sidebar/Anna White.png"></button>
-                <textarea id="commentInput" placeholder="댓글 입력" style="width: 80%;"></textarea>
+                <textarea id="commentInput" placeholder="Add a public comment..."></textarea>
             </div>
             <div class="comment">
                 <button id="cancel_btn" onclick="cancelComment()">취소</button>
