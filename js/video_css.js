@@ -85,8 +85,8 @@ function createVideoItem2(video_id,container) {
                     <button class="subscribes_btn"><img src="../Image/Channel/Subscribes-Btn.png"></button>
                 </div>
                     <div class="video_desc">
-                    <span>vidio_desssssssssssssssc</span>
-                    <button class="showmore_btn">SHOW MORE</button>
+                        <span>${data.video_detail}</span>
+                        <button class="showmore_btn">SHOW MORE</button>
                     </div>      
             `;
             // console.log(data.video_link);

@@ -1,4 +1,4 @@
-// 채널 페이지
+// 채널 프로필
 function displayVideos(videoIds) {
     const container = document.getElementById('videoChannel');
 
@@ -27,13 +27,14 @@ function getChannelInfo(video_channel, container) {
                 // html 작성 부분
                 videoDiv.innerHTML = `
                 <p><img src="${data.channel_banner}"></p>
+                <p>${data.channel_name}</p>
                 <p>${data.subscribers}</p>
                 <p><img src="${data.channel_profile}"></p>
-            `;
+            `; 
                 // console.log(data.video_link);
                 container.appendChild(videoDiv);
                 // 다음 video_id로 재귀 호출
-                createVideoItem(video_id + 1);
+                // createVideoItem(video_id + 1);
             }
         }
     };
@@ -43,8 +44,11 @@ function getChannelInfo(video_channel, container) {
     xhr.setRequestHeader("Content-Type", "application/json");
     xhr.send(JSON.stringify(jsondata));
 }
-let videoIds = [0];
+
 // id = 0부터 아이템 불러오기
 window.onload=function(){
+    let videoIds = ['oreumi'];
     displayVideos(videoIds);
 }
+
+// 채널 프로필에 맞는 비디오 불러오기
