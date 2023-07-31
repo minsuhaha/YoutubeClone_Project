@@ -91,6 +91,7 @@ a {
 /* profile part */
 
 .profile_main {
+    position: fixed;
     display: flex;
     width: 200px;
     height: 48px;
@@ -100,6 +101,7 @@ a {
     gap: 8px;
     flex-shrink: 0;
     margin-left: 25%;
+    right: 10px;
     /* border: 1px solid grey; */
 }
 
@@ -157,6 +159,7 @@ a {
     gap: 1px;
     flex-shrink: 0;
     margin-top: 8px;
+    margin-right: 60px;
     /* border: 1px solid white; */
 
 }
@@ -174,6 +177,8 @@ a {
     font-weight: 400;
     line-height: normal;
     color: var(--gray-color, #AAA);
+    border-radius: 10px;
+    background-color: #83C9E7
 }
 
 .search_box::placeholder{
@@ -203,7 +208,7 @@ a {
     align-items: flex-start;
     gap: 10px;
     flex-shrink: 0;
-    border-radius: 0px 2px 2px 0px;
+    border-radius: 10px;
     border: 1px solid var(--border-color, #303030);
     background: var(--border-color, #303030);
 }

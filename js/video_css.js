@@ -111,3 +111,14 @@ window.onload=function(){
     displayVideos(videoIds);
     displayVideos2(videoIds);
 }
+
+const subs_Btn = document.getElementById('subscribe-button');
+
+subs_Btn.addEventListener('click', function(b) {
+    if(subs_Btn.innerText === 'SUBSCRIBES'){
+        subs_Btn.innerText = '1 SUBSCRIBED';
+        b.target.style.backgroundColor = 'darkgray';
+    } else {
+        subs_Btn.innerText = 'SUBSCRIBES';
+        b.target.style.backgroundColor = '#cc0000';
+    }});
