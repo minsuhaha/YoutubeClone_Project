@@ -60,7 +60,7 @@ function searchYoutube(searchData, container){
                                 <img class="Thumbnail_img" src='${data.image_link}' alt='Video Thumbnail'>
                             </a>
                             <h3 class="Thumbnail_h3">${data.video_title}</h3>
-                            <p>채널명: <a href="index_channel.html?channel_name=${encodeURIComponent(data.video_channel)}">${data.video_channel}</a></p>
+                            <p>채널명: <a href="/HTML/index_channel.html?channel_name=${encodeURIComponent(data.video_channel)}">${data.video_channel}</a></p>
                             <p>등록일: ${data.upload_date}, 조회수: ${data.views}회</p>
                         </article>
                     `;
