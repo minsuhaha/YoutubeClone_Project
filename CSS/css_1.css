@@ -94,18 +94,24 @@ a {
 /* profile part */
 
 .profile_main {
-    position: fixed;
     display: flex;
     width: 200px;
     height: 48px;
     margin: 8px;
-    justify-content:right;
-    align-items:center;
+    justify-content: right;
+    align-items: center;
     gap: 8px;
     flex-shrink: 0;
     margin-left: 25%;
-    right: 10px;
+    position: relative;
     /* border: 1px solid grey; */
+}
+
+.profile_main>button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    position: relative;
 }
 
 .profile_box {
@@ -448,4 +454,126 @@ a {
     .profile_main {
         margin-left: 25%;
     }
+}
+
+#yt_logo:hover::before {
+    content: "YouTubeHome";
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f0f0f0;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+#apps:hover::before {
+    content: "test";
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f0f0f0;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+#create_btn:hover::before {
+    content: "create";
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f0f0f0;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+
+#alarm_btn:hover::before {
+    content: "alarm";
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f0f0f0;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+#profile_btn:hover::before {
+    content: "profile";
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f0f0f0;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.hiddenMenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -36px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 8px;
+}
+
+.hiddenMenu:nth-child(4) {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 8px;
+}
+
+.hiddenMenu:nth-child(6) {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 51px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 8px;
+}
+
+.hiddenMenu:nth-child(8) {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 102px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 8px;
+}
+
+.hiddenUl {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.hiddenA {
+    margin-bottom: 5px;
+    display: block;
+}
+
+.hiddenMenu.showMenu {
+    display: block;
+    /* showMenu 클래스가 적용되면 보이도록 설정 */
+}
+
+.profile_user {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0px;
+    border-radius: 50%;
 }
