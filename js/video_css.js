@@ -1,8 +1,14 @@
 function displayVideos(videoIds) {
     const container = document.getElementById('videoContainer');
+    const container2 = document.getElementById('videoDesc');
+    const container3 = document.getElementById('videoSecond');
+    // document.getElementById("vd_change").addEventListener('click',vd_change);
 
     videoIds.forEach(videoId => {
         createVideoItem(videoId, container);
+        createVideoItem2(videoId, container2);
+        createVideoItem3(videoId, container3);
+        
     });
 }
 
@@ -55,14 +61,6 @@ function createVideoItem(video_id,container) {
     // id = 0부터 아이템 불러오기
 
 
-function displayVideos2(videoIds) {
-    const container2 = document.getElementById('videoDesc');
-
-    videoIds.forEach(videoId => {
-        createVideoItem2(videoId, container2);
-    });
-}
-
 function createVideoItem2(video_id,container) {
     // XMLHttpRequest 객체 생성
     let xhr = new XMLHttpRequest();
@@ -101,15 +99,56 @@ function createVideoItem2(video_id,container) {
             xhr.send();
         }
 
-        function cancelComment() {
-            const commentInput = document.getElementById('commentInput')
-            commentInput.value = '';
-        }
+        function createVideoItem3(video_id,container) {
+            // XMLHttpRequest 객체 생성
+            let xhr = new XMLHttpRequest();
+            // API 요청 설정
+            let apiUrl = `http://oreumi.appspot.com/video/getVideoInfo?video_id=${video_id}`;
+            
+        
+            // 응답 처리 설정
+            xhr.onreadystatechange = function(){
+                if (xhr.readyState === xhr.DONE && xhr.status === 200) {
+                // 가져온 응답 처리
+                let data = JSON.parse(xhr.responseText);
+                // 데이터 있는지 확인
+                if (data && data.video_id !== undefined) {
+                    let videoDiv3 = document.createElement('div');
+                    videoDiv3.innerHTML = `
+                        <div class="second_vd">
+                            <button type="button" class="second_vd_vdbox">
+                                <img class="second_vd_vd" src="${data.image_link}">
+                            </button>
+                            <div class="second_vd_infobox">
+                                <div>${data.video_title}
+                                </div>
+                                <div>${data.video_channel}
+                                </div>
+                                <div>${data.views} views. ${data.upload_date}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                    // console.log(data.video_link);
+                    container.appendChild(videoDiv3);
+                      // 다음 video_id로 재귀 호출
+                    createVideoItem3(video_id + 1,container);
+                        }
+                    }
+                    };
+                    xhr.open('GET', apiUrl, true);
+                    // 요청 전송
+                    xhr.send();
+                }
 
 let videoIds = [0];
 window.onload=function(){
     displayVideos(videoIds);
-    displayVideos2(videoIds);
+}
+
+function cancelComment() {
+    const commentInput = document.getElementById('commentInput')
+    commentInput.value = '';
 }
 
 const subs_Btn = document.getElementById('subscribe-button');
@@ -122,3 +161,5 @@ subs_Btn.addEventListener('click', function(b) {
         subs_Btn.innerText = 'SUBSCRIBES';
         b.target.style.backgroundColor = '#cc0000';
     }});
+
+

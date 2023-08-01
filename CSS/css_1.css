@@ -66,6 +66,9 @@ body {
     background-color: #83C9E7;
     /* background-color: #212121; */
     overflow-x: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* 클래스나 아이디는 나중에 받으셔서 쓰시면될겁니다 */

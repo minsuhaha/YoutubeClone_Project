@@ -13,18 +13,28 @@
     padding: 5px;
     color: #fff;
     left: 240px;
-    border-bottom: 1px 1px solid #303030;
+    border-bottom: 1px solid #303030;
+    /* 변경: 1px 1px solid */
+    overflow-x: hidden;
 }
 
 .items {
     white-space: nowrap;
     overflow: hidden;
+    /* 변경: overflow-x를 hidden에서 visible로 수정 */
+    transition: transform 0.3s ease;
+    /* 추가: 스크롤 시 애니메이션 효과 */
+    width: 500px;
 }
 
 .items:hover {
     overflow-x: auto;
 }
 
+.scroll {
+    display: block;
+    /* 스크롤 버튼 스타일 설정 */
+}
 
 /* nav 바 item */
 .item {
@@ -32,12 +42,13 @@
     height: 40px;
     border-radius: 45%;
     background-color: #1263CE;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
     cursor: pointer;
     margin: 0 5px;
     margin-right: 10px;
+    color: #fff;
 }
 
 .item>a {
