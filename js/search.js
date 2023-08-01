@@ -7,7 +7,7 @@ function search(event) {
     let text = document.getElementsByClassName("search_box")[0].value;
     
     // 메인 페이지 URL
-    let mainPageUrl = "http://127.0.0.1:5500/js/index_home%20copy.html";
+    let mainPageUrl = "http://127.0.0.1:5500/HTML/index_home.html";
     // 검색어를 쿼리 스트링으로 추가한 URL
     let newURL = mainPageUrl + '?search=' + encodeURIComponent(text);
     
@@ -52,7 +52,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                                             <img class="Thumbnail_img" src='${video.image_link}' alt='Video Thumbnail'>
                                         </a>
                                         <h3 class="Thumbnail_h3">${video.video_title}</h3>
-                                        <p>채널명: <a href="index_channel.html?channel_name=${encodeURIComponent(video.video_channel)}">${video.video_channel}</a></p>
+                                        <p>채널명: <a href="/HTML/index_channel.html?channel_name=${encodeURIComponent(video.video_channel)}">${video.video_channel}</a></p>
                                         <p>등록일: ${video.upload_date}, 조회수: ${video.views}회</p>
                                     </article>
                                         `;
