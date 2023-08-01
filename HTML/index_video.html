@@ -21,12 +21,13 @@
         <!-- 네비게이션바 파트 -->
         <div class="yt_button">
             <button href="#" id='hamburger' onclick="toggleSidebar()"><img class="hamburger_icon"
-                src="../Image/searchBar/Vector-4.png"></button>
-            <a href="#"><img class="yt_logo" src="../Image/searchBar/logo_2.png"></a>
+                    src="../Image/searchBar/Vector-4.png"></button>
+            <a href="/HTML/index_home.html"><img class="yt_logo" src="../Image/searchBar/logo_2.png"></a>
         </div>
         <div class="search_box_area">
             <input class="search_box" id="search" placeholder=" Search">
-            <div id="search_box_btn"><input class="search_box_icon" type="image" src="../Image/searchBar/search.png"></div>
+            <div id="search_box_btn"><input class="search_box_icon" type="image" src="../Image/searchBar/search.png">
+            </div>
             <input class="voice_box" type="image" src="../Image/searchBar/Vector.png">
         </div>
         <div class="profile_main">
@@ -36,123 +37,90 @@
             <a href="#"><img class="profile_user" src="../Image/searchBar/User-Avatar.svg"></a>
         </div>
     </header>
-<main>
-    <section class="primary"><!-- 비디오부터 댓글 전체 섹션-->
-        <!-- 비디오부터 좋아요 버튼까지-->
-        <!-- 비디오 플레이어 -->
-        <article> 
-            <div id="videoContainer">
-                <!-- 비디오 플레이어를 여기에 삽입 -->
-            </div>
-        </article>
-        <!-- 댓글 정보, 정렬, 입력 부분-->
-        <div>
+    <main>
+        <section class="primary"><!-- 비디오부터 댓글 전체 섹션-->
+            <!-- 비디오부터 좋아요 버튼까지-->
+            <!-- 비디오 플레이어 -->
+            <article>
+                <div id="videoContainer">
+                    <!-- 비디오 플레이어를 여기에 삽입 -->
+                </div>
+            </article>
+            <!-- 댓글 정보, 정렬, 입력 부분-->
             <div>
-                <span>286 Comment</span>
-                <button class="dropdown_btn"><img src="../Image/Channel/Dropdown.png"></button>
-                <span>SORT BY</span>
+                <div>
+                    <span>286 Comment</span>
+                    <button class="dropdown_btn"><img src="../Image/Channel/Dropdown.png"></button>
+                    <span>SORT BY</span>
+                </div>
+                <div>
+                    <button class="channel_btn"><img src="../Image/Sidebar/Anna White.png"></button>
+                    <textarea id="commentInput" placeholder="Add a public comment..."></textarea>
+                </div>
+                <div class="comment">
+                    <button id="cancel_btn" onclick="cancelComment()">취소</button>
+                    <button id="comment_btn" onclick="addComment()">댓글</button>
+                </div>
             </div>
-            <div>
-                <button class="channel_btn"><img src="../Image/Sidebar/Anna White.png"></button>
-                <textarea id="commentInput" placeholder="Add a public comment..."></textarea>
+        </section>
+        <!-- Content 부분 -->
+        <aside>
+            <div class="video_second" id="videoSecond">
+                <div class="second_topbox">
+                    <div class="second_topmenu">All</div>
+                    <div class="second_topmenu">토끼</div>
+                    <div class="second_topmenu">AI</div>
+                    <div class="second_topmenu">블록체인</div>
+                </div>
             </div>
-            <div class="comment">
-                <button id="cancel_btn" onclick="cancelComment()">취소</button>
-                <button id="comment_btn" onclick="addComment()">댓글</button>
+        </aside>
+        <aside class="sidebar">
+            <!-- sidebar Top -->
+            <div class="sidebar_top">
+                <div>
+                    <img src="../Image/Sidebar/home.svg">
+                    <a href="#">Home</a>
+                </div>
+                <div>
+                    <img src="../Image/Sidebar/explore.svg">
+                    <a href="#">Explore</a>
+                </div>
+                <div>
+                    <img src="../Image/Sidebar/subscriptions.svg">
+                    <a href="#">Subscriptions</a>
+                </div>
             </div>
-        </div>
-    </section>
-    <!-- Content 부분 -->
-    <section class="Content">
-        <div>
-            <!-- icon -->
-        </div>
-        <div>
-            <span>
-                <video controls src=""></video>
-                <div>Title</div>
-                <div>Channelname</div>
-                <div>Views</div>
-            </span>
-            <span>
-                <video controls src=""></video>
-                <div>Title</div>
-                <div>Channelname</div>
-                <div>Views</div>
-            </span>
-            <span>
-                <video controls src=""></video>
-                <div>Title</div>
-                <div>Channelname</div>
-                <div>Views</div>
-            </span>
-            <span>
-                <video controls src=""></video>
-                <div>Title</div>
-                <div>Channelname</div>
-                <div>Views</div>
-            </span>
-            <span>
-                <video controls src=""></video>
-                <div>Title</div>
-                <div>Channelname</div>
-                <div>Views</div>
-            </span>
-            <span>
-                <video controls src=""></video>
-                <div>Title</div>
-                <div>Channelname</div>
-                <div>Views</div>
-            </span>
-        </div>
-    </section>
-    <aside class="sidebar">
-        <!-- sidebar Top -->
-        <div class="sidebar_top">
-            <div>
-                <img src="../Image/Sidebar/home.svg">
-                <a href="#">Home</a>
-            </div>
-            <div>
-                <img src="../Image/Sidebar/explore.svg">
-                <a href="#">Explore</a>
-            </div>
-            <div>
-                <img src="../Image/Sidebar/subscriptions.svg">
-                <a href="#">Subscriptions</a>
-            </div>
-        </div>
 
-        <div class="sidebar_top">
-            <div>
-                <img src="../Image/Sidebar/library.svg">
-                <a href="#">Library</a>
+            <div class="sidebar_top">
+                <div>
+                    <img src="../Image/Sidebar/library.svg">
+                    <a href="#">Library</a>
+                </div>
+                <div>
+                    <img src="../Image/Sidebar/history.svg">
+                    <a href="#">History</a>
+                </div>
+                <div>
+                    <img src="../Image/Sidebar/video.svg">
+                    <a href="#">Your Videos</a>
+                </div>
+                <div>
+                    <img src="../Image/Sidebar/watch.svg">
+                    <a href="#">watch Later</a>
+                </div>
+                <div>
+                    <img src="../Image/Sidebar/Like.svg">
+                    <a href="#">Liked Videos</a>
+                </div>
+                <div>
+                    <img src="../Image/Sidebar/show.svg">
+                    <a href="#">Show More</a>
+                </div>
             </div>
-            <div>
-                <img src="../Image/Sidebar/history.svg">
-                <a href="#">History</a>
-            </div>
-            <div>
-                <img src="../Image/Sidebar/video.svg">
-                <a href="#">Your Videos</a>
-            </div>
-            <div>
-                <img src="../Image/Sidebar/watch.svg">
-                <a href="#">watch Later</a>
-            </div>
-            <div>
-                <img src="../Image/Sidebar/Like.svg">
-                <a href="#">Liked Videos</a>
-            </div>
-            <div>
-                <img src="../Image/Sidebar/show.svg">
-                <a href="#">Show More</a>
-            </div>
-        </div>
 
-        <!-- sidebar Sub -->
-        <div class="sidebarSub">
-            <div class="subTitle"><a href="">SUBSCRIPTIONS</a></div>
+            <!-- sidebar Sub -->
+            <div class="sidebarSub">
+                <div class="subTitle"><a href="">SUBSCRIPTIONS</a></div>
                 <div>
                     <img src="../Image/Sidebar/James Gouse.png">
                     <a href="#">James Gouse</a>
@@ -184,12 +152,12 @@
                 <div>
                     <img src="../Image/Sidebar/show.svg">
                     <a href="#">Show 10 More</a>
+                </div>
             </div>
-        </div>
-        
-        <!-- sidebar More -->
-        <div class="sidebarMore">
-            <div class="subTitle"><a href="">MORE FROM YOUTUBE</a></div>
+
+            <!-- sidebar More -->
+            <div class="sidebarMore">
+                <div class="subTitle"><a href="">MORE FROM YOUTUBE</a></div>
                 <div>
                     <img src="../Image/Sidebar/premium.svg" alt="">
                     <a href="#">Youtube Premium</a>
@@ -214,45 +182,46 @@
                         <img src="../Image/Sidebar/settings.svg" alt="">
                         <a href="">Settings</a>
                     </div>
-        
+
                     <div>
                         <img src="../Image/Sidebar/reporthistory.svg" alt="">
                         <a href="">Report history</a>
                     </div>
-        
+
                     <div>
                         <img src="../Image/Sidebar/help.svg" alt="">
                         <a href="">Help</a>
                     </div>
-        
+
                     <div>
                         <img src="../Image/Sidebar/feedback.svg" alt="">
                         <a href="">Send feedback</a>
                     </div>
                 </div>
-        </div>
-        
-        <!-- sidebar footer 부분 -->
-        <div class="sidebarFooter">
-            <div>
-                <p></p>
             </div>
-            <div>
-                <p></p>
-            </div>
-        </div>
 
-    </aside>
-
-    <!-- 비디오 썸네일 부분 시작-->
-    <main>
-        <section>
-            <div class="Thumbnail" id="videoContainer">
-            <!--자바스크립트 코드에서 추가-->
+            <!-- sidebar footer 부분 -->
+            <div class="sidebarFooter">
+                <div>
+                    <p></p>
+                </div>
+                <div>
+                    <p></p>
+                </div>
             </div>
-        </section>
-</main>
+
+        </aside>
+
+        <!-- 비디오 썸네일 부분 시작-->
+        <main>
+            <section>
+                <div class="Thumbnail" id="videoContainer">
+                    <!--자바스크립트 코드에서 추가-->
+                </div>
+            </section>
+        </main>
 </body>
 <script src="/js/search.js"></script>
 <script src="/js/video_hamburger.js"></script>
+
 </html>

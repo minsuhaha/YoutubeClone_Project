@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,12 +17,13 @@
         <!-- 네비게이션바 파트 -->
         <div class="yt_button">
             <button href="#" id='hamburger' onclick="toggleSidebar()"><img class="hamburger_icon"
-                src="../Image/searchBar/Vector-4.png"></button>
-            <a href="#"><img class="yt_logo" src="../Image/searchBar/logo_2.png"></a>
+                    src="../Image/searchBar/Vector-4.png"></button>
+            <a href="/HTML/index_home.html"><img class="yt_logo" src="../Image/searchBar/logo_2.png"></a>
         </div>
         <div class="search_box_area">
             <input class="search_box" id="search" placeholder=" Search">
-            <div id="search_box_btn"><input class="search_box_icon" type="image" src="../Image/searchBar/search.png"></div>
+            <div id="search_box_btn"><input class="search_box_icon" type="image" src="../Image/searchBar/search.png">
+            </div>
             <input class="voice_box" type="image" src="../Image/searchBar/Vector.png">
         </div>
         <div class="profile_main">
@@ -60,7 +62,8 @@
 
     <!-- 영상 파트 위에 top menu bar 파트 -->
     <nav class="navigation">
-        <div class="items">
+        <button id="reverseScrollButton">◄</button>
+        <div class="items" id="itemsContainer">
             <!-- css_2 span에 class명 item1 로 추가 설정함! -->
             <span class="item"><a href="#">all</a></span>
             <span class="item"><a href="#">AI</a></span>
@@ -71,11 +74,15 @@
             <span class="item"><a href="#">환경</a></span>
             <span class="item"><a href="#">코로나</a></span>
             <span class="item"><a href="#">가상현실</a></span>
-            <button type="button" id="xscroll" class="scroll">></button>
+            <span class="item"><a href="#">게임</a></span>
+            <span class="item"><a href="#">노래</a></span>
+            <span class="item"><a href="#">코인</a></span>
+
         </div>
+        <button type="button" id="xscroll" class="scroll">►</button>
     </nav>
 
-      <!-- 사이드바 파트 -->
+    <!-- 사이드바 파트 -->
     <aside class="sidebar">
         <!-- sidebar Top -->
         <div class="sidebar_top">
@@ -123,85 +130,85 @@
         <!-- sidebar Sub -->
         <div class="sidebarSub">
             <div class="subTitle"><a href="">SUBSCRIPTIONS</a></div>
-                <div>
-                    <img src="../Image/Sidebar/James Gouse.png">
-                    <a href="#">James Gouse</a>
-                </div>
-                <div>
-                    <img src="../Image/Sidebar/Alan Cooper.png">
-                    <a href="#">Alan Cooper</a>
-                </div>
-                <div>
-                    <img src="../Image/Sidebar/Marcus Levin.png">
-                    <a href="#">Marcus Levin</a>
-                </div>
-                <div>
-                    <img src="../Image/Sidebar/Alexis Sears.png">
-                    <a href="#">Alexis Sears</a>
-                </div>
-                <div>
-                    <img src="../Image/Sidebar/Jesica Lambert.png">
-                    <a href="#">Jesica Lambert</a>
-                </div>
-                <div>
-                    <img src="../Image/Sidebar/Anna White.png">
-                    <a href="#">Anna White</a>
-                </div>
-                <div>
-                    <img src="../Image/Sidebar/Skylar Dias.png">
-                    <a href="#">Skylar Dias</a>
-                </div>
-                <div>
-                    <img src="../Image/Sidebar/show.svg">
-                    <a href="#">Show 10 More</a>
+            <div>
+                <img src="../Image/Sidebar/James Gouse.png">
+                <a href="#">James Gouse</a>
+            </div>
+            <div>
+                <img src="../Image/Sidebar/Alan Cooper.png">
+                <a href="#">Alan Cooper</a>
+            </div>
+            <div>
+                <img src="../Image/Sidebar/Marcus Levin.png">
+                <a href="#">Marcus Levin</a>
+            </div>
+            <div>
+                <img src="../Image/Sidebar/Alexis Sears.png">
+                <a href="#">Alexis Sears</a>
+            </div>
+            <div>
+                <img src="../Image/Sidebar/Jesica Lambert.png">
+                <a href="#">Jesica Lambert</a>
+            </div>
+            <div>
+                <img src="../Image/Sidebar/Anna White.png">
+                <a href="#">Anna White</a>
+            </div>
+            <div>
+                <img src="../Image/Sidebar/Skylar Dias.png">
+                <a href="#">Skylar Dias</a>
+            </div>
+            <div>
+                <img src="../Image/Sidebar/show.svg">
+                <a href="#">Show 10 More</a>
             </div>
         </div>
-        
+
         <!-- sidebar More -->
         <div class="sidebarMore">
             <div class="subTitle"><a href="">MORE FROM YOUTUBE</a></div>
-                <div>
-                    <img src="../Image/Sidebar/premium.svg" alt="">
-                    <a href="#">Youtube Premium</a>
-                </div>
-                <div>
-                    <img src="../Image/Sidebar/gaming.svg" alt="">
-                    <a href="">Gaming</a>
-                </div>
-                <div>
-                    <img src="../Image/Sidebar/live.svg" alt="">
-                    <a href="">Live</a>
-                </div>
-                <div>
-                    <img src="../Image/Sidebar/show.svg" id="arrow-img">
-                    <a href="#" id="show-more">Show More</a>
-                </div>
+            <div>
+                <img src="../Image/Sidebar/premium.svg" alt="">
+                <a href="#">Youtube Premium</a>
+            </div>
+            <div>
+                <img src="../Image/Sidebar/gaming.svg" alt="">
+                <a href="">Gaming</a>
+            </div>
+            <div>
+                <img src="../Image/Sidebar/live.svg" alt="">
+                <a href="">Live</a>
+            </div>
+            <div>
+                <img src="../Image/Sidebar/show.svg" id="arrow-img">
+                <a href="#" id="show-more">Show More</a>
+            </div>
 
 
-                <!-- sidebar More 안에 sidebar hidden -->
-                <div class='sidebar_hidden'>
-                    <div>
-                        <img src="../Image/Sidebar/settings.svg" alt="">
-                        <a href="">Settings</a>
-                    </div>
-        
-                    <div>
-                        <img src="../Image/Sidebar/reporthistory.svg" alt="">
-                        <a href="">Report history</a>
-                    </div>
-        
-                    <div>
-                        <img src="../Image/Sidebar/help.svg" alt="">
-                        <a href="">Help</a>
-                    </div>
-        
-                    <div>
-                        <img src="../Image/Sidebar/feedback.svg" alt="">
-                        <a href="">Send feedback</a>
-                    </div>
+            <!-- sidebar More 안에 sidebar hidden -->
+            <div class='sidebar_hidden'>
+                <div>
+                    <img src="../Image/Sidebar/settings.svg" alt="">
+                    <a href="">Settings</a>
                 </div>
+
+                <div>
+                    <img src="../Image/Sidebar/reporthistory.svg" alt="">
+                    <a href="">Report history</a>
+                </div>
+
+                <div>
+                    <img src="../Image/Sidebar/help.svg" alt="">
+                    <a href="">Help</a>
+                </div>
+
+                <div>
+                    <img src="../Image/Sidebar/feedback.svg" alt="">
+                    <a href="">Send feedback</a>
+                </div>
+            </div>
         </div>
-        
+
         <!-- sidebar footer 부분 -->
         <div class="sidebarFooter">
             <div>
@@ -218,21 +225,22 @@
     <main>
         <section>
             <div class="Thumbnail" id="videoContainer">
-            <!--자바스크립트 코드에서 추가-->
+                <!--자바스크립트 코드에서 추가-->
             </div>
         </section>
     </main>
 </body>
-    <script src="/js/hamburger.js"></script>
-    <script src="/js/showMore.js"></script>
-    <script src="/js/test.js"></script>
-    <script src="/js/test2.js"> </script>
-    <script src="/js/search.js"></script>
-    <script>
-        const btn = document.querySelector('#xscroll')
-        btn.addEventListener('click',function(){
-	    window.scrollBy(50, 0) //or
+<script src="/js/hamburger.js"></script>
+<script src="/js/showMore.js"></script>
+<script src="/js/search.js"></script>
+<script src="/js/button.js"></script>
+<script>
+    const btn = document.querySelector('#xscroll')
+    btn.addEventListener('click', function () {
+        window.scrollBy(50, 0) //or
         // window.scrollBy({left:100, top:0})
-        })
-    </script>
+    })
+</script>
+<script src="/js/nav_btn.js"></script>
+
 </html>
