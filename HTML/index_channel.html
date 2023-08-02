@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../CSS/css_1.css">
     <link rel="stylesheet" href="../CSS/css_2.css">
     <link rel="stylesheet" href="../CSS/channel.css">
-    <script src="/js/channel_json.js"></script>
+    <script src="../js/channel_json.js"></script>
 </head>
 
 <body>
@@ -36,7 +36,7 @@
 
     <section class="Channel">
         <!-- 상단 채널 부분 -->
-        <section>
+        <section class="Channel-Info">
             <div class="Channel-Cover">
                 <img src="../Image/Channel/image 2.png" class="cover-image" alt="">
             </div>
@@ -46,51 +46,45 @@
                     <div class="Channel-Profile">
                         <a href="#"><img src="../Image/Sidebar/James Gouse.png" alt=""></a>
                     </div>
+
                     <div class="Channel-Profile-Name">
                         <span>Channelname</span>
                         <span>Times</span>
                     </div>
-                    <div class="Channel-Subscribe">
-                        <a href="#"><img src="../Image/Channel/Subscribes-Btn.png" alt=""></a>
-                    </div>
+                </div>
+                <div class="Channel-Subscribe">
+                    <a href="#"><img src="../Image/Channel/Subscribes-Btn.png" alt=""></a>
                 </div>
             </div>
+
             <!--  채널명 아래 버튼 부분 -->
             <div class="ChannelToolbar">
-                <div id="videoChannel">
+                <ul>
+                    <a href="#">HOME</a>
+                    <a href="#">VIDEOS</a>
+                    <a href="#">PLAYLISTS</a>
+                    <a href="#">COMMUNITY</a>
+                    <a href="#">CHANNELS</a>
+                    <a href="#">ABOUT</a>
 
-                </div>
-                <div>
-                    <ul>
-                        <a href="#">HOME</a>
-                        <a href="#">VIDEOS</a>
-                        <a href="#">PLAYLISTS</a>
-                        <a href="#">COMMUNITY</a>
-                        <a href="#">CHANNELS</a>
-                        <a href="#">ABOUT</a>
-
-                        <div class="ChannelToolbar-Button">
-                            <div><img src="../Image/SearchBar/search.png"></img></div>
-                            <div><img src="../Image/Channel/leftArrow.png"></img></div>
-                        </div>
-                </div>
+                    <div class="ChannelToolbar-Button">
+                        <div><img src="../Image/SearchBar/search.png"></img></div>
+                        <div><img src="../Image/Channel/leftArrow.png"></img></div>
+                    </div>
+                </ul>
+                <!-- <div id="videoChannel">
+                </div> -->
             </div>
         </section>
-
-        <!-- 채널 비디오 영상  -->
-        <section>
-            <div class="Thumbnail" id="videoContainer">
-                <!--자바스크립트 코드에서 추가-->
-            </div>
-        </section>
-    </section>
-    <section>
         <article class="channel_mbox" id="channel_mainVD">
-
+            <!-- 채널 비디오 영상  -->
+            <!--자바스크립트 코드에서 추가-->
         </article>
-        <article class="channel_sbox" id="channel_subVD">
+        <section>
+            <article class="channel_sbox" id="channel_subVD">
 
-        </article>
+            </article>
+        </section>
     </section>
 
     <!-- 왼쪽 사이드바 파트 -->
@@ -234,9 +228,10 @@
     </aside>
 </body>
 </script>
-<script src="/js/hamburger.js"></script>
-<script src="/js/showMore.js"></script>
-<script src="/js/search.js"></script>
-<script src="/js/channel_vd.js"></script>
+<script src="../js/hamburger.js"></script>
+<script src="../js/showMore.js"></script>
+<script src="../js/search.js"></script>
+<script src="../js/channel_vd.js"></script>
+<script src="../js/channel_hamburger.js"></script>
 
 </html>

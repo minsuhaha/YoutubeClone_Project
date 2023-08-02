@@ -1,33 +1,44 @@
+.Channel {
+    display: flex;
+    flex-direction: column;
+    /* 요소들을 세로 방향으로 배치 */
+    width: 100%;
+    /* sidebar의 너비만큼 제외한 나머지 영역을 차지 */
+    margin-left: 240px;
+    margin-top: 56px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.channelLonger {
+    margin-left: 120px;
+}
+
+.Channel-Info {
+    margin: 0;
+}
+
+
 /* Channel 헤더 밑 마이크 사진 부분 */
 .Channel-Cover {
-    position: absolute;
-    display: flex;
-    justify-content: center; /* 가로 중앙 정렬 */
-    align-items: center; /* 세로 중앙 정렬 */
-    top: 5.5rem; /* 헤더의 높이에 따라 조정 */
-    left: 240px; /* 사이드 바의 너비 만큼 왼쪽으로 이동 */
-    width: calc(100% - 240px); /* 전체 너비에서 사이드 바의 너비를 빼준 값으로 설정 */
-    height: 7rem;
-    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    height: 266px;
 }
 
 .cover-image {
-    width: 100%; /* 이미지의 너비를 100%로 설정 */
+    width: 100%;
+    flex-shrink: 0;
 }
 
 
 /* Channel Title 부분 */
 .Channel-Title {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    /* border: 0px solid #44ADDA; 박스의 테두리 설정 */
-    padding: 10px; /* 박스 내부의 패딩 설정 */
-    margin-left: 14.5rem;
-    margin-top: 14rem; /* 상단의 마진 설정 */
-    height: 5rem; /* 박스의 높이 설정 */
-    width: calc(100% - 240px); /* 전체 너비에서 사이드 바의 너비를 빼준 값으로 설정 */
-    background-color: #44ADDA; /* 박스의 배경색 설정 */
+    padding: 10px;
+    background-color: #44ADDA;
+    justify-content: space-between;
+    margin-bottom: 0px;
 }
 
 /* Channel Title 안에 프로필, 구독버튼을 담고 있는 channel content 부분 */
@@ -35,118 +46,125 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
-    gap: 20rem;
+    margin-left: 20px;
 }
 
 /* channel-content 안 Channel-Profile (프로필 부분) 부분 */
-.Channel-Profile > a > img{
+.Channel-Profile>a>img {
     width: 80px;
     height: 80px;
-    margin-top: 30px;  
+    /* margin-top: 30px; */
 }
+
 
 .Channel-Profile-Name {
     display: flex;
     flex-direction: column;
     align-items: start;
+    margin-left: 20px;
 }
 
 .Channel-Profile-Name span:nth-child(1) {
-    font-size: 30px; /* 적당한 크기로 조정 */
+    font-size: 30px;
+    /* 적당한 크기로 조정 */
     font-weight: bold;
 }
 
 .Channel-Profile-Name span:nth-child(2) {
-    font-size: 15px; /* 적당한 크기로 조정 */
+    font-size: 15px;
+    /* 적당한 크기로 조정 */
     font-weight: normal;
 }
 
 /* 구독버튼 부분 */
-.Channel-Subscribe > a > img{
-    margin-top: 40px;  
+.Channel-Subscribe>a>img {
+    margin-top: 40px;
 }
 
 /* ChannelToolbar 채널페잊 탑 메뉴 바 부분 */
 .ChannelToolbar {
-    display: flex; 
-    justify-content: space-between; /* 아이템들이 상자 내에서 공간을 최대한 활용하도록 설정 */
-    /* border: 0px solid #4B89DC; 박스의 테두리 설정 */
-    background-color: #44ADDA; /* 박스의 배경색 설정 */
-    width: calc(100% - 220px); /* 전체 너비에서 사이드 바의 너비를 빼준 값으로 설정 */
-    height: 4rem;
-    margin-left: 14.5rem;
+    display: flex;
+    background-color: #44ADDA;
+    margin-top: 0;
+    margin-bottom: 0px;
 }
 
 .ChannelToolbar ul {
     display: flex;
-    justify-content: flex-start; /* 리스트 아이템들을 시작점 기준으로 배치 */
-    flex-grow: 1; /* 가능한 한 많은 공간 차지 */
-    list-style: none; /* 기본 리스트 스타일 제거 */
+    justify-content: space-between;
+    list-style: none;
+    width: 100%;
+
 }
 
 .ChannelToolbar-Button {
     display: flex;
-    justify-content: flex-end; /*버튼을 끝점 기준으로 배치*/
+    justify-content: flex-end;
+    /*버튼을 끝점 기준으로 배치*/
     flex-direction: row;
     align-items: center;
     gap: 18rem;
 }
 
 .ChannelToolbar ul a {
-    padding-left: 2rem; /* 조정 가능한 값 */
-    padding-right: 2rem; /* 오른쪽 패딩도 추가해서 간격을 조절하세요 */
+    padding-left: 2rem;
+    /* 조정 가능한 값 */
+    padding-right: 2rem;
+    /* 오른쪽 패딩도 추가해서 간격을 조절하세요 */
     text-decoration-line: none;
     color: white;
 }
 
-.channel_mbox{
-    display: flex;
-    flex-direction: row;
+
+.channel_mbox {
+    border: 1px solid rebeccapurple;
+    display: inline-flex;
     padding: 24px 287px 24px 65px;
     align-items: flex-start;
-    position: absolute;
-    left:240px;
-    border: 1px solid black;
 }
 
-.channel_mvd{
+.Thumbnail {
+    margin: 0;
     display: flex;
-    padding-right: 0px;
     flex-direction: row;
+    /* 두 요소를 수평으로 정렬 */
     align-items: flex-start;
+    align-items: center;
+    border: 1px solid rgb(248, 6, 6);
+
+}
+
+.channel_mvd {
     gap: 10px;
-    padding-right: 24px;
     width: 424px;
     height: 238px;
-    border: 1px solid black;
+    border: 1px solid rgb(255, 230, 0);
 }
 
-.channel_mvd_desc{
-    margin-bottom:20px;
-    border: 1px solid black;
-}
 
-.channel_mdesc_box{
-    display: flex;
+.channel_mdesc_box {
     padding-bottom: 0px;
     flex-direction: column;
     align-items: flex-start;
-    border: 1px solid black;
-
+    border: 1px solid rgb(4, 238, 43);
 }
 
-.channel_sbox{
+.channel_mvd_desc {
+    margin-bottom: 20px;
+    border: 1px solid black;
+}
+
+.channel_sbox {
     position: absolute;
     left: 240px;
-    top:900px;
+    top: 900px;
     display: flex;
     padding: 0px 65px;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.channel_svd{
+.channel_svd {
     display: flex;
     padding-right: 0px;
     flex-direction: row;
@@ -157,5 +175,3 @@
     height: 118px;
     border: 1px solid black;
 }
-
-
