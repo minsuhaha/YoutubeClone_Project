@@ -38,7 +38,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
             // 모든 Promise가 완료될 때까지 기다림
             Promise.all(promises).then(() => {
-                let value = search_video_with_info.filter((video) => video.video_title.includes(searchKeyword));
+                // 대소문자 가리지 않도록 설정
+                let value = search_video_with_info.filter((video) => video.video_title.toLowerCase().includes(searchKeyword.toLowerCase()));
                 let container = document.getElementById('videoContainer');
 
                 // videoContainer의 기존 내용을 제거
