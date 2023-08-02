@@ -55,7 +55,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         let videoDiv = document.createElement('div');
         videoDiv.innerHTML = `
             <article class="Thumbnail_art">
-                <a href="${video.video_link}">
+                <a href="index_video.html?video_id=${video.video_id}">
                     <img class="Thumbnail_img" src="${video.image_link}" alt="Video Thumbnail">
                 </a>
                 <h3 class="Thumbnail_h3">${video.video_title}</h3>

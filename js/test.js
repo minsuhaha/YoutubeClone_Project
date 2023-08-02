@@ -56,7 +56,7 @@ function searchYoutube(searchData, container){
                     let videoDiv = document.createElement('div');
                     videoDiv.innerHTML = `
                         <article class="Thumbnail_art">
-                            <a href="${data.video_link}">
+                            <a href="index_video.html?video_id=${searchData}">
                                 <img class="Thumbnail_img" src='${data.image_link}' alt='Video Thumbnail'>
                             </a>
                             <h3 class="Thumbnail_h3">${data.video_title}</h3>
