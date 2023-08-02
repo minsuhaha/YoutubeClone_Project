@@ -67,7 +67,7 @@ function createVideoItem(video_id,container) {
                     // console.log(data.video_link);
                     container.appendChild(videoDiv2);
                       // 다음 video_id로 재귀 호출
-                    createVideoItem3(video_id + 1,container);
+                    createVideoItem2(video_id + 1,container);
                         }
                     }
                     };

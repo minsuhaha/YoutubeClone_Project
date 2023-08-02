@@ -1,30 +1,102 @@
-// 채널명에 따른 데이터를 받아오기
-window.addEventListener('DOMContentLoaded', (event) => {
+// 채널 페이지 -> 채널명에 따른 채널정보 및 영상데이터 가져오기
+window.addEventListener('DOMContentLoaded', async (event) => {
     let urlParams = new URLSearchParams(window.location.search);
     let channelName = urlParams.get('channel_name');
 
     // 웹 로컬스토리지에 있는 데이터 접근
     let channelData = JSON.parse(localStorage.getItem(channelName));
-    
-    const container = document.getElementById('videoContainer'); 
+
+    // 채널 정보 가져오기
+    let channelInfo = await getChannelInfo(channelName);
+
+    // 화면에 채널 정보 표시
+    const channelCover = document.querySelector('.Channel-Cover');
+    channelCover.innerHTML = `<img src="${channelInfo.channel_banner}" class="cover-image" alt="Channel Banner">`;
+
+    const channelTitle = document.querySelector('.Channel-Title');
+    channelTitle.innerHTML = `
+        <div class="channel-content">
+            <div class="Channel-Profile">
+                <a href="#"><img src="${channelInfo.channel_profile}" alt="Channel Avatar"></a>
+            </div>
+            <div class="Channel-Profile-Name">
+                <span>${channelInfo.channel_name}</span>
+                <span>${channelInfo.subscribers} subscribers</span>
+            </div>
+            <div class="Channel-Subscribe">
+                <a href="#"><img src="../Image/Channel/Subscribes-Btn.png" alt=""></a>
+            </div>
+        </div>
+    `;
+
+    // 대표 영상 및 설명 찾기
+    let representativeVideo = findRepresentativeVideo(channelData);
+
+    // 화면에 대표 영상 및 설명 표시
+    const channelBigVideoBox = document.querySelector('.Channel-Big-Video');
+    let bigVideoItem = `
+        <div class="channel__big__video">
+            <video controls width="640" height="360">
+                <source src="${representativeVideo.video_link}" type="video/mp4">
+            </video>
+        </div>
+        <div class="big__video__info">
+            <h5>${representativeVideo.video_title}</h5>
+            <p>${representativeVideo.views} views . ${representativeVideo.upload_date}</p>
+            <p>${representativeVideo.video_detail}</p>
+        </div>
+    `;
+    channelBigVideoBox.innerHTML = bigVideoItem;
+
+
+    // 화면에 비디오 리스트 표시
+    const videoContainer = document.getElementById('videoContainer');
     channelData.forEach(video => {
         let videoDiv = document.createElement('div');
         videoDiv.innerHTML = `
             <article class="Thumbnail_art">
                 <a href="${video.video_link}">
-                    <img class="Thumbnail_img" src='${video.image_link}' alt='Video Thumbnail'>
+                    <img class="Thumbnail_img" src="${video.image_link}" alt="Video Thumbnail">
                 </a>
                 <h3 class="Thumbnail_h3">${video.video_title}</h3>
                 <p>채널명: <a href="/HTML/index_channel.html?channel_name=${encodeURIComponent(video.video_channel)}">${video.video_channel}</a></p>
                 <p>등록일: ${video.upload_date}, 조회수: ${video.views}회</p>
             </article>
-            `;
-        container.appendChild(videoDiv);
+        `;
+        videoContainer.appendChild(videoDiv);
     });
 });
 
+// 채널 정보
+async function getChannelInfo(channelName) {
+    let url = `http://oreumi.appspot.com/channel/getChannelInfo`;
 
-    
+    let response = await fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ video_channel: channelName }),
+    });
+
+    let channelData = await response.json();
+    return channelData;
+}
+
+// 대표 영상 찾기
+function findRepresentativeVideo(channelData) {
+    let maxViews = 0;
+    let representativeVideo = null;
+
+    channelData.forEach(video => {
+        if (video.views > maxViews) {
+            maxViews = video.views;
+            representativeVideo = video;
+        }
+    });
+
+    return representativeVideo;
+}
 
 // 채널 프로필 불러오기
 // window.addEventListener('DOMContentLoaded', (event) => {
