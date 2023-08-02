@@ -7,7 +7,7 @@ function search(event) {
     let text = document.getElementsByClassName("search_box")[0].value;
     
     // 메인 페이지 URL
-    let mainPageUrl = "http://127.0.0.1:5500/HTML/index_home.html";
+    let mainPageUrl = "index_home.html";
     // 검색어를 쿼리 스트링으로 추가한 URL
     let newURL = mainPageUrl + '?search=' + encodeURIComponent(text);
     
