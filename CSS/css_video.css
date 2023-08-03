@@ -503,6 +503,6 @@ body{
     flex-shrink: 0;
     background-color: #4b89dc;
     overflow-y: auto;
-    left: -240px;  / 이 부분을 수정함 /
-    transition: left 0.3s ease;  / 부드러운 애니메이션 효과를 위해 추가 */
+    left: -240px;  /* 이 부분을 수정함 */
+    transition: left 0.3s ease;  /* 부드러운 애니메이션 효과를 위해 추가 */
 }
