@@ -78,6 +78,8 @@ function commentsAdd(comments) {
         `;
         box.appendChild(commentsHTML);
     });
+    
+    
 }
 
 // localStorage에 댓글을 저장하는 함수

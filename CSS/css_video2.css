@@ -1,0 +1,517 @@
+/* 영상 및 info 전체 박스 css */
+body {
+    /* font-family: sans-serif; */
+    font-family: iceJaram-Rg;
+    font-size: x-large;
+    background-color: #83C9E7;
+    /* background-color: #212121; */
+    overflow-x: auto;
+}
+
+.primary {
+    display: flex;
+    flex-direction: column;
+    margin-top: 54px;
+    margin-left: 220px;
+    padding-left: 20px;
+    width: auto;
+    color: white;
+    font-weight: 600;
+    font-size: x-large;
+    /* border: 1px solid black; */
+}
+
+/* 영상부분 css */
+.video {
+    width: 100%;
+    height: auto;
+}
+
+/* 영상 밑 info 전체 박스 css */
+
+.info_box {
+    width: auto;
+    padding-top: 10px;
+    padding-bottom: 8px;
+    /* border: 1px solid black; */
+    border-bottom: 1px solid #303030;
+}
+
+/* 영상 제목 css */
+
+.info_title {
+
+    width: 100%;
+    height: 21px;
+    padding-top: 3px;
+    padding-bottom: 2px;
+    font-size: xx-large;
+    /* border: 1px solid black; */
+}
+
+/* 제목 밑 view와 구독관련 버튼 박스 css */
+
+.info_bottom {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 91px;
+    width: 100%;
+    height: 40px;
+    /* border: 1px solid black; */
+}
+
+/* view와 등록일 css */
+.info_view {
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    height: 16px;
+    padding: 12px 0px;
+    font-size: x-large;
+    gap: 5px;
+
+}
+
+/* 구독 관련 전체 박스 css */
+.info_icon {
+    display: flex;
+    /* width: 100%; */
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0px;
+    height: 40px;
+    /* border:  1px solid black;  */
+}
+
+/* 구독 박스 아이콘 css */
+.info_icon>button>img {
+    align-items: center;
+    justify-content: center;
+    padding: 6px 6px 6px 6px;
+    /* border:  1px solid black; */
+}
+
+/* 구독 박스 글자 css */
+.info_icon>button>span {
+    align-items: center;
+    justify-content: center;
+    padding: 6px 6px 6px 6px;
+    color: white;
+    font-weight: 600;
+    font-size: x-large;
+    font-family: 'iceJaram-Rg';
+    /* border:  1px solid black; */
+}
+
+/* 구독 박스 아이콘+글자=버튼 박스 css */
+.info_icon>button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border:1px solid black; */
+    border: 0;
+    background-color: #83C9E7;
+}
+
+/* 버튼 박스에 호버시 색상 변경 */
+.info_icon>button:hover {
+    background-color: #44ADDA;
+}
+
+/* 버튼 박스 클릭시 색상 변경 */
+.info_icon>button:active {
+    background-color: #1263CE;
+    box-shadow: 1px 1px 1px black;
+    transition-duration: 0.1s;
+}
+
+
+.info_icon>button:focus {
+    background-color: #44ADDA;
+}
+
+
+
+
+.channel_desc_area {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 100%;
+    height: 149px;
+    padding-bottom: 16px;
+    margin-bottom: 1px;
+    /* border: 1px solid black; */
+
+}
+
+
+/* .channel_title>button {
+
+    border: 1px solid black;
+} */
+
+.channel_title {
+    display: flex;
+    padding: 16px;
+    width: 100%;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 10px;
+    align-items: center;
+    justify-content: space-between;
+    /* border: 1px solid black; */
+}
+
+/* .channel_title>button {
+
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+} */
+
+
+/* .channel_icon {
+
+    display: flex;
+    width: 48px;
+    height: 48px;
+    justify-content: center;
+    align-items: center;
+} */
+
+
+/* .channel_title>span {
+
+    display: inline-flex;
+    padding: 0px 0px 10px 0px;
+    flex-direction: row;
+    align-items: flex-start;
+    border:1px solid black;
+
+} */
+
+#subscribe-button {
+    background-color: #cc0000;
+    color: #fff;
+    display: inline-block;
+    padding: 10px 16px;
+    align-items: right;
+    gap: 10px;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.channel_btn {
+    width: 40px;
+    height: 40px;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    padding-right: 50px;
+}
+
+.channel_btn>img {
+    width: 40px;
+    height: 40px;
+}
+
+.channel_name {
+    font-size: 40px;
+}
+
+/* .video_desc를 flexbox 레이아웃으로 설정 */
+.video_desc {
+    padding: 12px;
+    width: 100%;
+    border-bottom: 1px solid #303030;
+}
+
+.video_desc>span {
+    display: block;
+    /* max-width: 476px; */
+    /* 최대 너비 설정 */
+    word-wrap: break-word;
+    line-height: 0.6;
+}
+
+.video_dec_btn {
+    padding: 0px 56px;
+    margin: 0px;
+}
+
+.showmore_btn {
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    color: red;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 15px;
+    padding-left: 40px;
+
+}
+
+.dropdown_btn {
+    width: 10px;
+    height: 10px;
+    border: 0;
+    background-color: transparent;
+    cursor: pointer;
+    padding-right: 20px;
+    padding-left: 40px;
+}
+
+#commentInput {
+    display: inline-block;
+    background-color: #83C9E7;
+    border: none;
+    width: 100%;
+    height: 25px;
+    border-bottom: 1px solid #303030;
+    font-style: white;
+    resize: none;
+    font-family: iceJaram-Rg;
+    font-size: 25px;
+    color: white;
+}
+
+#commentInput::placeholder {
+    font-family: iceJaram-Rg;
+    font-size: 25px;
+    color: white;
+}
+
+.comment {
+    display: flex;
+    justify-content: flex-end;
+    width: auto;
+}
+
+.comment_btns {
+    display: flex;
+    justify-content: start;
+    width: auto;
+    margin-top: 10px;
+}
+
+.comment_btns>div {
+    margin-right: 100px;
+}
+
+#comment_btn {
+    pointer-events: auto;
+    margin-right: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    font-family: iceJaram-Rg;
+    color: white;
+    font-size: 25px;
+}
+
+#cancel_btn {
+    pointer-events: auto;
+    margin-right: 10px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    font-family: iceJaram-Rg;
+    color: white;
+    font-size: 25px;
+}
+
+#comment_btn:hover {
+    /* 마우스를 버튼 위로 올렸을 때의 색상 */
+    background-color: rgba(16, 81, 221, 0.568);
+}
+
+#cancel_btn:hover {
+    background-color: rgba(16, 81, 221, 0.568);
+}
+
+/* .Content {
+    display: flex;
+    width: 25%;
+    height: auto;
+    margin-top: 54px;
+} */
+/* 
+.Content>div>span {
+    display: inline;
+} */
+
+.video_second {
+    font-family: iceJaram-Rg;
+    color: white;
+    font-size: x-large;
+    font-weight: 600;
+    position: absolute;
+    top: 56px;
+    /* left:720px; */
+    margin-right: 0px;
+    display: flex;
+    width: auto;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    flex-shrink: 0;
+    /* margin-left: 24px; */
+    padding-top: 24px;
+    /* border:1px solid black; */
+}
+
+.second_vd {
+    display: flex;
+    padding-top: 8px;
+    align-items: flex-start;
+    width: auto;
+    height: auto;
+    gap: 10px;
+}
+
+.second_vd_vd {
+    width: auto;
+    height: 94px;
+}
+
+.second_vd_vdbox {
+    display: flex;
+    padding-right: 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+}
+
+.second_vd_vdbox:hover {
+    opacity: 0.8;
+}
+
+.second_vd_infobox {
+    display: flex;
+    width: auto;
+    height: 94px;
+    padding: 5px 5px 0px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 80%;
+}
+
+.second_topbox {
+    display: flex;
+    width: auto;
+    padding: 1px 12px 2px 0px;
+    align-items: flex-start;
+}
+
+.second_topmenu {
+    display: flex;
+    padding: 8px 12px;
+    margin: 5px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    border-radius: 32px;
+    background: #687CE1;
+    cursor: pointer;
+}
+
+.second_topmenu:hover {
+    background: #4332D4;
+}
+
+.comment_box {
+    margin-bottom: 30px;
+}
+
+#edit_btn {
+    pointer-events: auto;
+    margin-right: 10px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    font-family: iceJaram-Rg;
+    color: black;
+    font-size: 25px;
+}
+
+#edit_btn:hover {
+    background-color: rgba(16, 81, 221, 0.568);
+}
+
+#delete_btn {
+    pointer-events: auto;
+    margin-right: 10px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    font-family: iceJaram-Rg;
+    color: black;
+    font-size: 25px;
+}
+
+#delete_btn:hover {
+    background-color: rgba(207, 21, 21, 0.918);
+}
+
+.edit_input {
+    display: inline-block;
+    background-color: #83C9E7;
+    border: none;
+    width: 100%;
+    height: 25px;
+    border-bottom: 1px solid #303030;
+    font-style: white;
+    resize: none;
+    font-family: iceJaram-Rg;
+    font-size: 25px;
+    color: white;
+}
+
+.edit_cancel_btn {
+    pointer-events: auto;
+    margin-right: 10px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    font-family: iceJaram-Rg;
+    color: black;
+    font-size: 25px;
+}
+
+.edit_cancel_btn:hover {
+    background-color: rgba(16, 81, 221, 0.568);
+}
+
+.edit_confirm_btn {
+    pointer-events: auto;
+    margin-right: 10px;
+    background-color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 30px;
+    font-family: iceJaram-Rg;
+    color: black;
+    font-size: 25px;
+}
+
+.edit_confirm_btn:hover {
+    background-color: rgba(16, 81, 221, 0.568);
+}
+
+.edit_buttons_container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-top: 10px;
+}

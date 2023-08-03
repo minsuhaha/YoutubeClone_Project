@@ -1,6 +1,6 @@
-fetch('http://oreumi.appspot.com/video/getVideoList')
-    .then(res => res.json())
-    .then(data => console.log(data));
+// fetch('http://oreumi.appspot.com/video/getVideoList')
+//     .then(res => res.json())
+//     .then(data => console.log(data));
 
 
 
@@ -23,6 +23,7 @@ HTML 및 CSS에 추가하면 될 거 같습니다.*/
  } 추가*/
  
 
+let subs_Btn = document.querySelector('#subscribe-button')
 
 subs_Btn.addEventListener('click', function(b) {
     if(subs_Btn.innerText === 'SUBSCRIBES'){
