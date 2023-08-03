@@ -259,8 +259,9 @@ a {
     padding: 12px 0px;
     flex-direction: column;
     align-items: flex-start;
+    width: 240px;
     /* justify-content: flex-start; */
-    border-bottom: 1px solid #303030;
+    border-bottom: 1px solid #1263CE;
     /* border: 1px solid white; */
 
     justify-content: center;
@@ -293,9 +294,9 @@ a {
     align-items: flex-start;
     /* border: 1px solid white; */
     gap: 12px;
-    width: 224px;
+    width: 240px;
     justify-content: center;
-    border-bottom: 1px solid #303030;
+    border-bottom: 1px solid #1263CE;
 }
 
 /* sub 아이콘 부분 */

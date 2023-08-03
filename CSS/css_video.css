@@ -23,7 +23,7 @@ body{
 
 /* 영상부분 css */
 .video {
-    width: 100%;
+    width: 640px;
     height: auto;
 }
 
@@ -416,4 +416,93 @@ body{
 
 .second_topmenu:hover{
     background: #4332D4;
+}
+
+.comment_box{
+    display: flex;
+    width: 640px;
+    height: 84px;
+    align-items: flex-start;
+    padding-bottom: 16px;
+    /* border:1px solid black; */
+}
+
+.comment_icon{
+    width: 40px;
+    height: 40px;
+    padding-right: 16px;
+    align-items: flex-start;
+    border-radius: 50%;
+
+}
+
+.comment_textbox{
+    display: flex;
+    flex-direction: column;
+}
+
+.comment_name{
+    display: flex;
+    padding-bottom: 2px;
+    align-items: flex-start;
+    align-self: stretch;
+    /* border:1px solid black; */
+}
+
+.comment_text{
+    display: flex;
+    align-items: flex-start;
+    padding: 2px 0px;
+    gap:10px;
+    align-self: stretch;
+    /* border:1px solid black; */
+}
+
+.comment_img{
+    width: 13px;
+    height: 12px;
+}
+
+.comment_btn{
+    background-color: transparent;
+    border: 0;
+}
+
+
+.comment_btn:hover{
+    /* background-color: #687CE1; */
+    color: white;
+    box-shadow: 2px 2px;
+}
+
+.comment_btn:active{
+    background-color: #83C9E7;
+}
+
+.comment_del_btn{
+    font-family: iceJaram-Rg;
+    color: white;
+    font-size: x-large;
+    background-color: #83C9E7;
+    border: 0;
+    
+}
+
+.comment_del_btn:hover{
+    box-shadow: 2px 2px;
+}
+.sidebar {
+    position: fixed;
+    top: 56px;
+    display: flex;
+    width: 240px;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-shrink: 0;
+    background-color: #4b89dc;
+    overflow-y: auto;
+    left: -240px;  / 이 부분을 수정함 /
+    transition: left 0.3s ease;  / 부드러운 애니메이션 효과를 위해 추가 */
 }
