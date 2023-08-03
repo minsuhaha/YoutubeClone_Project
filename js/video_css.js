@@ -44,7 +44,7 @@ function createVideoItem(video_id,container) {
         if (data && data.video_id !== undefined) {
             let videoDiv = document.createElement('div');
             videoDiv.innerHTML = `
-            <video class="video" controls src='${data.video_link}'></video>
+            <video class="video" controls autoplay src='${data.video_link}'></video>
             <div class="info_box">
                 <div class="info_title">${data.video_title}</div>
                 <div class="info_bottom">

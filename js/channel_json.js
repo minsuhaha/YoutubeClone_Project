@@ -40,9 +40,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
     const channelBigVideoBox = document.querySelector('.Channel-Big-Video');
     let bigVideoItem = `
         <div class="channel__big__video">
-            <video controls width="640" height="360">
-                <source src="${representativeVideo.video_link}" type="video/mp4">
-            </video>
+            <video controls autoplay src='${representativeVideo.video_link}' width='640' height='360'></video>
         </div>
         <div class="big__video__info">
             <h5>${representativeVideo.video_title}</h5>
