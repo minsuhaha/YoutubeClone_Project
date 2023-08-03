@@ -22,7 +22,7 @@ HTML 및 CSS에 추가하면 될 거 같습니다.*/
     font-weight: 700;
  } 추가*/
  
-const subs_Btn = document.getElementById('subscribe-button');
+
 
 subs_Btn.addEventListener('click', function(b) {
     if(subs_Btn.innerText === 'SUBSCRIBES'){

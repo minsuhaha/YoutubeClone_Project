@@ -13,9 +13,13 @@
     padding: 5px;
     color: #fff;
     left: 240px;
-    border-bottom: 1px solid #303030;
+    /* border-bottom: 1px solid #303030; */
     /* 변경: 1px 1px solid */
     overflow-x: hidden;
+}
+
+.navbarLonger {
+    left: 120px;
 }
 
 .items {
@@ -24,7 +28,7 @@
     /* 변경: overflow-x를 hidden에서 visible로 수정 */
     transition: transform 0.3s ease;
     /* 추가: 스크롤 시 애니메이션 효과 */
-    width: 500px;
+    width: auto;
 }
 
 .items:hover {
@@ -38,7 +42,7 @@
 
 /* nav 바 item */
 .item {
-    width: 60px;
+    width: auto;
     height: 40px;
     border-radius: 45%;
     background-color: #1263CE;
@@ -65,10 +69,14 @@
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
-    margin-top: 130px;
-    margin-left: 270px;
+    margin-top: 110px;
+    margin-left: 220px;
     flex: 1;
     color: white;
+}
+
+.ThumbnailWider {
+    margin-left: 100px;
 }
 
 .Thumbnail_art {

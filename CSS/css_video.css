@@ -12,8 +12,9 @@ body{
     display: flex;
     flex-direction: column;
     margin-top: 54px;
+    margin-left: 220px;
     padding-left: 20px;
-    width: 75%;
+    width: auto;
     color: white;
     font-weight: 600;
     font-size: x-large;
@@ -22,14 +23,14 @@ body{
 
 /* 영상부분 css */
 .video {
-    width: 640px;
+    width: 100%;
     height: auto;
 }
 
 /* 영상 밑 info 전체 박스 css */
 
 .info_box {
-    width: 640px;
+    width: auto;
     padding-top: 10px;
     padding-bottom: 8px;
     /* border: 1px solid black; */
@@ -270,7 +271,7 @@ body{
     display: inline-block;
     background-color: #83C9E7;
     border: none;
-    width: 584px;
+    width: 100%;
     height: 25px;
     border-bottom: 1px solid #303030;
     font-style: white;
@@ -289,7 +290,7 @@ body{
 .comment {
     display: flex;
     justify-content: flex-end;
-    width: 640px;
+    width: auto;
 }
 
 #comment_btn {
@@ -325,16 +326,16 @@ body{
     background-color: rgba(16, 81, 221, 0.568);
 }
 
-.Content {
+/* .Content {
     display: flex;
     width: 25%;
     height: auto;
     margin-top: 54px;
-}
-
+} */
+/* 
 .Content>div>span {
     display: inline;
-}
+} */
 
 .video_second{
     font-family: iceJaram-Rg;
@@ -343,14 +344,15 @@ body{
     font-weight: 600;
     position: absolute;
     top:56px;
-    left:720px;
+    /* left:720px; */
+    margin-right: 0px;
     display: flex;
-    width: 426px;
+    width: auto;
     flex-direction: column;
     justify-content: flex-end;
     align-items: center;
     flex-shrink: 0;
-    margin-left: 24px;
+    /* margin-left: 24px; */
     padding-top: 24px;
     /* border:1px solid black; */
 }
@@ -359,13 +361,13 @@ body{
     display: flex;
     padding-top: 8px;
     align-items: flex-start;
-    width: 402px;
-    height: 94px;
+    width: auto;
+    height: auto;
     gap: 10px;
 }
 
 .second_vd_vd{
-    width: 168px;
+    width: auto;
     height: 94px;
 }
 
@@ -385,15 +387,17 @@ body{
 
 .second_vd_infobox{
     display: flex;
-    width: 226px;
-    padding: 7px 0px;
+    width: auto;
+    height: 94px;
+    padding: 5px 5px 0px 0px;
     flex-direction: column;
     align-items: flex-start;
+    font-size: 80%;
 }
 
 .second_topbox{
     display: flex;
-    width: 402px;
+    width: auto;
     padding: 1px 12px 2px 0px;
     align-items: flex-start;
 }
@@ -401,6 +405,7 @@ body{
 .second_topmenu{
     display: flex;
     padding: 8px 12px;
+    margin: 5px;
     flex-direction: column;
     align-items: flex-start;
     gap: 10px;
