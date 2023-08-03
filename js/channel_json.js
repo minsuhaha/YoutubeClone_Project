@@ -8,14 +8,16 @@ window.addEventListener('DOMContentLoaded', async (event) => {
 
     // 채널 정보 가져오기
     let channelInfo = await getChannelInfo(channelName);
-
+    
     // 화면에 채널 정보 표시
     const channelCover = document.querySelector('.Channel-Cover');
     channelCover.innerHTML = `<img src="${channelInfo.channel_banner}" class="cover-image" alt="Channel Banner">`;
 
     const channelTitle = document.querySelector('.Channel-Title');
+
     channelTitle.innerHTML = `
         <div class="channel-content">
+            <div class = "channel-frame">
             <div class="Channel-Profile">
                 <a href="#"><img src="${channelInfo.channel_profile}" alt="Channel Avatar"></a>
             </div>
@@ -23,12 +25,14 @@ window.addEventListener('DOMContentLoaded', async (event) => {
                 <span>${channelInfo.channel_name}</span>
                 <span>${channelInfo.subscribers} subscribers</span>
             </div>
+            </div>
             <div class="Channel-Subscribe">
                 <a href="#"><img src="../Image/Channel/Subscribes-Btn.png" alt=""></a>
             </div>
         </div>
     `;
 
+    
     // 대표 영상 및 설명 찾기
     let representativeVideo = findRepresentativeVideo(channelData);
 
@@ -220,5 +224,3 @@ function findRepresentativeVideo(channelData) {
 //     let videoIds = ['oreumi'];
 //     displayVideos(videoIds);
 // };
-
-
