@@ -18,20 +18,28 @@ window.addEventListener('DOMContentLoaded', async (event) => {
     channelTitle.innerHTML = `
         <div class="channel-content">
             <div class = "channel-frame">
-            <div class="Channel-Profile">
-                <a href="#"><img src="${channelInfo.channel_profile}" alt="Channel Avatar"></a>
+                <div class="Channel-Profile">
+                    <a href="#"><img src="${channelInfo.channel_profile}" alt="Channel Avatar"></a>
+                </div>
+                <div class="Channel-Profile-Name">
+                    <span>${channelInfo.channel_name}</span>
+                    <span>${channelInfo.subscribers} subscribers</span>
+                </div>
             </div>
-            <div class="Channel-Profile-Name">
-                <span>${channelInfo.channel_name}</span>
-                <span>${channelInfo.subscribers} subscribers</span>
-            </div>
-            </div>
-            <div class="Channel-Subscribe">
-                <a href="#"><img src="../Image/Channel/Subscribes-Btn.png" alt=""></a>
-            </div>
+            <button id="subscribe-button">SUBSCRIBES</button>
         </div>
     `;
 
+    let subs_Btn = document.querySelector('#subscribe-button')
+
+    subs_Btn.addEventListener('click', function(b) {
+        if(subs_Btn.innerText === 'SUBSCRIBES'){
+            subs_Btn.innerText = 'SUBSCRIBED';
+            b.target.style.backgroundColor = 'darkgray';
+        } else {
+            subs_Btn.innerText = 'SUBSCRIBES';
+            b.target.style.backgroundColor = '#cc0000';
+        }});
     
     // 대표 영상 및 설명 찾기
     let representativeVideo = findRepresentativeVideo(channelData);
@@ -40,14 +48,15 @@ window.addEventListener('DOMContentLoaded', async (event) => {
     const channelBigVideoBox = document.querySelector('.Channel-Big-Video');
     let bigVideoItem = `
         <div class="channel__big__video">
-            <video controls width="640" height="360">
+            <video controls width="480" height="270">
                 <source src="${representativeVideo.video_link}" type="video/mp4">
             </video>
         </div>
         <div class="big__video__info">
-            <h5>${representativeVideo.video_title}</h5>
+            <p>${representativeVideo.video_title}</p>
             <p>${representativeVideo.views} views . ${representativeVideo.upload_date}</p>
             <p>${representativeVideo.video_detail}</p>
+            <p>${representativeVideo.video_tag}</p>
         </div>
     `;
     channelBigVideoBox.innerHTML = bigVideoItem;
@@ -224,5 +233,3 @@ function findRepresentativeVideo(channelData) {
 //     let videoIds = ['oreumi'];
 //     displayVideos(videoIds);
 // };
-
-
