@@ -13,7 +13,7 @@ function createVideoItem(video_id,container) {
     // XMLHttpRequest 객체 생성
     let xhr = new XMLHttpRequest();
     // API 요청 설정
-    let apiUrl = `http://oreumi.appspot.com/video/getVideoInfo?video_id=${video_id}`;
+    let apiUrl = `https://oreumi.appspot.com/video/getVideoInfo?video_id=${video_id}`;
     
 
     // 응답 처리 설정
@@ -50,7 +50,7 @@ function createVideoItem(video_id,container) {
             // XMLHttpRequest 객체 생성
             let xhr = new XMLHttpRequest();
             // API 요청 설정
-            let apiUrl = `http://oreumi.appspot.com/video/getVideoInfo?video_id=${video_id}`;
+            let apiUrl = `https://oreumi.appspot.com/video/getVideoInfo?video_id=${video_id}`;
             
         
             // 응답 처리 설정

@@ -79,7 +79,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
 
 // 채널 정보
 async function getChannelInfo(channelName) {
-    let url = `http://oreumi.appspot.com/channel/getChannelInfo`;
+    let url = `https://oreumi.appspot.com/channel/getChannelInfo`;
 
     let response = await fetch(url, {
         method: 'POST',
@@ -122,8 +122,8 @@ function findRepresentativeVideo(channelData) {
 
 // // 채널 정보를 받아오는 함수
 // function getChannelInfo(channel_name, container) {
-//     let xhr = new XMLHttpRequest();
-//     let apiUrl = "http://oreumi.appspot.com/channel/getChannelInfo";
+//     let xhr = new XMLRequest();
+//     let apiUrl = "https://oreumi.appspot.com/channel/getChannelInfo";
 //     let jsondata = { "channel_name": channel_name };
 
 //     xhr.onreadystatechange = function () {
@@ -156,7 +156,7 @@ function findRepresentativeVideo(channelData) {
 //     getChannelInfo(channelName, document.getElementById('videoChannel'));
 
 //     // Get videos for this channel
-//     let apiUrl = "http://oreumi.appspot.com/channel/getChannelInfo";  // Your actual API URL
+//     let apiUrl = "https://oreumi.appspot.com/channel/getChannelInfo";  // Your actual API URL
 //     let jsondata = { "channel_name": channelName };
     
 //     let xhr = new XMLHttpRequest();
@@ -190,7 +190,7 @@ function findRepresentativeVideo(channelData) {
 //     // XMLHttpRequest 객체 생성
 //     let xhr = new XMLHttpRequest();
 //     // Url은 get일때와 달리 ? 뒤는 생략
-//     let apiUrl = "http://oreumi.appspot.com/channel/getChannelInfo";
+//     let apiUrl = "https://oreumi.appspot.com/channel/getChannelInfo";
 
 //     // 요청할 데이터
 //     let jsondata = {

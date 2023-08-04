@@ -28,7 +28,7 @@ function displayVideos(videoIds) {
 }
 
 function searchYoutube(searchData, container){
-    const apiUrl = `http://oreumi.appspot.com/video/getVideoInfo?video_id=${searchData}`;
+    const apiUrl = `https://oreumi.appspot.com/video/getVideoInfo?video_id=${searchData}`;
 
     let xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function(){
