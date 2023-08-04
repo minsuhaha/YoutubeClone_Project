@@ -23,7 +23,7 @@ body {
 
 /* 영상부분 css */
 .video {
-    width: 100%;
+    width: 640px;
     height: auto;
 }
 
