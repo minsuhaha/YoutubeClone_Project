@@ -56,11 +56,11 @@ function createVideoItem(video_id,container) {
                         <span style="margin-left:10px;">${data.upload_date}</span>
                     </span>
                     <span class="info_icon">
-                        <button><img src="../Image/Channel/Vector.png"><span>1.7K</span></button>
-                        <button><img src="../Image/Channel/Vector-1.png"><span>632</span></button>
-                        <button><img src="../Image/Channel/Vector-2.png"><span>SHARE</span></button>
-                        <button><img src="../Image/Channel/Vector-3.png"><span>SAVE</span></button>
-                        <button><img src="../Image/Channel/Vector-4.png"></button>
+                        <button><img src="./Image/Channel/Vector.png"><span>1.7K</span></button>
+                        <button><img src="./Image/Channel/Vector-1.png"><span>632</span></button>
+                        <button><img src="./Image/Channel/Vector-2.png"><span>SHARE</span></button>
+                        <button><img src="./Image/Channel/Vector-3.png"><span>SAVE</span></button>
+                        <button><img src="./Image/Channel/Vector-4.png"></button>
                     </span>
                 </div>
             </div>
@@ -132,9 +132,9 @@ function createVideoItem2(video_id,container) {
             let videoDiv2 = document.createElement('div');
             videoDiv2.innerHTML = `
             <div class="channel_title">
-                    <button class="channel_btn"><img src="../Image/Sidebar/Marcus Levin.png" alt=""></button>
+                    <button class="channel_btn"><img src="./Image/Sidebar/Marcus Levin.png" alt=""></button>
                     <span class="channel_name">${data.video_channel}</span>
-                    <button class="subscribes_btn"><img src="../Image/Channel/Subscribes-Btn.png"></button>
+                    <button class="subscribes_btn"><img src="./Image/Channel/Subscribes-Btn.png"></button>
                 </div>
                     <div class="video_desc">
                         <span>${data.video_detail}</span>
