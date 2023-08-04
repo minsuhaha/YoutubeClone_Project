@@ -6,14 +6,21 @@ function toggleSidebar() {
     const sidebar = document.querySelector('.sidebar');
     const navbar = document.querySelector('.navigation');
     const thmbox = document.querySelector('.main_box');
+    const sidebarsub = document.querySelector('.sidebarSub')
+
     if (sidebarHidden) {
         sidebar.classList.add('sidebarHidden');
         navbar.classList.add('navbarLonger');
         thmbox.classList.add('ThumbnailWider');
+        sidebarsub.classList.add('sidebarSub_del');
+       
+
     } else {
         sidebar.classList.remove('sidebarHidden');
         navbar.classList.remove('navbarLonger');
         thmbox.classList.remove('ThumbnailWider');
+        sidebarsub.classList.remove('sidebarSub_del');
+        
     }
 
 
@@ -32,3 +39,4 @@ function toggleSidebar() {
     });
 
 }
+// 
