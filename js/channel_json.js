@@ -27,10 +27,19 @@ window.addEventListener('DOMContentLoaded', async (event) => {
             </div>
             </div>
             <button id="subscribe-button">SUBSCRIBES</button>
-            <button id="subscribe-button">SUBSCRIBES</button>
         </div>
     `;
 
+    let subs_Btn = document.querySelector('#subscribe-button')
+
+    subs_Btn.addEventListener('click', function(b) {
+    if(subs_Btn.innerText === 'SUBSCRIBES'){
+        subs_Btn.innerText = 'SUBSCRIBED';
+        b.target.style.backgroundColor = 'darkgray';
+    } else {
+        subs_Btn.innerText = 'SUBSCRIBES';
+        b.target.style.backgroundColor = '#cc0000';
+    }});
     
     // 대표 영상 및 설명 찾기
     let representativeVideo = findRepresentativeVideo(channelData);
@@ -39,7 +48,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
     const channelBigVideoBox = document.querySelector('.Channel-Big-Video');
     let bigVideoItem = `
         <div class="channel__big__video">
-            <video controls autoplay src='${representativeVideo.video_link}' width='640' height='360'></video>
+            <video controls autoplay src='${representativeVideo.video_link}' width='480' height='270'></video>
         </div>
         <div class="big__video__info">
             <h5>${representativeVideo.video_title}</h5>
