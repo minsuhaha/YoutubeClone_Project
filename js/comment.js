@@ -4,6 +4,18 @@ let comments = JSON.parse(localStorage.getItem('comments')) || {};
 // 각 비디오에 대한 댓글을 객체 형태로 저장
 let videoComments = JSON.parse(localStorage.getItem('videoComments')) || {};
 
+//텍스트 줄바꿈 구현
+const textarea = document.getElementById('commentInput');
+
+textarea.addEventListener('input', function () {
+    textarea.style.height = 'auto'; // 먼저 높이를 초기화하여 내용에 따라 자동으로 조절되도록 합니다.
+    textarea.style.height = textarea.scrollHeight + 'px'; // 스크롤 높이를 설정하여 크기를 조절합니다.
+});
+
+
+
+// 페이지 로드 시 초기 상태 설정
+textarea.style.height = textarea.scrollHeight + 'px';
 // 페이지 들어가면 자동으로 댓글 로드
 function loadComments() {
     const savedComments = videoComments[videoId] || [];
@@ -56,32 +68,35 @@ function commentsAdd(comments) {
     const userName = "오르미";
 
     comments.forEach((comment, index) => {
+        // \n을 <br>로 변경하여 줄바꿈 적용
+        comment = comment.replace(/\n/g, '<br>');
+
         const commentsHTML = document.createElement("div"); // 각 댓글을 위해 새로운 div 생성
         commentsHTML.classList.add('comment_box')
         commentsHTML.innerHTML = `
-            
-                <span><img src="./Image/Channel/oreumi_profile.jpg"></span>
-                <span>${userName}</span>
-                <div class="comment-text">${comment}</div>
-                <div class="comment_btns">
-                    <div>
-                        <button class="comment_btn" onclick="likeComment(${index})"><img id="like_img_${index}" class="comment_img" src="./Image/etc/up.svg"></button>
-                        <span id="count_${index}">0</span>
-                        <button class="comment_btn" onclick="unlikeComment(${index})"><img id="unlike_img_${index}" class="comment_img" src="./Image/etc/down.svg"></button>
-                        <span id="count_${index}">0</span>
-                    </div>
-                    <div>
+            <div class="comment_profile">
+                <span><img class="comment_profile_img" src="/Image/Channel/oreumi_profile.jpg"></span>
+                <span>
+                    <div class="comment_username">${userName}</div>
+                    <div class="comment-output">${comment}</div>
+                </span>
+            </div>
+            <div class="comment_btns">
+                <div>
+                    <button class="like_btn" onclick="likeComment(${index})"><img id="like_img_${index}" class="like_btn_img" src="/Image/etc/up.svg"></button>
+                    <span id="count_${index}">0</span>
+                    <button class="like_btn" onclick="unlikeComment(${index})"><img id="unlike_img_${index}" class="like_btn_img" src="/Image/etc/down.svg"></button>
+                    <span id="count_${index}">0</span>
+                </div>
+                <div>
                     <button id="edit_btn" onclick="editComment(${index})">수정</button>
                     <button id="delete_btn" onclick="deleteComment(${index})">삭제</button>
-                    </div>
                 </div>
+            </div>
         `;
         box.appendChild(commentsHTML);
     });
-    
-    
 }
-
 // localStorage에 댓글을 저장하는 함수
 function saveCommentsToLocalStorage() {
     localStorage.setItem('videoComments', JSON.stringify(videoComments));
@@ -92,10 +107,11 @@ function cancelComment() {
     localStorage.clear();
     commentInput.value = '';
 }
+//댓글 수정 부분
 function editComment(index) {
-    const commentTextElement = document.querySelectorAll(".comment-text")[index];
+    const commentTextElement = document.querySelectorAll(".comment-output")[index];
     const currentComment = videoComments[videoId][index];
-    const editInput = document.createElement("input");
+    const editInput = document.createElement("textarea");
     const confirmButton = document.createElement("button");
     const cancelButton = document.createElement("button");
     const buttonsContainer = document.createElement("div");
@@ -107,11 +123,14 @@ function editComment(index) {
 
     editInput.type = "text";
     editInput.value = currentComment;
-    editInput.addEventListener("keydown", handleEnter);
+    // editInput.addEventListener("keydown", handleEnter);
 
     buttonsContainer.appendChild(cancelButton);
     buttonsContainer.appendChild(confirmButton);
-
+    editInput.addEventListener('input', function () {
+        this.style.height = 'auto';
+        this.style.height = (this.scrollHeight) + 'px';
+    });
     confirmButton.innerText = "확인";
     cancelButton.innerText = "취소";
 
@@ -155,18 +174,18 @@ function likeComment(index) {
     like = !like;
     let like_img = document.getElementById(`like_img_${index}`);
     if (like) {
-        like_img.src = "./Image/etc/up.svg";
+        like_img.src = "/Image/etc/up.svg";
     } else {
-        like_img.src = "./Image/etc/upfull.png";
+        like_img.src = "/Image/etc/upfull.png";
     }
 }
 function unlikeComment(index) {
     unlike = !unlike;
     let unlike_img = document.getElementById(`unlike_img_${index}`);
     if (unlike) {
-        unlike_img.src = "./Image/etc/down.svg";
+        unlike_img.src = "/Image/etc/down.svg";
     } else {
-        unlike_img.src = "./Image/etc/downfull.png";
+        unlike_img.src = "/Image/etc/downfull.png";
     }
 }
 function handleEnter(event) {
