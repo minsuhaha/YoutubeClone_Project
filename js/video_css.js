@@ -32,7 +32,7 @@ function createVideoItem(video_id,container) {
     // XMLHttpRequest 객체 생성
     let xhr = new XMLHttpRequest();
     // API 요청 설정
-    let apiUrl = `http://oreumi.appspot.com/video/getVideoInfo?video_id=${video_id}`;
+    let apiUrl = `https://oreumi.appspot.com/video/getVideoInfo?video_id=${video_id}`;
     
 
     // 응답 처리 설정
@@ -77,13 +77,13 @@ function createVideoItem(video_id,container) {
     // id = 0부터 아이템 불러오기
     // async function createVideoItem2(video_id, container) {
     //     // Fetch the video information using fetch API
-    //     let videoUrl = `http://oreumi.appspot.com/video/getVideoInfo?video_id=${video_id}`;
+    //     let videoUrl = `https://oreumi.appspot.com/video/getVideoInfo?video_id=${video_id}`;
     //     let videoResponse = await fetch(videoUrl);
     //     let videoData = await videoResponse.json();
     
     //     if (videoData && videoData.video_id !== undefined) {
     //         // Fetch the channel information using fetch API
-    //         let channelApiUrl = 'http://oreumi.appspot.com/channel/getChannelInfo';
+    //         let channelApiUrl = 'https://oreumi.appspot.com/channel/getChannelInfo';
     //         let channelResponse = await fetch(channelApiUrl, {
     //             method: 'POST',
     //             headers: {
@@ -117,7 +117,7 @@ function createVideoItem2(video_id,container) {
     // XMLHttpRequest 객체 생성
     let xhr = new XMLHttpRequest();
     // API 요청 설정
-    let apiUrl = `http://oreumi.appspot.com/video/getVideoInfo?video_id=${video_id}`;
+    let apiUrl = `https://oreumi.appspot.com/video/getVideoInfo?video_id=${video_id}`;
     
 
     // 응답 처리 설정
@@ -156,7 +156,7 @@ function createVideoItem2(video_id,container) {
         // XMLHttpRequest 객체 생성
         let xhr = new XMLHttpRequest();
         // API 요청 설정
-        let apiUrl = `http://oreumi.appspot.com/video/getVideoInfo?video_id=${video_id}`;
+        let apiUrl = `https://oreumi.appspot.com/video/getVideoInfo?video_id=${video_id}`;
         
 
         // 응답 처리 설정

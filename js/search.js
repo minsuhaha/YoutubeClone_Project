@@ -7,7 +7,7 @@ function search(event) {
     let text = document.getElementsByClassName("search_box")[0].value;
     
     // 메인 페이지 URL
-    let mainPageUrl = "index_home.html";
+    let mainPageUrl = "index.html";
     // 검색어를 쿼리 스트링으로 추가한 URL
     let newURL = mainPageUrl + '?search=' + encodeURIComponent(text);
     
@@ -21,7 +21,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
     // 검색어가 있을 경우 검색 수행
     if (searchKeyword) {
-        fetch("http://oreumi.appspot.com/video/getVideoList")
+        fetch("https://oreumi.appspot.com/video/getVideoList")
         .then((response) => response.json())
         .then((videoAll) => {
             search_video = videoAll;
@@ -29,7 +29,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
             // 각 비디오에 대해 추가 정보를 가져오는 Promise를 배열에 저장
             let promises = search_video.map(video => {
-                return fetch(`http://oreumi.appspot.com/video/getVideoInfo?video_id=${video.video_id}`)
+                return fetch(`https://oreumi.appspot.com/video/getVideoInfo?video_id=${video.video_id}`)
                         .then(response => response.json())
                         .then(videoInfo => {
                             search_video_with_info.push({...video, ...videoInfo});
@@ -71,7 +71,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 // let videoAll = [];
 // let search_video = [];
 
-// fetch("http://oreumi.appspot.com/video/getVideoList")
+// fetch("https://oreumi.appspot.com/video/getVideoList")
 //     .then((response) => response.json())
 //     .then((data) => {
 //         videoAll = data;
@@ -80,7 +80,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
 // async function getVideo(videoList) {
 //     for (let i = 0; i < videoList.length; i++) {
-//         const data = await fetch(`http://oreumi.appspot.com/video/getVideoInfo?video_id=${videoList[i].video_id}`).then((response) => response.json());
+//         const data = await fetch(`https://oreumi.appspot.com/video/getVideoInfo?video_id=${videoList[i].video_id}`).then((response) => response.json());
 //         search_video[i] = data
 //     }
 // }
