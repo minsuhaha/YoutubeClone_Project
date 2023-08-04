@@ -278,6 +278,7 @@ a {
     /* border: 1px solid white; */
 }
 
+
 /* 사이드바 아이콘 뒤에 이름 부분 */
 .sidebar>div>div>a {
     color: white;
@@ -285,6 +286,7 @@ a {
     height: 16px;
     padding: 4px 0px;
 }
+
 
 /* sub 부분 */
 .sidebarSub {
@@ -297,6 +299,10 @@ a {
     width: 240px;
     justify-content: center;
     border-bottom: 1px solid #1263CE;
+}
+
+.sidebarSub_del{
+    border: 0;
 }
 
 /* sub 아이콘 부분 */
@@ -346,6 +352,7 @@ a {
     height: 32px;
     padding-right: 0px;
     align-items: center;
+    
 }
 
 .subTitle>a {
@@ -354,7 +361,7 @@ a {
     align-items: flex-start;
     gap: 10px;
     color: var(--gray-color, #AAA);
-    font-size: 12px;
+    font-size: 20px;
     font-style: normal;
     font-weight: 700;
     line-height: normal;
@@ -394,12 +401,12 @@ a {
 
 /* /-------------------------- 햄버거 버튼 (aside 크기 변경)--------------------------------------/ */
 .sidebarHidden {
-    width: 120px;
-    font-size: 12px;
-    transition: font-size 0.3s ease, width 0.3s ease;
-
+    width: 100px;
+    font-size: 15px;
+    transition: font-size 0.4s ease, width 0.4s ease;
+    
 }
-
+/*  */
 .sidebarHidden>div>div {
     max-height: 40px;
 
@@ -408,6 +415,7 @@ a {
 .sidebarHidden>div>div>a {
     margin: 2px;
     padding-top: 1px;
+    
     display: flex;
     flex-direction: column;
     /* 사이드바가 숨겨질 때 요소들을 세로로 배치 */

@@ -6,11 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YouTube</title>
     <link rel="shortcut icon" href="./Image/SearchBar/Group.png">
-    <link rel="stylesheet" href="./CSS/css_1.css">
+    <link rel="stylesheet" href="./CSS/css.css">
     <link rel="stylesheet" href="./CSS/css_2.css">
-    <!-- css_video.css 부분 두개의 파일이 있는데 한개로 합쳐야 됨.-->
-    <!-- <link rel="stylesheet" href="../CSS/css_video.css"> -->
     <link rel="stylesheet" href="./CSS/css_video2.css">
+    </div>
 </head>
 
 <body>
@@ -60,125 +59,124 @@
             </div>
         </div>
     </header>
-    <main>
-        <section class="primary"><!-- 비디오부터 댓글 전체 섹션-->
-            <!-- 비디오부터 좋아요 버튼까지-->
-            <!-- 비디오 플레이어 -->
-            <article>
-                <div id="videoContainer">
-                    <!-- 비디오 플레이어를 여기에 삽입 -->
-                </div>
 
-                <div id = "videoDesc">
-                    <!-- 채널 정보 -->
-                </div>
-            </article>
+    <section class="primary"><!-- 비디오부터 댓글 전체 섹션-->
+        <!-- 비디오부터 좋아요 버튼까지-->
+        <!-- 비디오 플레이어 -->
+        <article>
+            <div id="videoContainer">
+                <!-- 비디오 플레이어를 여기에 삽입 -->
+            </div>
 
-            <!-- 댓글 정보, 정렬, 입력 부분-->
+            <div id="videoDesc">
+                <!-- 채널 정보 -->
+            </div>
+        </article>
+
+        <!-- 댓글 정보, 정렬, 입력 부분-->
+        <div>
             <div>
-                <div>
-                    <span>286 Comment</span>
-                    <button class="dropdown_btn"><img src="./Image/Channel/Dropdown.png"></button>
-                    <span>SORT BY</span>
-                </div>
-                <div>
-                    <a href="http://127.0.0.1:3000/index_channel.html"><button class="channel_btn"><img src="./Image/Channel/oreumi_profile.jpg"></button></a>
-                    <input id="commentInput" placeholder="댓글을 입력해주세요!">
-                </div>
-                <div class="comment">
-                    <button id="cancel_btn" onclick="cancelComment()">취소</button>
-                    <button id="comment_btn" onclick="submit()">댓글</button>
-                    
-                </div>
+                <span>286 Comment</span>
+                <button class="dropdown_btn"><img src="./Image/Channel/Dropdown.png"></button>
+                <span>SORT BY</span>
             </div>
-            <!-- 댓글 부분 -->
-            <div id="comment_add">
-                <div id="comment_addbox"></div>
-                
+            <div class="comment_input_box">
+                <a href="http://127.0.0.1:3000/index_channel.html"><button class="channel_btn"><img
+                            src="./Image/Channel/oreumi_profile.jpg"></button></a>
+                <textarea id="commentInput" placeholder="댓글을 입력해주세요!" rows="1"></textarea>
             </div>
-        </section>
-        <!-- Content 부분 -->
-        <aside>
-            <div class="video_second" id="videoSecond">
-                <div class="second_topbox">
-                    <div class="second_topmenu">All</div>
-                    <div class="second_topmenu">토끼</div>
-                    <div class="second_topmenu">AI</div>
-                    <div class="second_topmenu">블록체인</div>
-                </div>
-            </div>
-        </aside>
-        <aside class="sidebar">
-            <!-- sidebar Top -->
-            <div class="sidebar_top">
-                <div>
-                    <img src="./Image/Sidebar/home.svg">
-                    <a href="#">Home</a>
-                </div>
-                <div>
-                    <img src="./Image/Sidebar/explore.svg">
-                    <a href="#">Explore</a>
-                </div>
-                <div>
-                    <img src="./Image/Sidebar/subscriptions.svg">
-                    <a href="#">Subscriptions</a>
-                </div>
-            </div>
+            <div class="comment">
+                <button id="cancel_btn" onclick="cancelComment()">취소</button>
+                <button id="comment_btn" onclick="submit()">댓글</button>
 
-            <div class="sidebar_top">
-                <div>
-                    <img src="./Image/Sidebar/library.svg">
-                    <a href="#">Library</a>
-                </div>
-                <div>
-                    <img src="./Image/Sidebar/history.svg">
-                    <a href="#">History</a>
-                </div>
-                <div>
-                    <img src="./Image/Sidebar/video.svg">
-                    <a href="#">Your Videos</a>
-                </div>
-                <div>
-                    <img src="./Image/Sidebar/watch.svg">
-                    <a href="#">watch Later</a>
-                </div>
-                <div>
-                    <img src="./Image/Sidebar/Like.svg">
-                    <a href="#">Liked Videos</a>
-                </div>
-                <div>
-                    <img src="./Image/Sidebar/show.svg">
-                    <a href="#">Show More</a>
-                </div>
             </div>
+        </div>
+        <!-- 댓글 부분 -->
+        <div id="comment_add">
+        </div>
+    </section>
 
-            <!-- sidebar Sub -->
-            <div class="sidebarSub">
-                <div class="subTitle"><a href="">SUBSCRIPTIONS</a></div>
-                <div>
-                    <img src="./Image/Sidebar/James Gouse.png">
-                    <a href="#">James Gouse</a>
-                </div>
-                <div>
-                    <img src="./Image/Sidebar/Alan Cooper.png">
-                    <a href="#">Alan Cooper</a>
-                </div>
-                <div>
-                    <img src="./Image/Sidebar/Marcus Levin.png">
-                    <a href="#">Marcus Levin</a>
-                </div>
-                <div>
-                    <img src="./Image/Sidebar/Alexis Sears.png">
-                    <a href="#">Alexis Sears</a>
-                </div>
-                <div>
-                    <img src="./Image/Sidebar/Jesica Lambert.png">
-                    <a href="#">Jesica Lambert</a>
-                </div>
-                <div>
-                    <img src="./Image/Sidebar/Anna White.png">
-                    <a href="#">Anna White</a>
-                </div>
+    <!-- Content 부분 -->
+    <aside>
+        <div class="video_second" id="videoSecond">
+            <div class="second_topbox">
+                <div class="second_topmenu">All</div>
+                <div class="second_topmenu">토끼</div>
+                <div class="second_topmenu">AI</div>
+                <div class="second_topmenu">블록체인</div>
+            </div>
+        </div>
+    </aside>
+    <aside class="sidebar">
+        <!-- sidebar Top -->
+        <div class="sidebar_top">
+            <div>
+                <img src="./Image/Sidebar/home.svg">
+                <a href="#">Home</a>
+            </div>
+            <div>
+                <img src="./Image/Sidebar/explore.svg">
+                <a href="#">Explore</a>
+            </div>
+            <div>
+                <img src="./Image/Sidebar/subscriptions.svg">
+                <a href="#">Subscriptions</a>
+            </div>
+        </div>
+
+        <div class="sidebar_top">
+            <div>
+                <img src="./Image/Sidebar/library.svg">
+                <a href="#">Library</a>
+            </div>
+            <div>
+                <img src="./Image/Sidebar/history.svg">
+                <a href="#">History</a>
+            </div>
+            <div>
+                <img src="./Image/Sidebar/video.svg">
+                <a href="#">Your Videos</a>
+            </div>
+            <div>
+                <img src="./Image/Sidebar/watch.svg">
+                <a href="#">watch Later</a>
+            </div>
+            <div>
+                <img src="./Image/Sidebar/Like.svg">
+                <a href="#">Liked Videos</a>
+            </div>
+            <div>
+                <img src="./Image/Sidebar/show.svg">
+                <a href="#">Show More</a>
+            </div>
+        </div>
+
+        <!-- sidebar Sub -->
+        <div class="sidebarSub">
+            <div class="subTitle"><a href="">SUBSCRIPTIONS</a></div>
+            <div>
+                <img src="./Image/Sidebar/James Gouse.png">
+                <a href="#">James Gouse</a>
+            </div>
+            <div>
+                <img src="./Image/Sidebar/Alan Cooper.png">
+                <a href="#">Alan Cooper</a>
+            </div>
+            <div>
+                <img src="./Image/Sidebar/Marcus Levin.png">
+                <a href="#">Marcus Levin</a>
+            </div>
+            <div>
+                <img src="./Image/Sidebar/Alexis Sears.png">
+                <a href="#">Alexis Sears</a>
+            </div>
+            <div>
+                <img src="./Image/Sidebar/Jesica Lambert.png">
+                <a href="#">Jesica Lambert</a>
+            </div>
+            <div>
+                <img src="./Image/Sidebar/Anna White.png">
+                <a href="#">Anna White</a>
                 <div>
                     <img src="./Image/Sidebar/Skylar Dias.png">
                     <a href="#">Skylar Dias</a>
@@ -244,21 +242,17 @@
                 </div>
             </div>
 
-        </aside>
+    </aside>
 
-        <!-- 비디오 썸네일 부분 시작-->
-        <main>
-            <section>
-                <div class="Thumbnail" id="videoContainer">
-                    <!--자바스크립트 코드에서 추가-->
-                </div>
-            </section>
-        </main>
+    <!-- 비디오 썸네일 부분 시작-->
+
+
 </body>
 <script src="./js/search.js"></script>
 <script src="./js/video_hamburger.js"></script>
 <script src="./js/button.js"></script>
 <script src="./js/showMore.js"></script>
 <script src="./js/video_css.js"></script>
-<script src="./js/comment.js"></script> 
+<script src="./js/comment.js"></script>
+
 </html>
