@@ -158,7 +158,12 @@
     /* 두 요소를 수평으로 정렬 */
     justify-items: flex-start;
     align-items: flex-start;
-    border-top: solid 1px #1263CE;
+    
+    border-bottom: 1px solid #1263CE; 
+    padding-bottom: 0px; /* 경계선과 내용 사이의 간격 */
+    margin-bottom: 20px; /* 경계선과 다음 요소 사이의 간격 */
+
+    
     /* border: 1px solid rgb(248, 6, 6); */
 }
 
@@ -225,3 +230,4 @@
 .channelLonger {
     margin-left: 120px;
 }
+
