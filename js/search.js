@@ -53,7 +53,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                                             <img class="Thumbnail_img" src='${video.image_link}' alt='Video Thumbnail'>
                                         </a>
                                         <h3 class="Thumbnail_h3">${video.video_title}</h3>
-                                        <p>채널명: <a href="/HTML/index_channel.html?channel_name=${encodeURIComponent(video.video_channel)}">${video.video_channel}</a></p>
+                                        <p>채널명: <a href="index_channel.html?channel_name=${encodeURIComponent(video.video_channel)}">${video.video_channel}</a></p>
                                         <p>등록일: ${video.upload_date}, 조회수: ${video.views}회</p>
                                     </article>
                                         `;
