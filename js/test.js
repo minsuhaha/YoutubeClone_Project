@@ -51,9 +51,10 @@ function searchYoutube(searchData, container){
                         existingData.push(data);
                         localStorage.setItem(channelName, JSON.stringify(existingData));
                     }
-  
+                    
                     // let videoDiv = '';
                     let videoDiv = document.createElement('div');
+                    let date = formatDate(data.upload_date);
                     videoDiv.innerHTML = `
                         <article class="Thumbnail_art">
                             <a href="index_video.html?video_id=${searchData}">
@@ -61,7 +62,7 @@ function searchYoutube(searchData, container){
                             </a>
                             <h3 class="Thumbnail_h3">${data.video_title}</h3>
                             <p>채널명: <a href="index_channel.html?channel_name=${encodeURIComponent(data.video_channel)}">${data.video_channel}</a></p>
-                            <p>등록일: ${data.upload_date}, 조회수: ${data.views}회</p>
+                            <p>${date} • ${data.views} views.</p>
                         </article>
                     `;
                     container.appendChild(videoDiv);
@@ -83,5 +84,24 @@ displayVideos(videoIds);
     
 
 
+function formatDate(dateString) {
+    const uploadDate = new Date(dateString);
+    const now = new Date();
+    const diffTime = Math.abs(now - uploadDate);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
 
+    let formattedDate;
+
+    if (diffDays < 7) {
+        formattedDate = `${diffDays} days ago`;
+    } else if (diffDays < 30) {
+        const weeks = Math.floor(diffDays / 7);
+        formattedDate = `${weeks} weeks ago`;
+    } else {
+        const months = Math.floor(diffDays / 30);
+        formattedDate = `${months} months ago`;
+    }
+
+    return formattedDate;
+}
 

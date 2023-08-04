@@ -11,7 +11,7 @@ function displayVideos(videoId) {
 
     // videoId를 배열 형태로 만들어서 해당 비디오만 크게 표시
     createVideoItem(videoId, container);
-
+    
     // 전체 리스트 영상을 표시하기 위해 다른 videoIds를 사용 -> id 0 부터 시작하도록  
     const otherVideoIds = [0];
     // 해당 videoId를 제외한 영상들을 옆에 작은 크기로 표시
@@ -19,9 +19,11 @@ function displayVideos(videoId) {
 
     const container2 = document.getElementById('videoDesc');
     const container3 = document.getElementById('videoSecond');
+    
+    createVideoItem2(videoId, container2);
 
     otherVideoIdsWithoutCurrent.forEach(videoId => {
-        createVideoItem2(videoId, container2);
+        
         createVideoItem3(videoId, container3);
     });
 }

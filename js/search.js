@@ -7,7 +7,7 @@ function search(event) {
     let text = document.getElementsByClassName("search_box")[0].value;
     
     // 메인 페이지 URL
-    let mainPageUrl = "index_home.html";
+    let mainPageUrl = "index.html";
     // 검색어를 쿼리 스트링으로 추가한 URL
     let newURL = mainPageUrl + '?search=' + encodeURIComponent(text);
     
@@ -49,7 +49,7 @@ window.addEventListener('DOMContentLoaded', (event) => {
                     let videoDiv = document.createElement('div');
                     videoDiv.innerHTML = `
                                     <article class="Thumbnail_art">
-                                        <a href="${video.video_link}">
+                                        <a href="index_video.html?video_id=${video.video_id}">
                                             <img class="Thumbnail_img" src='${video.image_link}' alt='Video Thumbnail'>
                                         </a>
                                         <h3 class="Thumbnail_h3">${video.video_title}</h3>
