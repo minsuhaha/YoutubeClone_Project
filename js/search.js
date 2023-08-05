@@ -91,37 +91,42 @@ function search() {
 
     for (let video of value) {
         let videoDiv = document.createElement('div');
-        videoDiv.innerHTML = `
-                        <article class="Thumbnail_art">
-                            <a href="index_video.html?video_id=${video.video_id}">
-                                <img class="Thumbnail_img" src='${video.image_link}' alt='Video Thumbnail'>
-                            </a>
+        let date = formatDate(video.upload_date);
+        fetch(`http://oreumi.appspot.com/channel/getChannelInfo?video_channel=${video.video_channel}`, {method: 'POST'})
+        .then((response) => response.json())
+        .then((data) => {
+            videoDiv.innerHTML = `
+                <article class="Thumbnail_art">
+                    <a href="index_video.html?video_id=${video.video_id}">
+                        <img
+                            class="Thumbnail_img"
+                            src='${video.image_link}'
+                            alt='Video Thumbnail'
+                        >
+                    </a>
+                    <div>
+                        <img
+                            class="Thumbnail_profile_img"
+                            src="${data.channel_profile}"
+                            alt="Channel Avatar"
+                        >
+                        <div>
                             <h3 class="Thumbnail_h3">${video.video_title}</h3>
-                            <p>채널명: <a href="index_channel.html?channel_name=${encodeURIComponent(video.video_channel)}">${video.video_channel}</a></p>
-                            <p>등록일: ${video.upload_date}, 조회수: ${video.views}회</p>
-                        </article>
-                        `;
-
-                           
-
-        container.appendChild(videoDiv);
+                            <a href="index_channel.html?channel_name=${encodeURIComponent(video.video_channel)}">
+                                ${video.video_channel}
+                            </a>
+                            <p>${date} • ${video.views} views.</p>
+                        </div>
+                    </div>
+                </article>
+                `;
+                videoContainer.appendChild(videoDiv);
+            });
     }
      // URL에 검색어를 쿼리 스트링으로 추가
      let newURL = window.location.protocol + "//" + window.location.host + window.location.pathname + '?search=' + encodeURIComponent(text);
      window.history.pushState({path: newURL}, '', newURL);
 
-                for (let video of value) {
-                    let videoDiv = document.createElement('div');
-                    videoDiv.innerHTML = `
-                                    <article class="Thumbnail_art">
-                                        <a href="index_video.html?video_id=${video.video_id}">
-                                            <img class="Thumbnail_img" src='${video.image_link}' alt='Video Thumbnail'>
-                                        </a>
-                                        <h3 class="Thumbnail_h3">${video.video_title}</h3>
-                                        <p>채널명: <a href="index_channel.html?channel_name=${encodeURIComponent(video.video_channel)}">${video.video_channel}</a></p>
-                                        <p>등록일: ${video.upload_date}, 조회수: ${video.views}회</p>
-                                    </article>
-                                        `;
 
 }
 
@@ -136,3 +141,23 @@ document.getElementsByClassName("search_box")[0].addEventListener("keypress", fu
 });
 
 
+function formatDate(dateString) {
+    const uploadDate = new Date(dateString);
+    const now = new Date();
+    const diffTime = Math.abs(now - uploadDate);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+
+    let formattedDate;
+
+    if (diffDays < 7) {
+        formattedDate = `${diffDays} days ago`;
+    } else if (diffDays < 30) {
+        const weeks = Math.floor(diffDays / 7);
+        formattedDate = `${weeks} weeks ago`;
+    } else {
+        const months = Math.floor(diffDays / 30);
+        formattedDate = `${months} months ago`;
+    }
+
+    return formattedDate;
+}

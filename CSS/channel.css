@@ -8,6 +8,7 @@
     margin-top: 56px;
     padding: 0;
     overflow: hidden;
+
 }
 
 .Channel-Info {
@@ -39,6 +40,7 @@
     /* padding: 10px; */
     justify-content: space-between;
     margin-bottom: 0px;
+    margin-left: 110px;
     /* border: 1px solid red; */
 }
 
@@ -50,7 +52,6 @@
     justify-content: space-between;
     width: 80%;
     /* border: 1px solid red; */
-    margin-left: 220px;
 }
 
 .channel-frame {
@@ -122,7 +123,7 @@
     width: 40%;
     padding: 5px 5px 0px 0px;
     /* border: solid 1px black; */
-    margin: 0px 0px 0px 220px;
+    margin: 0px 0px 0px 100px;
 }
 
 .ChannelToolbar-Button {
@@ -152,7 +153,7 @@
 }
 
 .Channel-Big-Video {
-    margin: 0;
+    margin-left: -110px;
     display: flex;
     flex-direction: row;
     /* 두 요소를 수평으로 정렬 */
@@ -171,7 +172,7 @@
 .Thumbnail {
     margin-top: 0px;
     padding-top: 10px;
-    margin-left: 200px;
+    margin-left: 90px;
     margin-right: 100px;
     
 }
@@ -242,6 +243,7 @@
     align-items: center;
     margin-top: 1rem;
     margin-bottom: 1rem;
+    margin-left: -110px;
 }
 
 .playlist-title {
@@ -275,7 +277,6 @@
     font-weight: 700;
     padding: 3px 0px 2px 8px;
 }
-
 
 
 

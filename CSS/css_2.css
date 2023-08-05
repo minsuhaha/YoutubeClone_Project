@@ -84,17 +84,29 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-.Thumbnail_art>p {
-    font-size: 20px;
+.Thumbnail_art>div {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 0px;
+
 }
+
 
 .Thumbnail_img {
     width: 100%;
     border-radius: 10px;
 }
 
+.Thumbnail_profile_img {
+    width: 50px;
+    height: 50px;
+    border-radius: 70%;
+    margin: 10px;
+}
+
 .Thumbnail_h3 {
-    margin: 8px 0;
+    margin: 0;
+    color: black;
     /* font-size: px; */
 }
 

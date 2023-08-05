@@ -75,7 +75,7 @@ function commentsAdd(comments) {
         commentsHTML.classList.add('comment_box')
         commentsHTML.innerHTML = `
             <div class="comment_profile">
-                <span><img class="comment_profile_img" src="/Image/Channel/oreumi_profile.jpg"></span>
+                <span><img class="comment_profile_img" src="./Image/Channel/oreumi_profile.jpg"></span>
                 <span>
                     <div class="comment_username">${userName}</div>
                     <div class="comment-output">${comment}</div>
@@ -83,9 +83,9 @@ function commentsAdd(comments) {
             </div>
             <div class="comment_btns">
                 <div>
-                    <button class="like_btn" onclick="likeComment(${index})"><img id="like_img_${index}" class="like_btn_img" src="/Image/etc/up.svg"></button>
+                    <button class="like_btn" onclick="likeComment(${index})"><img id="like_img_${index}" class="like_btn_img" src="./Image/etc/up.svg"></button>
                     <span id="count_${index}">0</span>
-                    <button class="like_btn" onclick="unlikeComment(${index})"><img id="unlike_img_${index}" class="like_btn_img" src="/Image/etc/down.svg"></button>
+                    <button class="like_btn" onclick="unlikeComment(${index})"><img id="unlike_img_${index}" class="like_btn_img" src="./Image/etc/down.svg"></button>
                     <span id="count_${index}">0</span>
                 </div>
                 <div>
@@ -174,18 +174,18 @@ function likeComment(index) {
     like = !like;
     let like_img = document.getElementById(`like_img_${index}`);
     if (like) {
-        like_img.src = "/Image/etc/up.svg";
+        like_img.src = "./Image/etc/up.svg";
     } else {
-        like_img.src = "/Image/etc/upfull.png";
+        like_img.src = "./Image/etc/upfull.png";
     }
 }
 function unlikeComment(index) {
     unlike = !unlike;
     let unlike_img = document.getElementById(`unlike_img_${index}`);
     if (unlike) {
-        unlike_img.src = "/Image/etc/down.svg";
+        unlike_img.src = "./Image/etc/down.svg";
     } else {
-        unlike_img.src = "/Image/etc/downfull.png";
+        unlike_img.src = "./Image/etc/downfull.png";
     }
 }
 function handleEnter(event) {

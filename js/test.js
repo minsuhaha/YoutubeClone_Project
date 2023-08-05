@@ -55,17 +55,43 @@ function searchYoutube(searchData, container){
                     // let videoDiv = '';
                     let videoDiv = document.createElement('div');
                     let date = formatDate(data.upload_date);
-                    videoDiv.innerHTML = `
-                        <article class="Thumbnail_art">
-                            <a href="index_video.html?video_id=${searchData}">
-                                <img class="Thumbnail_img" src='${data.image_link}' alt='Video Thumbnail'>
-                            </a>
-                            <h3 class="Thumbnail_h3">${data.video_title}</h3>
-                            <p>채널명: <a href="index_channel.html?channel_name=${encodeURIComponent(data.video_channel)}">${data.video_channel}</a></p>
-                            <p>${date} • ${data.views} views.</p>
-                        </article>
-                    `;
-                    container.appendChild(videoDiv);
+                    fetch(`http://oreumi.appspot.com/channel/getChannelInfo?video_channel=${channelName}`, {method: 'POST'})
+                        .then((response) => response.json())
+                        .then((channelData) => {
+                            videoDiv.innerHTML = `
+                            <article class="Thumbnail_art">
+                                <a href="index_video.html?video_id=${searchData}">
+                                    <img
+                                        class="Thumbnail_img"
+                                        src='${data.image_link}'
+                                        alt='Video Thumbnail'
+                                    >
+                                </a>
+                                <div>
+                                    <a href="index_channel.html?channel_name=${encodeURIComponent(data.video_channel)}">
+                                        <img 
+                                            class="Thumbnail_profile_img"
+                                            src="${channelData.channel_profile}"
+                                            alt="Channel Avatar"
+                                        >
+                                    </a>
+                                    <div>
+                                        <h3>
+                                            <a  class="Thumbnail_h3" href="index_video.html?video_id=${searchData}">
+                                            ${data.video_title}
+                                            </a>
+                                        </h3>
+                                        <a href="index_channel.html?channel_name=${encodeURIComponent(data.video_channel)}">
+                                            ${data.video_channel}
+                                        </a>
+                                        <p>${date} • ${data.views} views.</p>
+                                    </div>
+                                </div>
+                            </article>
+                            `;
+                            container.appendChild(videoDiv);
+                        });
+                    
                     // document.getElementById('InfoTitle').innerHTML = videoDiv
                 }
             } else {
