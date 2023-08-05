@@ -69,15 +69,15 @@ function searchYoutube(searchData, container){
                                 >
                             </a>
                             <div>
-                                <h3>
+                                <h3 class="ThumbnailInfo">
                                     <a  class="Thumbnail_h3" href="index_video.html?video_id=${searchData}">
                                     ${data.video_title}
                                     </a>
                                 </h3>
-                                <a href="index_channel.html?channel_name=${encodeURIComponent(data.video_channel)}">
+                                <a class="ThumbnailInfo" href="index_channel.html?channel_name=${encodeURIComponent(data.video_channel)}">
                                     ${data.video_channel}
                                 </a>
-                                <p>${date} • ${data.views} views.</p>
+                                <p class="ThumbnailInfo">${date} • ${data.views} views.</p>
                             </div>
                         </div>
                     </article>

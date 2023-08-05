@@ -14,13 +14,13 @@ body {
     margin-top: 54px;
     /* margin-left: 220px; */
     /* padding-left: 20px; */
-    width: auto;
+    width: 70%;
     color: black;
     font-weight: 600;
     font-size: x-large;
     margin-right: 20px;
     /* border: 1px solid black; */
-    margin-left: 10px;
+    margin-left: 5%;
 }
 
 .thumbnailWider {
@@ -30,7 +30,7 @@ body {
 
 /* 영상부분 css */
 .video {
-    width: 960px;
+    width: 100%;
     height: auto;
     left: 0px;
     top: 0px;
@@ -43,7 +43,7 @@ body {
 /* 영상 밑 info 전체 박스 css */
 
 .info_box {
-    width: auto;
+    width: 100%;
     padding-top: 10px;
     padding-bottom: 8px;
     /* border: 1px solid black; */
@@ -193,7 +193,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     margin-left: 15px;
-    margin-right: 60%;
+    margin-right: 70%;
 }
 
 /* .channel_title>button {
@@ -264,8 +264,8 @@ body {
 
 /* .video_desc를 flexbox 레이아웃으로 설정 */
 .video_desc {
-    padding: 12px;
-    width: 100%;
+    padding: 20px 20px 0px 10px;
+    width: 98%;
     background-color: #44ADDA;
     border-radius: 10px;
     margin-bottom: 40px;
@@ -312,7 +312,7 @@ body {
     background-color: #83C9E7;
     border: none;
     outline: none;
-    width: 100%;
+    width: 95%;
     border-bottom: 1px solid #303030;
     font-style: black;
     resize: none;
@@ -335,7 +335,7 @@ body {
 .comment {
     display: flex;
     justify-content: flex-end;
-    width: auto;
+    width: 100%;
 }
 
 .comment_btns {
@@ -408,10 +408,10 @@ body {
     position: absolute;
     top: 56px;
     display: flex;
-    width: 330px;
+    width: 20%;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-shrink: 0;
     /* margin-left: 24px; */
     padding-top: 24px;
@@ -489,7 +489,7 @@ body {
 
 .comment_box {
     margin-bottom: 30px;
-    width: 700px;
+    width: 70%;
 }
 
 .comment_profile {
@@ -550,7 +550,7 @@ body {
     background-color: #83C9E7;
     border: none;
     outline: none;
-    width: 700px;
+    width: 70%;
     border-bottom: 1px solid #303030;
     font-style: black;
     resize: none;
