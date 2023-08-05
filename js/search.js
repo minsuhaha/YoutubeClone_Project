@@ -105,11 +105,13 @@ function search() {
                         >
                     </a>
                     <div>
-                        <img
-                            class="Thumbnail_profile_img"
-                            src="${data.channel_profile}"
-                            alt="Channel Avatar"
-                        >
+                        <a href="index_channel.html?channel_name=${encodeURIComponent(video.video_channel)}">
+                            <img 
+                                class="Thumbnail_profile_img"
+                                src="${data.channel_profile}"
+                                alt="Channel Avatar"
+                            >
+                        </a>
                         <div>
                             <h3 class="Thumbnail_h3">${video.video_title}</h3>
                             <a href="index_channel.html?channel_name=${encodeURIComponent(video.video_channel)}">
