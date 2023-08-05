@@ -17,9 +17,9 @@
     /* 변경: 1px 1px solid */
     overflow-x: hidden;
 }
-
+/*  */
 .navbarLonger {
-    left: 120px;
+    left: 100px;
 }
 
 .items {
@@ -108,5 +108,5 @@ main {
 }
 
 .ThumbnailWider {
-    margin-left: 120px;
+    margin-left: 100px;
 }
