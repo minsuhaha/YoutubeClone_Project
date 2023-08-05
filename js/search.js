@@ -133,12 +133,16 @@ function search() {
 }
 
 // click 시 검색
-document.getElementsByClassName("search_box_icon")[0].addEventListener("click", search); // 혹은 "click" 이벤트를 "input" 이벤트로 변경할 수 있습니다.
+document.getElementsByClassName("search_box_icon")[0].addEventListener("click", () => {
+    const value = document.getElementsByClassName("search_box")[0].value;
+    window.location.href = `index.html?search=${value}`;
+}); // 혹은 "click" 이벤트를 "input" 이벤트로 변경할 수 있습니다.
 
 // enter 시 검색
 document.getElementsByClassName("search_box")[0].addEventListener("keypress", function(e) {
     if (e.keyCode === 13) {
-        search();
+        const value = document.getElementsByClassName("search_box")[0].value;
+        window.location.href = `index.html?search=${value}`;
     }
 });
 
