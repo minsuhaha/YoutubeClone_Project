@@ -55,7 +55,7 @@ function searchYoutube(searchData, container){
                     // let videoDiv = '';
                     let videoDiv = document.createElement('div');
                     let date = formatDate(data.upload_date);
-                    fetch(`http://oreumi.appspot.com/channel/getChannelInfo?video_channel=${channelName}`, {method: 'POST'})
+                    fetch(`https://oreumi.appspot.com/channel/getChannelInfo?video_channel=${channelName}`, {method: 'POST'})
                         .then((response) => response.json())
                         .then((channelData) => {
                             videoDiv.innerHTML = `

@@ -92,7 +92,7 @@ function search() {
     for (let video of value) {
         let videoDiv = document.createElement('div');
         let date = formatDate(video.upload_date);
-        fetch(`http://oreumi.appspot.com/channel/getChannelInfo?video_channel=${video.video_channel}`, {method: 'POST'})
+        fetch(`https://oreumi.appspot.com/channel/getChannelInfo?video_channel=${video.video_channel}`, {method: 'POST'})
         .then((response) => response.json())
         .then((data) => {
             videoDiv.innerHTML = `
