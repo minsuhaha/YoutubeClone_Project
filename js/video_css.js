@@ -44,6 +44,8 @@ function createVideoItem(video_id,container) {
         if (xhr.readyState === xhr.DONE && xhr.status === 200) {
         // 가져온 응답 처리
         let data = JSON.parse(xhr.responseText);
+        // 날짜 포맷팅
+        let date = formatDate(data.upload_date);
         // 데이터 있는지 확인
         if (data && data.video_id !== undefined) {
             let videoDiv = document.createElement('div');
@@ -55,7 +57,7 @@ function createVideoItem(video_id,container) {
                     <span class="info_view">    
                         <span>${data.views}</span>
                         <span>views.</span>
-                        <span style="margin-left:10px;">${data.upload_date}</span>
+                        <span style="margin-left:10px;">${date}</span>
                     </span>
                     <span class="info_icon">
                         <button><img src="./Image/Channel/Vector.png"><span>1.7K</span></button>
@@ -183,6 +185,8 @@ function createVideoItem4(video_id,container) {
         if (xhr.readyState === xhr.DONE && xhr.status === 200) {
         // 가져온 응답 처리
         let data = JSON.parse(xhr.responseText);
+        // 날짜 포맷팅
+        let date = formatDate(data.upload_date);
         // 데이터 있는지 확인
         if (data && data.video_id !== undefined) {
             let videoDiv4 = document.createElement('div');
@@ -198,7 +202,7 @@ function createVideoItem4(video_id,container) {
                 </div>
                 <div>${data.video_channel}
                 </div>
-                <div>${data.views} views. ${data.upload_date}
+                <div>${data.views} views. ${date}
                 </div>
             </div>
         </div>
@@ -221,6 +225,25 @@ function cancelComment() {
     commentInput.value = '';
 }
 
+function formatDate(dateString) {
+    const uploadDate = new Date(dateString);
+    const now = new Date();
+    const diffTime = Math.abs(now - uploadDate);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
 
+    let formattedDate;
+
+    if (diffDays < 7) {
+        formattedDate = `${diffDays} days ago`;
+    } else if (diffDays < 30) {
+        const weeks = Math.floor(diffDays / 7);
+        formattedDate = `${weeks} weeks ago`;
+    } else {
+        const months = Math.floor(diffDays / 30);
+        formattedDate = `${months} months ago`;
+    }
+
+    return formattedDate;
+}
 
 
