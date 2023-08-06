@@ -2,12 +2,11 @@
 window.onload = function() {
     let urlParams = new URLSearchParams(window.location.search);
     let videoId = urlParams.get('video_id');
-    let videoChannel = urlParams.get('video_channel');
-    displayVideos([videoId,videoChannel]);
+    displayVideos([videoId]);
 };
 
 // 비디오 메인 함수 displayVideo  페이지에 동영상을 표시하는 기능
-function displayVideos([videoId,videoChannel]) {
+function displayVideos(videoId) {
     const container = document.getElementById('videoContainer');
 
     // videoId를 배열 형태로 만들어서 해당 비디오만 크게 표시
@@ -18,15 +17,16 @@ function displayVideos([videoId,videoChannel]) {
     // 해당 videoId를 제외한 영상들을 옆에 작은 크기로 표시
     const otherVideoIdsWithoutCurrent = otherVideoIds.filter(id => id !== videoId);
 
-    const container2 = document.getElementById('videoDesc');
-    const container3 = document.getElementById('videoSecond');
+    const container2 = document.getElementById('channelInfo');
+    const container3 = document.getElementById('videoDesc');
+    const container4 = document.getElementById('videoSecond');
     
-    createVideoItem2(videoId, container2);
-    createVideoItem3(videoId, container2);
+    createVideoItem2(container2);
+    createVideoItem3(videoId, container3);
 
     otherVideoIdsWithoutCurrent.forEach(videoId => {
         
-        createVideoItem4(videoId, container3);
+        createVideoItem4(videoId, container4);
     });
 }
 
@@ -79,29 +79,62 @@ function createVideoItem(video_id,container) {
             xhr.send();
         }
     
+// async function getVideoInfo() {
+//     let url = `https://oreumi.appspot.com/channel/getChannelInfo`;
+//     let response = await fetch(url);
+//     let videoData = await response.json();
+//     return videoData;
+//     }
+
 async function getVideoInfo(videoId) {
-    let url = `http://oreumi.appspot.com/video/getVideoInfo?video_id=${videoId}`;
-    let response = await fetch(url);
-    let videoData = await response.json();
+    const url = `https://oreumi.appspot.com/video/getVideoInfo?video_id=${videoId}`;
+    const response  = await fetch(url);
+    const videoData = response.json();
+
     return videoData;
-    }
-          // "SHOW MORE" 버튼과 함께 비디오 채널 제목 ​​및 설명을 표시
-async function createVideoItem2(video_id,container) {
-    
-        let videoData = await getVideoInfo(video_id)
-        let videoDiv2 = document.createElement('div');
-        videoDiv2.innerHTML = `
-        <div class="channel_title">
-                <button class="channel_btn"><img src="./Image/Sidebar/Marcus Levin.png" alt=""></button>
-                <span class="channel_name">${videoData.video_channel}</span>
-                <button class="subscribes_btn"><img src="./Image/Channel/Subscribes-Btn.png"></button>
-        </div>
-        `;
-        // console.log(data.video_link);
-        container.appendChild(videoDiv2);
-            // 다음 video_id로 재귀 호출
-    // createVideoItem(video_id + 1);
 }
+
+async function getChannelInfo(videoData) {
+    const channelname = videoData.video_channel
+    const url = `https://oreumi.appspot.com/channel/getChannelInfo?video_channel=${channelname}`;
+    const response = await fetch(url, {method: 'POST'})
+    const channelData = response.json();
+
+    return channelData;
+}
+
+// "SHOW MORE" 버튼과 함께 비디오 채널 제목 ​​및 설명을 표시
+async function createVideoItem2(container) {
+    let videoData = await getVideoInfo(videoId)
+    let channelData = await getChannelInfo(videoData)
+    let videoDiv2 = document.createElement('div');
+    videoDiv2.innerHTML = `
+    <div class="channel_title">
+        <a href="index_channel.html?channel_name=${encodeURIComponent(channelData.channel_name)}"><img src="${channelData.channel_profile}" alt="Channel Avatar"></a>
+        <div>
+            <span class="channel_name">${channelData.channel_name}</span>
+            <span class="subscribers">구독자 ${channelData.subscribers}명</span>
+        </div>
+        <button id="subscribe-button">SUBSCRIBES</button>
+    </div>
+    `;
+    // console.log(data.video_link);
+    container.appendChild(videoDiv2);
+        // 다음 video_id로 재귀 호출
+    // createVideoItem(video_id + 1);
+    // 구독 버튼
+    let subs_Btn = document.querySelector('#subscribe-button')
+
+    subs_Btn.addEventListener('click', function(b) {
+    if(subs_Btn.innerText === 'SUBSCRIBES'){
+        subs_Btn.innerText = 'SUBSCRIBED';
+        b.target.style.backgroundColor = 'darkgray';
+    } else {
+        subs_Btn.innerText = 'SUBSCRIBES';
+        b.target.style.backgroundColor = '#cc0000';
+    }});
+}
+
 
 // "SHOW MORE" 버튼과 함께 비디오 채널 제목 ​​및 설명을 표시
 function createVideoItem3(video_id,container) {
@@ -188,16 +221,6 @@ function cancelComment() {
     commentInput.value = '';
 }
 
-// 구독 버튼
-const subs_Btn = document.getElementById('subscribe-button');
 
-subs_Btn.addEventListener('click', function(b) {
-    if(subs_Btn.innerText === 'SUBSCRIBES'){
-        subs_Btn.innerText = '1 SUBSCRIBED';
-        b.target.style.backgroundColor = 'darkgray';
-    } else {
-        subs_Btn.innerText = 'SUBSCRIBES';
-        b.target.style.backgroundColor = '#cc0000';
-    }});
 
 

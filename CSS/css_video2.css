@@ -14,21 +14,28 @@ body {
     margin-top: 54px;
     /* margin-left: 220px; */
     /* padding-left: 20px; */
-    width: auto;
-    color: white;
+    width: 70%;
+    color: black;
     font-weight: 600;
     font-size: x-large;
     margin-right: 20px;
     /* border: 1px solid black; */
+    margin-left: 5%;
+}
+
+.thumbnailWider {
     margin-left: 210px;
+
 }
 
 /* 영상부분 css */
 .video {
-    width: 1280px;
-    height: 720px;
+    width: 100%;
+    height: auto;
     left: 0px;
     top: 0px;
+    margin-top: 20px;
+    border-radius: 5px;
 }
 
 
@@ -36,7 +43,7 @@ body {
 /* 영상 밑 info 전체 박스 css */
 
 .info_box {
-    width: auto;
+    width: 100%;
     padding-top: 10px;
     padding-bottom: 8px;
     /* border: 1px solid black; */
@@ -104,7 +111,7 @@ body {
     align-items: center;
     justify-content: center;
     padding: 6px 6px 6px 6px;
-    color: white;
+    color: black;
     font-weight: 600;
     font-size: x-large;
     font-family: 'iceJaram-Rg';
@@ -163,19 +170,30 @@ body {
 .channel_title {
     display: flex;
     padding: 16px;
-    width: auto;
-    /* flex-direction: row; */
-    /* align-items: flex-start; */
+    width: 100%;
+    height: 70px;
+    flex-direction: row;
+    align-items: center;
     gap: 10px;
-    /* align-items: center; */
-    justify-content: space-between;
+    align-items: center;
+    justify-content: flex-start;
+    color: black;
     /* border: 1px solid black; */
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
 }
 
 .test {
     display: flex;
     align-items: flex-start;
+}
+
+.channel_title>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-left: 15px;
+    margin-right: 70%;
 }
 
 /* .channel_title>button {
@@ -206,17 +224,18 @@ body {
 
 } */
 
-.subscribes_btn {
+#subscribe-button {
+    background-color: #cc0000; 
     color: #fff;
-    display: inline-block;
-    padding: 10px 16px;
-    align-items: right;
-    gap: 10px;
-    font-size: 14px;
+    display: flex; 
+    padding: 10px 16px; 
+    align-items: center;
+    justify-content: flex-start; 
+    gap: 10px; 
+    height: auto;
+    font-size: 14px; 
     font-weight: 700;
-    background-color: transparent;
-    border: none;
-}
+ }
 
 .channel_btn {
     width: 40px;
@@ -235,13 +254,22 @@ body {
 .channel_name {
     font-size: 40px;
     margin-bottom: 20px;
-    color: #cc0acc;
+    color: black;
+    font-size: 30px;
+}
+
+.subscribers {
+    font-size: 20px;
 }
 
 /* .video_desc를 flexbox 레이아웃으로 설정 */
 .video_desc {
-    padding: 12px;
-    width: 100%;
+    padding: 20px 20px 0px 10px;
+    width: 98%;
+    background-color: #44ADDA;
+    border-radius: 10px;
+    margin-bottom: 40px;
+    /* border-bottom: solid 1px black; */
 }
 
 .video_desc>span {
@@ -261,7 +289,7 @@ body {
     border: 0;
     background-color: transparent;
     cursor: pointer;
-    color: red;
+    color: black;
     font-size: 14px;
     font-weight: bold;
     margin-top: 15px;
@@ -284,9 +312,9 @@ body {
     background-color: #83C9E7;
     border: none;
     outline: none;
-    width: 100%;
+    width: 95%;
     border-bottom: 1px solid #303030;
-    font-style: white;
+    font-style: black;
     resize: none;
     font-family: iceJaram-Rg;
     font-size: 35px;
@@ -301,13 +329,13 @@ body {
 #commentInput::placeholder {
     font-family: iceJaram-Rg;
     font-size: 25px;
-    color: white;
+    color: black;
 }
 
 .comment {
     display: flex;
     justify-content: flex-end;
-    width: auto;
+    width: 100%;
 }
 
 .comment_btns {
@@ -321,6 +349,11 @@ body {
     margin-right: 100px;
 }
 
+.like_btn {
+    background-color: #83C9E7;
+    border: none;
+}
+
 #comment_btn {
     pointer-events: auto;
     margin-right: 10px;
@@ -329,7 +362,7 @@ body {
     cursor: pointer;
     border-radius: 30px;
     font-family: iceJaram-Rg;
-    color: white;
+    color: black;
     font-size: 25px;
 }
 
@@ -346,7 +379,7 @@ body {
     cursor: pointer;
     border-radius: 30px;
     font-family: iceJaram-Rg;
-    color: white;
+    color: black;
     font-size: 25px;
 }
 
@@ -369,16 +402,16 @@ body {
 
 .video_second {
     font-family: iceJaram-Rg;
-    color: white;
+    color: black;
     font-size: x-large;
     font-weight: 600;
     position: absolute;
     top: 56px;
     display: flex;
-    width: 330px;
+    width: 20%;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: flex-start;
+    align-items: flex-start;
     flex-shrink: 0;
     /* margin-left: 24px; */
     padding-top: 24px;
@@ -398,6 +431,7 @@ body {
 .second_vd_vd {
     width: auto;
     height: 94px;
+    border-radius: 5px;
 }
 
 .second_vd_vdbox {
@@ -439,6 +473,7 @@ body {
     align-items: flex-start;
     gap: 10px;
     border-radius: 32px;
+    color: white;
     background: #687CE1;
     cursor: pointer;
 }
@@ -454,7 +489,7 @@ body {
 
 .comment_box {
     margin-bottom: 30px;
-    width: 700px;
+    width: 70%;
 }
 
 .comment_profile {
@@ -481,7 +516,7 @@ body {
 #edit_btn {
     pointer-events: auto;
     margin-right: 10px;
-    background-color: white;
+    background-color: #83C9E7;
     border: none;
     cursor: pointer;
     border-radius: 30px;
@@ -497,7 +532,7 @@ body {
 #delete_btn {
     pointer-events: auto;
     margin-right: 10px;
-    background-color: white;
+    background-color: #83C9E7;
     border: none;
     cursor: pointer;
     border-radius: 30px;
@@ -515,24 +550,19 @@ body {
     background-color: #83C9E7;
     border: none;
     outline: none;
-    width: 700px;
+    width: 70%;
     border-bottom: 1px solid #303030;
-    font-style: white;
+    font-style: black;
     resize: none;
     font-family: iceJaram-Rg;
-    font-size: 35px;
+    font-size: 25px;
     color: black;
-    resize: none;
-    min-height: 24px;
-    padding: 5px;
-    overflow: hidden;
-    box-sizing: border-box;
 }
 
 .edit_cancel_btn {
     pointer-events: auto;
     margin-right: 10px;
-    background-color: white;
+    background-color: #83C9E7;
     border: none;
     cursor: pointer;
     border-radius: 30px;
@@ -548,7 +578,7 @@ body {
 .edit_confirm_btn {
     pointer-events: auto;
     margin-right: 10px;
-    background-color: white;
+    background-color: #83C9E7;
     border: none;
     cursor: pointer;
     border-radius: 30px;
@@ -568,66 +598,10 @@ body {
     margin-top: 10px;
 }
 
-.like_container {
-    display: inline-block;
-    position: relative;
-}
 
-.like_btn_img {
-    width: 13px;
-    height: 12px;
-}
-
-.like_btn {
-    background-color: transparent;
-    border: 0;
-    width: 25px;
-    height: 25px;
-    cursor: pointer;
-    position: relative
-}
-
-
-.like_btn:hover {
-    background-color: #b3b8d1;
-    color: white;
-    border-radius: 100%;
-}
-
-.like_btn:active {
-    background-color: #83C9E7;
-}
-
-.like_btn .tooltip {
-    position: absolute;
-    bottom: -30px;
-    /* 툴팁을 버튼 아래쪽에 위치시킵니다. */
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: #727272;
-    color: rgb(255, 255, 255);
-    padding: 5px;
-    border-radius: 5px;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s, visibility 0.3s;
-    width: 40px;
-}
-
-.like_btn:hover .tooltip {
-    opacity: 1;
-    visibility: visible;
-}
-
-.comment_del_btn {
-    font-family: iceJaram-Rg;
-    color: white;
-    font-size: x-large;
-    background-color: #83C9E7;
-    border: 0;
-
-}
-
-.comment_del_btn:hover {
-    box-shadow: 2px 2px;
+.channel_title>a>img {
+    width: 60px;
+    height: 60px;
+    border-radius: 70%;
+    /* margin-top: 30px; */
 }

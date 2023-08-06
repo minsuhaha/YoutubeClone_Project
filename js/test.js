@@ -21,61 +21,130 @@
 
 function displayVideos(videoIds) {
     const container = document.getElementById('videoContainer'); 
+    const serachParams = window.location.search;
 
-    videoIds.forEach(videoId => {
-        searchYoutube(videoId, container);
-    });
+    if (serachParams) {
+        search(videoIds)
+    } else {
+        videoIds.forEach(videoId => {
+            searchYoutube(videoId, container);
+        });
+    }
+}
+
+async function search(videoIds) {
+    const searchVideo = [];
+
+    for (let i = 0; i < videoIds.length; i++) {
+        const data = await fetch(`https://oreumi.appspot.com/video/getVideoInfo?video_id=${videoIds[i]}`).then((response) => response.json());
+        searchVideo[i] = data
+    }
+
+    const searchParams = window.location.search.split('=')[1]
+    const text = decodeURIComponent(searchParams);
+    let value = search_video.filter((video) => video.video_title.toLowerCase().includes(text.toLowerCase()));
+    let container = document.getElementById('videoContainer');
+
+    // videoContainer의 기존 내용을 제거
+    container.innerHTML = '';
+
+    for (let video of value) {
+        let videoDiv = document.createElement('div');
+        let date = formatDate(video.upload_date);
+
+        fetch(`https://oreumi.appspot.com/channel/getChannelInfo?video_channel=${video.video_channel}`, {method: 'POST'})
+        .then((response) => response.json())
+        .then((data) => {
+            videoDiv.innerHTML = `
+                <article class="Thumbnail_art">
+                    <a href="index_video.html?video_id=${video.video_id}">
+                        <img
+                            class="Thumbnail_img"
+                            src='${video.image_link}'
+                            alt='Video Thumbnail'
+                        >
+                    </a>
+                    <div>
+                        <a href="index_channel.html?channel_name=${encodeURIComponent(video.video_channel)}">
+                            <img 
+                                class="Thumbnail_profile_img"
+                                src="${data.channel_profile}"
+                                alt="Channel Avatar"
+                            >
+                        </a>
+                        <div>
+                            <h3 class="Thumbnail_h3">${video.video_title}</h3>
+                            <a href="index_channel.html?channel_name=${encodeURIComponent(video.video_channel)}">
+                                ${video.video_channel}
+                            </a>
+                            <p>${date} • ${video.views} views.</p>
+                        </div>
+                    </div>
+                </article>
+                `;
+                videoContainer.appendChild(videoDiv);
+            });
+    }
 }
 
 function searchYoutube(searchData, container){
     const apiUrl = `https://oreumi.appspot.com/video/getVideoInfo?video_id=${searchData}`;
 
-    let xhr = new XMLHttpRequest();
-    xhr.onreadystatechange = function(){
-        if (xhr.readyState === XMLHttpRequest.DONE){
-            if (xhr.status === 200){ 
-                let data = JSON.parse(xhr.responseText)
-                if (data.Response === 'False'){
-                    alert('정보를 가져오는데 실패했습니다.')
-                } else{
-                    
-                    // channel_name 담기
-                    let channelName = data.video_channel;
-                    let existingData = JSON.parse(localStorage.getItem(channelName) || '[]');
-                    
-                    let isExist = existingData.some(function(el) {
-                      return el.video_title === data.video_title;
-                    });
+    fetch(apiUrl)
+        .then((response) => response.json())
+        .then((data) => {
+            let channelName = data.video_channel;
+            let existingData = JSON.parse(localStorage.getItem(channelName) || '[]');
+            
+            let isExist = existingData.some(function(el) {
+                return el.video_title === data.video_title;
+            });
 
-                    if (!isExist) {
-                        existingData.push(data);
-                        localStorage.setItem(channelName, JSON.stringify(existingData));
-                    }
-                    
-                    // let videoDiv = '';
-                    let videoDiv = document.createElement('div');
-                    let date = formatDate(data.upload_date);
+            if (!isExist) {
+                existingData.push(data);
+                localStorage.setItem(channelName, JSON.stringify(existingData));
+            }
+            
+            // let videoDiv = '';
+            let videoDiv = document.createElement('div');
+            let date = formatDate(data.upload_date);
+            fetch(`https://oreumi.appspot.com/channel/getChannelInfo?video_channel=${channelName}`, {method: 'POST'})
+                .then((response) => response.json())
+                .then((channelData) => {
                     videoDiv.innerHTML = `
-                        <article class="Thumbnail_art">
-                            <a href="index_video.html?video_id=${searchData}">
-                                <img class="Thumbnail_img" src='${data.image_link}' alt='Video Thumbnail'>
+                    <article class="Thumbnail_art">
+                        <a href="index_video.html?video_id=${searchData}">
+                            <img
+                                class="Thumbnail_img"
+                                src='${data.image_link}'
+                                alt='Video Thumbnail'
+                            >
+                        </a>
+                        <div>
+                            <a href="index_channel.html?channel_name=${encodeURIComponent(data.video_channel)}">
+                                <img 
+                                    class="Thumbnail_profile_img"
+                                    src="${channelData.channel_profile}"
+                                    alt="Channel Avatar"
+                                >
                             </a>
-                            <h3 class="Thumbnail_h3">${data.video_title}</h3>
-                            <p>채널명: <a href="index_channel.html?channel_name=${encodeURIComponent(data.video_channel)}">${data.video_channel}</a></p>
-                            <p>${date} • ${data.views} views.</p>
-                        </article>
+                            <div>
+                                <h3 class="ThumbnailInfo">
+                                    <a  class="Thumbnail_h3" href="index_video.html?video_id=${searchData}">
+                                    ${data.video_title}
+                                    </a>
+                                </h3>
+                                <a class="ThumbnailInfo" href="index_channel.html?channel_name=${encodeURIComponent(data.video_channel)}">
+                                    ${data.video_channel}
+                                </a>
+                                <p class="ThumbnailInfo">${date} • ${data.views} views.</p>
+                            </div>
+                        </div>
+                    </article>
                     `;
                     container.appendChild(videoDiv);
-                    // document.getElementById('InfoTitle').innerHTML = videoDiv
-                }
-            } else {
-                alert('정보를 가져오는데 실패했습니다.');
-            }
-        }
-
-    };
-    xhr.open('GET', apiUrl, true); 
-    xhr.send();
+                });
+        })
 }
 
 let videoIds = [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20]; // 여기에 비디오 id 작성해주시면 됩니다!
