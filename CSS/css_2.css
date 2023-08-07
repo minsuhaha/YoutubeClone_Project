@@ -1,3 +1,4 @@
+
 /* nav바 */
 .navigation {
     position: fixed;
@@ -100,7 +101,7 @@
 
 .ThumbnailInfo {
     color:midnightblue ;
-    font-size: 22px;
+    font-size: 24px;
     margin: 5px 0px 5px 5px;
     font-weight: 600;
 }

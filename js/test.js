@@ -52,11 +52,15 @@ async function search(videoIds) {
                             >
                         </a>
                         <div>
-                            <h3 class="Thumbnail_h3">${video.video_title}</h3>
-                            <a href="index_channel.html?channel_name=${encodeURIComponent(video.video_channel)}">
-                                ${video.video_channel}
-                            </a>
-                            <p>${date} • ${video.views} views.</p>
+                            <h3 class="ThumbnailInfo">
+                                <a  class="Thumbnail_h3" href="index_video.html?video_id=${video.video_id}">
+                                ${video.video_title}
+                                </a>
+                            </h3>
+                    <a class="ThumbnailInfo" href="index_channel.html?channel_name=${encodeURIComponent(video.video_channel)}">
+                        ${video.video_channel}
+                    </a>
+                    <p class="ThumbnailInfo">${date} • ${convertViews(video.views)} views.</p>
                         </div>
                     </div>
                 </article>
@@ -116,7 +120,7 @@ function searchYoutube(searchData, container){
                                 <a class="ThumbnailInfo" href="index_channel.html?channel_name=${encodeURIComponent(data.video_channel)}">
                                     ${data.video_channel}
                                 </a>
-                                <p class="ThumbnailInfo">${date} • ${data.views} views.</p>
+                                <p class="ThumbnailInfo">${date} • ${convertViews(data.views)} views.</p>
                             </div>
                         </div>
                     </article>
@@ -153,3 +157,24 @@ function formatDate(dateString) {
     return formattedDate;
 }
 
+
+function convertViews(views) {
+    if (views >= 100000000) {
+      let converted = (views / 1000000000).toFixed(1);
+      return converted.endsWith(".0")
+        ? converted.slice(0, -2) + "B"
+        : converted + "B";
+    } else if (views >= 1000000) {
+      let converted = (views / 1000000).toFixed(1);
+      return converted.endsWith(".0")
+        ? converted.slice(0, -2) + "M"
+        : converted + "M";
+    } else if (views >= 1000) {
+      let converted = (views / 1000).toFixed(1);
+      return converted.endsWith("")
+        ? converted.slice(0, -2) + "K"
+        : converted + "K";
+    } else {
+      return views.toString();
+    }
+  }
