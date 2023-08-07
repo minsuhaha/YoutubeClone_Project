@@ -1,232 +1,278 @@
-// 페이지가 로드되면 displayVideos 함수를 호출하여 비디오 표시
-window.onload = function () {
-    let urlParams = new URLSearchParams(window.location.search);
-    let videoId = urlParams.get('video_id');
-    displayVideos([videoId]);
-};
+// 처음 화면 로드 시 전체 비디오 리스트 가져오기
+getVideoList().then(createVideoItem);
 
-// 비디오 메인 함수 displayVideo  페이지에 동영상을 표시하는 기능
-function displayVideos(videoId) {
-    const container = document.getElementById('videoContainer');
+// 현재 주소에서 비디오ID 가져오기
+let currentURL = window.location.href;
+let url = new URL(currentURL);
+let videoid = url.searchParams.get("video_id"); //채널명
+// videoId = "12";
 
-    // videoId를 배열 형태로 만들어서 해당 비디오만 크게 표시
-    createVideoItem(videoId, container);
-
-    // 전체 리스트 영상을 표시하기 위해 다른 videoIds를 사용 -> id 0 부터 시작하도록  
-    const otherVideoIds = [0];
-    // 해당 videoId를 제외한 영상들을 옆에 작은 크기로 표시
-    const otherVideoIdsWithoutCurrent = otherVideoIds.filter(id => id !== videoId);
-
-    const container2 = document.getElementById('channelInfo');
-    const container3 = document.getElementById('videoDesc');
-    const container4 = document.getElementById('videoSecond');
-
-    createVideoItem2(container2);
-    createVideoItem3(videoId, container3);
-
-    otherVideoIdsWithoutCurrent.forEach(videoId => {
-
-        createVideoItem4(videoId, container4);
-    });
+// 비디오 리스트 정보
+async function getVideoList() {
+  let response = await fetch("https://oreumi.appspot.com/video/getVideoList");
+  let videoListData = response.json();
+  return videoListData;
 }
 
-
-// 서버에서 비디오 정보를 가져오는 XMLHttpRequest를 만듬
-function createVideoItem(video_id, container) {
-    // XMLHttpRequest 객체 생성
-    let xhr = new XMLHttpRequest();
-    // API 요청 설정
-    let apiUrl = `https://oreumi.appspot.com/video/getVideoInfo?video_id=${video_id}`;
-
-
-    // 응답 처리 설정
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === xhr.DONE && xhr.status === 200) {
-        // 가져온 응답 처리
-        let data = JSON.parse(xhr.responseText);
-        let tapName = document.querySelector('.tapName');
-        tapName.innerHTML = `${data.video_title} - YouTube`
-        // 날짜 포맷팅
-        let date = formatDate(data.upload_date);
-        // 데이터 있는지 확인
-        if (data && data.video_id !== undefined) {
-            let videoDiv = document.createElement('div');
-            videoDiv.innerHTML = `
-            <video class="video" controls autoplay src='${data.video_link}'></video>
-            <div class="info_box">
-                <div class="info_title">${data.video_title}</div>
-                <div class="info_bottom">
-                    <span class="info_view">    
-                        <span>${data.views}</span>
-                        <span>views.</span>
-                        <span style="margin-left:10px;">${date}</span>
-                    </span>
-                    <span class="info_icon">
-                        <button><img src="./Image/Channel/Vector.png"><span>1.7K</span></button>
-                        <button><img src="./Image/Channel/Vector-1.png"><span>632</span></button>
-                        <button><img src="./Image/Channel/Vector-2.png"><span>SHARE</span></button>
-                        <button><img src="./Image/Channel/Vector-3.png"><span>SAVE</span></button>
-                        <button><img src="./Image/Channel/Vector-4.png"></button>
-                    </span>
-                </div>
-            </div>
-        `;
-                // console.log(data.video_link);
-                container.appendChild(videoDiv);
-                // 다음 video_id로 재귀 호출
-                // createVideoItem(video_id + 1);
-            }
-        }
-    };
-    xhr.open('GET', apiUrl, true);
-    // 요청 전송
-    xhr.send();
-}
-
-// async function getVideoInfo() {
-//     let url = `https://oreumi.appspot.com/channel/getChannelInfo`;
-//     let response = await fetch(url);
-//     let videoData = await response.json();
-//     return videoData;
-//     }
-
+// 각 비디오 정보
 async function getVideoInfo(videoId) {
-    const url = `https://oreumi.appspot.com/video/getVideoInfo?video_id=${videoId}`;
-    const response = await fetch(url);
-    const videoData = response.json();
-
-    return videoData;
+  const url = `https://oreumi.appspot.com/video/getVideoInfo?video_id=${videoId}`;
+  let response = await fetch(url);
+  let videoData = response.json();
+  return videoData;
 }
 
-async function getChannelInfo(videoData) {
-    const channelname = videoData.video_channel
-    const url = `https://oreumi.appspot.com/channel/getChannelInfo?video_channel=${channelname}`;
-    const response = await fetch(url, { method: 'POST' })
-    const channelData = response.json();
+// 채널 정보
+async function getChannelInfo(channelName) {
+  let url = `https://oreumi.appspot.com/channel/getChannelInfo`;
 
-    return channelData;
+  let response = await fetch(url, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ video_channel: channelName }),
+  });
+
+  let channelData = await response.json();
+  return channelData;
 }
 
-// "SHOW MORE" 버튼과 함께 비디오 채널 제목 ​​및 설명을 표시
-async function createVideoItem2(container) {
-    let videoData = await getVideoInfo(videoId)
-    let channelData = await getChannelInfo(videoData)
-    let videoDiv2 = document.createElement('div');
-    videoDiv2.innerHTML = `
+// 채널 내 영상정보
+async function getChannelVideo() {
+  let response = await fetch(
+    `https://oreumi.appspot.com/video/getChannelVideo?video_channel=${channelName}`
+  );
+  let videoListData = await response.json();
+  return videoListData;
+}
+
+// 피드 내용 로드
+async function createVideoItem(videoList) {
+  let videoContainer = document.getElementById("videoContainer");
+
+
+  // 현재 비디오 정보 가져오기
+  let currentVideoInfo = await getVideoInfo(videoid);
+//   let tagList = currentVideoInfo.video_tag;
+  let channelName = currentVideoInfo.video_channel;
+  let targetTagList = currentVideoInfo.video_tag; //현재 비디오 태그
+  let targetVideoId = currentVideoInfo.video_id;
+  let date = formatDate(currentVideoInfo.upload_date);
+  let tapName = document.querySelector('.tapName');
+        tapName.innerHTML = `${currentVideoInfo.video_title} - YouTube`
+
+  // 비디오 추가
+  videoContainer.innerHTML = `
+        <video class="video" controls autoplay src='${currentVideoInfo.video_link}'></video>
+        <div class="info_box">
+            <div class="info_title">${currentVideoInfo.video_title}</div>
+            <div class="info_bottom">
+                <span class="info_view">    
+                    <span>${convertViews(currentVideoInfo.views)}</span>
+                    <span>views.</span>
+                    <span style="margin-left:10px;">${date}</span>
+                </span>
+                <span class="info_icon">
+                    <button><img src="./Image/Channel/Vector.png"><span>1.7K</span></button>
+                    <button><img src="./Image/Channel/Vector-1.png"><span>632</span></button>
+                    <button><img src="./Image/Channel/Vector-2.png"><span>SHARE</span></button>
+                    <button><img src="./Image/Channel/Vector-3.png"><span>SAVE</span></button>
+                    <button><img src="./Image/Channel/Vector-4.png"></button>
+                </span>
+            </div>
+        </div>
+        `;
+
+  // 추천 태그
+//   let recoSortButtons = document.getElementById("second_topbox");
+
+//   recoSortButtons.innerHTML += `<button class="selected">${currentVideoInfo.video_channel}</button>`;
+
+//   for (let i = 0; i < tagList.length; i++) {
+//     let tag = tagList[i];
+
+//     recoSortButtons.innerHTML += `
+//             <button>${tag}</button>
+//             `;
+//   }
+
+  let currentChannelInfo = await getChannelInfo(channelName);
+  let currentChannelURL = `./index_channel.html?channelName=${channelName}`;
+  let channelInfoBox = document.getElementById("channelInfo");
+  channelInfoBox.innerHTML = `
     <div class="channel_title">
-        <a href="index_channel.html?channel_name=${encodeURIComponent(channelData.channel_name)}"><img src="${channelData.channel_profile}" alt="Channel Avatar"></a>
+        <a href="index_channel.html?channel_name=${currentChannelURL}"><img src="${currentChannelInfo.channel_profile}" alt="Channel Avatar"></a>
         <div>
-            <span class="channel_name">${channelData.channel_name}</span>
-            <span class="subscribers">구독자 ${channelData.subscribers}명</span>
+            <span class="channel_name">${currentChannelInfo.channel_name}</span>
+            <span class="subscribers">구독자 ${convertViews(currentChannelInfo.subscribers)}명</span>
         </div>
         <button id="subscribe-button">SUBSCRIBES</button>
     </div>
     `;
-    // console.log(data.video_link);
-    container.appendChild(videoDiv2);
-    // 다음 video_id로 재귀 호출
-    // createVideoItem(video_id + 1);
-    // 구독 버튼
     let subs_Btn = document.querySelector('#subscribe-button')
 
-    subs_Btn.addEventListener('click', function (b) {
-        if (subs_Btn.innerText === 'SUBSCRIBES') {
-            subs_Btn.innerText = 'SUBSCRIBED';
-            b.target.style.backgroundColor = 'darkgray';
-        } else {
-            subs_Btn.innerText = 'SUBSCRIBES';
-            b.target.style.backgroundColor = '#cc0000';
-        }
-    });
-}
+    subs_Btn.addEventListener('click', function(b) {
+    if(subs_Btn.innerText === 'SUBSCRIBES'){
+        subs_Btn.innerText = 'SUBSCRIBED';
+        b.target.style.backgroundColor = 'darkgray';
+    } else {
+        subs_Btn.innerText = 'SUBSCRIBES';
+        b.target.style.backgroundColor = '#cc0000';
+    }});
 
+  let channelInfoDownSide = document.getElementById("videoDesc");
+    channelInfoDownSide.innerHTML = `
+    <div class="video_desc">
+        <span>${currentVideoInfo.video_detail}</span>
+        <button class="showmore_btn">SHOW MORE</button>
+    </div>      
+    `;
 
-// "SHOW MORE" 버튼과 함께 비디오 채널 제목 ​​및 설명을 표시
-function createVideoItem3(video_id, container) {
-    // XMLHttpRequest 객체 생성
-    let xhr = new XMLHttpRequest();
-    // API 요청 설정
-    let apiUrl = `https://oreumi.appspot.com/video/getVideoInfo?video_id=${video_id}`;
+  // 각 비디오들 정보 가져오기
+  let videoInfoPromises = videoList.map((video) =>
+    getVideoInfo(video.video_id)
+  );
+  let videoInfoList = await Promise.all(videoInfoPromises);
 
+  // 유사도 측정결과 가져오기
+  async function getSimilarity(firstWord, secondWord) {
+    const openApiURL = "http://aiopen.etri.re.kr:8000/WiseWWN/WordRel";
+    const access_key = "c7f0233c-aa50-4b62-9d20-60731732014c";
 
-    // 응답 처리 설정
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === xhr.DONE && xhr.status === 200) {
-            // 가져온 응답 처리
-            let data = JSON.parse(xhr.responseText);
-            // 데이터 있는지 확인
-            if (data && data.video_id !== undefined) {
-                let videoDiv3 = document.createElement('div');
-                videoDiv3.innerHTML = `
-            <div class="video_desc">
-                        <span>${data.video_detail}</span>
-                        <button class="showmore_btn">SHOW MORE</button>
-            </div>      
-            `;
-                // console.log(data.video_link);
-                container.appendChild(videoDiv3);
-                // 다음 video_id로 재귀 호출
-                // createVideoItem(video_id + 1);
-            }
-        }
+    let requestJson = {
+      argument: {
+        first_word: firstWord,
+        second_word: secondWord,
+      },
     };
-    xhr.open('GET', apiUrl, true);
-    // 요청 전송
-    xhr.send();
-}
 
-//     // 동영상 제목, 채널명, 조회수, 업로드 날짜가 포함된 작은 동영상 썸네일을 나타내는 div 요소를 생성하고 추가
-function createVideoItem4(video_id, container) {
-    // XMLHttpRequest 객체 생성
-    let xhr = new XMLHttpRequest();
-    // API 요청 설정
-    let apiUrl = `https://oreumi.appspot.com/video/getVideoInfo?video_id=${video_id}`;
+    let response = await fetch(openApiURL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: access_key,
+      },
+      body: JSON.stringify(requestJson),
+    });
+    let data = await response.json();
+    return data.return_object["WWN WordRelInfo"].WordRelInfo.Distance;
+  }
 
+  async function calculateVideoSimilarities(videoList, targetTagList) {
+    let filteredVideoList = [];
 
-    // 응답 처리 설정
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === xhr.DONE && xhr.status === 200) {
-            // 가져온 응답 처리
-            let data = JSON.parse(xhr.responseText);
-            // 날짜 포맷팅
-            let date = formatDate(data.upload_date);
-            // 데이터 있는지 확인
-            if (data && data.video_id !== undefined) {
-                let videoDiv4 = document.createElement('div');
-                videoDiv4.innerHTML = `
-            <div class="second_vd">
-            <button type="button" class="second_vd_vdbox">
-                <a href ="index_video.html?video_id=${data.video_id}">
-                    <img class="second_vd_vd" src="${data.image_link}">
-                </a>
-            </button>
+    for (let video of videoList) {
+      let totalDistance = 0;
+      let promises = [];
+
+      for (let videoTag of video.video_tag) {
+        for (let targetTag of targetTagList) {
+          if (videoTag == targetTag) {
+            promises.push(0);
+          } else {
+            promises.push(getSimilarity(videoTag, targetTag));
+          }
+        }
+      }
+
+      let distances = await Promise.all(promises);
+
+      for (let distance of distances) {
+        if (distance !== -1) {
+          totalDistance += distance;
+        }
+      }
+
+      if (totalDistance !== 0) {
+        if (targetVideoId !== video.video_id) {
+          filteredVideoList.push({ ...video, score: totalDistance });
+        }
+      }
+    }
+
+    filteredVideoList.sort((a, b) => a.score - b.score);
+
+    filteredVideoList = filteredVideoList.map((video) => ({
+      ...video,
+      score: 0,
+    }));
+    console.log(filteredVideoList);
+    return filteredVideoList;
+  }
+
+  let filteredVideoList = await calculateVideoSimilarities(
+    videoInfoList,
+    targetTagList
+  );
+
+  // 비디오리스트에 추가
+  let videoListDiv = document.getElementById("videoSecond");
+  let videoListItems = "";
+    videoListItems += `
+            <div class="second_topbox">
+                <div class="second_topmenu">All</div>
+                <div class="second_topmenu">토끼</div>
+                <div class="second_topmenu">AI</div>
+                <div class="second_topmenu">블록체인</div>
+            </div>
+            `;
+  for (let i = 0; i < 5; i++) {
+    let video = filteredVideoList[i];
+    // let channelName = video.video_channel;
+    let date = formatDate(video.upload_date);
+    // let videoURL = `./index_video.html?id=${i}"`;
+    // let channelURL = `./index_channel.html?channelName=${channelName}`;
+    videoListItems += `
+        <div class="second_vd">
+        <button type="button" class="second_vd_vdbox">
+            <a href ="index_video.html?video_id=${video.video_id}">
+                <img class="second_vd_vd" src="${video.image_link}">
+            </a>
+        </button>
             <div class="second_vd_infobox">
-                <div>${data.video_title}
+                <div>${video.video_title}
                 </div>
-                <div>${data.video_channel}
+                <div>${video.video_channel}
                 </div>
-                <div>${data.views} views. ${date}
+                <div>
+                    조회수 ${convertViews(video.views)}  •  ${date}
                 </div>
             </div>
         </div>
-            `;
-                // console.log(data.video_link);
-                container.appendChild(videoDiv4);
-                // 다음 video_id로 재귀 호출
-                createVideoItem4(video_id + 1, container);
-            }
-        }
-    };
-    xhr.open('GET', apiUrl, true);
-    // 요청 전송
-    xhr.send();
+    `;
+  }
+
+  videoListDiv.innerHTML = videoListItems;
 }
 
-// 댓글 입력란에 연결된 "취소" 버튼을 클릭했을 때 호출되는 함수
-function cancelComment() {
-    const commentInput = document.getElementById('commentInput')
-    commentInput.value = '';
+// 단위 변환 함수
+function convertViews(views) {
+  if (views >= 10000000) {
+    let converted = (views / 10000000).toFixed(1);
+    return converted.endsWith(".0")
+      ? converted.slice(0, -2) + "천만"
+      : converted + "천만";
+  } else if (views >= 1000000) {
+    let converted = (views / 1000000).toFixed(1);
+    return converted.endsWith(".0")
+      ? converted.slice(0, -2) + "백만"
+      : converted + "백만";
+  } else if (views >= 10000) {
+    let converted = (views / 10000).toFixed(1);
+    return converted.endsWith(".0")
+      ? converted.slice(0, -2) + "만"
+      : converted + "만";
+  } else if (views >= 1000) {
+    let converted = (views / 1000).toFixed(1);
+    return converted.endsWith(".0")
+      ? converted.slice(0, -2) + "천"
+      : converted + "천";
+  } else {
+    return views.toString();
+  }
 }
+
 
 function formatDate(dateString) {
     const uploadDate = new Date(dateString);
