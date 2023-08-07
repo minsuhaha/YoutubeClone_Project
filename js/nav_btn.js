@@ -2,7 +2,7 @@ const navigation = document.querySelector('.navigation');
 const itemsContainer = document.getElementById('itemsContainer');
 const scrollButtonLeft = document.getElementById('reverseScrollButton');
 const scrollButtonRight = document.getElementById('xscroll');
-const scrollStep = itemsContainer.querySelector('.item').clientWidth + 21; // 아이템 너비로 스크롤 양 설정
+const scrollStep = itemsContainer.querySelector('.item').clientWidth + 28; // 아이템 너비로 스크롤 양 설정
 
 function checkScrollButtons() {
     const isOverflowing = itemsContainer.scrollWidth > itemsContainer.clientWidth;
