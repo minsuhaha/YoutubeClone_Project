@@ -1,3 +1,4 @@
+
 /* nav바 */
 .navigation {
     position: fixed;
@@ -121,6 +122,10 @@
     margin: 0;
     color: black;
     font-size: 27px;
+}
+
+body {
+    justify-content: flex-start;
 }
 
 main {
