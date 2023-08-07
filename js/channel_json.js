@@ -25,24 +25,29 @@ window.addEventListener('DOMContentLoaded', async (event) => {
             </div>
             <div class="Channel-Profile-Name">
                 <span>${channelInfo.channel_name}</span>
-                <span>${channelInfo.subscribers} subscribers</span>
+                <span>${convertViews(channelInfo.subscribers)} subscribers</span>
             </div>
             </div>
             <button id="subscribe-button">SUBSCRIBES</button>
         </div>
     `;
-
+   
     let subs_Btn = document.querySelector('#subscribe-button');
-    const subscription = document.querySelector('.subTitle');
-
+    const subscription = document.querySelector('.subscribe');
+    subscription.innerHTML =`
+                <img src="${channelInfo.channel_profile}">
+                <a href="index_channel.html?channel_name=${channelInfo.channel_name}">${channelInfo.channel_name}</a>
+            `;
+    subscription.style.display = 'none';
     subs_Btn.addEventListener('click', function(b) {
     if(subs_Btn.innerText === 'SUBSCRIBES'){
         subs_Btn.innerText = 'SUBSCRIBED';
         b.target.style.backgroundColor = 'darkgray';
-        subscription
+        subscription.style.display = 'block';
     } else {
         subs_Btn.innerText = 'SUBSCRIBES';
         b.target.style.backgroundColor = '#cc0000';
+        subscription.style.display = 'none';
     }});
     
     // 대표 영상 및 설명 찾기
@@ -56,7 +61,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         </div>
         <div class="big__video__info">
             <h5>${representativeVideo.video_title}</h5>
-            <p>${representativeVideo.views} views . ${representativeVideo.upload_date}</p>
+            <p>${convertViews(representativeVideo.views)} views . ${representativeVideo.upload_date}</p>
             <p>${representativeVideo.video_detail}</p>
         </div>
     `;
@@ -98,7 +103,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
                                 <a class="ThumbnailInfo" href="index_channel.html?channel_name=${encodeURIComponent(video.video_channel)}">
                                     ${video.video_channel}
                                 </a>
-                                <p class="ThumbnailInfo">${date} • ${video.views} views.</p>
+                                <p class="ThumbnailInfo">${date} • ${convertViews(video.views)} views.</p>
                             </div>
                         </div>
                     </article>
@@ -160,127 +165,42 @@ function formatDate(dateString) {
     return formattedDate;
 }
 
+function convertViews(views) {
+    if (views >= 100000000) {
+      let converted = (views / 1000000000).toFixed(1);
+      return converted.endsWith(".0")
+        ? converted.slice(0, -2) + "B"
+        : converted + "B";
+    } else if (views >= 1000000) {
+      let converted = (views / 1000000).toFixed(1);
+      return converted.endsWith(".0")
+        ? converted.slice(0, -2) + "M"
+        : converted + "M";
+    } else if (views >= 1000) {
+      let converted = (views / 1000).toFixed(1);
+      return converted.endsWith("")
+        ? converted.slice(0, -2) + "K"
+        : converted + "K";
+    } else {
+      return views.toString();
+    }
+  };
 
+let subsAdd = false;
 
-// 채널 프로필 불러오기
-// window.addEventListener('DOMContentLoaded', (event) => {
-//     let urlParams = new URLSearchParams(window.location.search);
-//     let channelName = urlParams.get('channel_name');
-    
-//     getChannelInfo(channelName, document.getElementById('videoChannel'));
-// });
+function subscribe() {
+        const subsName = document.querySelector('.subTitle>div');
+        subsAdd = !subsAdd;
+        if (subsAdd) {
+            subsName.innerHTML =`
+            <div>
+                <img src="${channelInfo.channel_profile}">
+                <a href="#">${channelInfo.channel_name}</a>
+            </div>
+            `;
+        } else {
+            subsName.style.display = 'none';
+        }
+    }
 
-
-
-
-
-// // 채널 정보를 받아오는 함수
-// function getChannelInfo(channel_name, container) {
-//     let xhr = new XMLRequest();
-//     let apiUrl = "https://oreumi.appspot.com/channel/getChannelInfo";
-//     let jsondata = { "channel_name": channel_name };
-
-//     xhr.onreadystatechange = function () {
-//         if (xhr.readyState === xhr.DONE && xhr.status === 200) {
-//             let data = JSON.parse(xhr.responseText);
-//             if (data && data.channel_name !== undefined) {
-//                 let videoDiv = document.createElement('div');
-//                 videoDiv.innerHTML = `
-//                     <p><img src="${data.channel_banner}" alt="Channel banner"></p>
-//                     <p>${data.channel_name}</p>
-//                     <p>${data.subscribers}</p>
-//                     <p><img src="${data.channel_profile}" alt="Channel profile"></p>
-//                 `;
-
-//                 container.appendChild(videoDiv);
-//             }
-//         }
-//     };
-
-//     xhr.open("POST", apiUrl, true);
-//     xhr.setRequestHeader("Content-Type", "application/json");
-//     xhr.send(JSON.stringify(jsondata));
-// }
-
-// // 채널 프로필 불러오기
-// window.addEventListener('DOMContentLoaded', (event) => {
-//     let urlParams = new URLSearchParams(window.location.search);
-//     let channelName = urlParams.get('channel_name');
-    
-//     getChannelInfo(channelName, document.getElementById('videoChannel'));
-
-//     // Get videos for this channel
-//     let apiUrl = "https://oreumi.appspot.com/channel/getChannelInfo";  // Your actual API URL
-//     let jsondata = { "channel_name": channelName };
-    
-//     let xhr = new XMLHttpRequest();
-//     xhr.onreadystatechange = function () {
-//         if (xhr.readyState === xhr.DONE && xhr.status === 200) {
-//             let data = JSON.parse(xhr.responseText);
-//             if (data && data.channel_name !== undefined) {
-//                 displayVideos(data.channel_name);
-//             }
-//         }
-//     };
-
-//     xhr.open("POST", apiUrl, true);
-//     xhr.setRequestHeader("Content-Type", "application/json");
-//     xhr.send(JSON.stringify(jsondata));
-// });
-
-
-
-// 이전 코드 
-
-// 채널 프로필
-// function displayVideos(videoIds) {
-//     const container = document.getElementById('videoChannel');
-
-//     videoIds.forEach(videoId => {
-//         getChannelInfo(videoId, container);
-//     });
-// }
-// function getChannelInfo(video_channel, container) {
-//     // XMLHttpRequest 객체 생성
-//     let xhr = new XMLHttpRequest();
-//     // Url은 get일때와 달리 ? 뒤는 생략
-//     let apiUrl = "https://oreumi.appspot.com/channel/getChannelInfo";
-
-//     // 요청할 데이터
-//     let jsondata = {
-//         "video_channel": video_channel
-//     }
-//     // 응답 처리 설정
-//     xhr.onreadystatechange = function () {
-//         if (xhr.readyState === xhr.DONE && xhr.status === 200) {
-//             // 가져온 응답 처리
-//             let data = JSON.parse(xhr.responseText);
-//             // 데이터 있는지 확인
-//             if (data && data.channel_name !== undefined) {
-//                 let videoDiv = document.createElement('div');
-//                 // html 작성 부분
-//                 videoDiv.innerHTML = `
-//                 <p><img src="${data.channel_banner}"></p>
-//                 <p>${data.channel_name}</p>
-//                 <p>${data.subscribers}</p>
-//                 <p><img src="${data.channel_profile}"></p>
-//             `; 
-//                 // console.log(data.video_link);
-//                 container.appendChild(videoDiv);
-//                 // 다음 video_id로 재귀 호출
-//                 // createVideoItem(video_id + 1);
-//             }
-//         }
-//     };
-
-// // post 방식으로 정보 불러오기
-//     xhr.open("POST", apiUrl, true);
-//     xhr.setRequestHeader("Content-Type", "application/json");
-//     xhr.send(JSON.stringify(jsondata));
-// }
-
-// // id = 0부터 아이템 불러오기
-// window.onload = function(){
-//     let videoIds = ['oreumi'];
-//     displayVideos(videoIds);
-// };
+document.getElementById('subscribe-button').addEventListener('click', subscribe);

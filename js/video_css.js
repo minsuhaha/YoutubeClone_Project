@@ -98,28 +98,37 @@ async function createVideoItem(videoList) {
 //   }
 
   let currentChannelInfo = await getChannelInfo(channelName);
-  let currentChannelURL = `./index_channel.html?channelName=${channelName}`;
+  // let currentChannelURL = `/index_channel.html?channelName=${channelName}`;
   let channelInfoBox = document.getElementById("channelInfo");
   channelInfoBox.innerHTML = `
     <div class="channel_title">
-        <a href="index_channel.html?channel_name=${currentChannelURL}"><img src="${currentChannelInfo.channel_profile}" alt="Channel Avatar"></a>
+        <a href="index_channel.html?channel_name=${currentChannelInfo.channel_name}"><img src="${currentChannelInfo.channel_profile}" alt="Channel Avatar"></a>
         <div>
             <span class="channel_name">${currentChannelInfo.channel_name}</span>
-            <span class="subscribers">구독자 ${convertViews(currentChannelInfo.subscribers)}명</span>
+            <span class="subscribers">${convertViews(currentChannelInfo.subscribers)} Subscribers </span>
         </div>
         <button id="subscribe-button">SUBSCRIBES</button>
     </div>
     `;
-    let subs_Btn = document.querySelector('#subscribe-button')
 
+    let subs_Btn = document.querySelector('#subscribe-button');
+    const subscription = document.querySelector('.subscribe');
+    subscription.innerHTML =`
+                <img src="${currentChannelInfo.channel_profile}">
+                <a href="index_channel.html?channel_name=${currentChannelInfo.channel_name}">${currentChannelInfo.channel_name}</a>
+            `;
+    subscription.style.display = 'none';
     subs_Btn.addEventListener('click', function(b) {
     if(subs_Btn.innerText === 'SUBSCRIBES'){
         subs_Btn.innerText = 'SUBSCRIBED';
         b.target.style.backgroundColor = 'darkgray';
+        subscription.style.display = 'block';
     } else {
         subs_Btn.innerText = 'SUBSCRIBES';
         b.target.style.backgroundColor = '#cc0000';
+        subscription.style.display = 'none';
     }});
+    
 
   let channelInfoDownSide = document.getElementById("videoDesc");
     channelInfoDownSide.innerHTML = `
@@ -231,12 +240,18 @@ async function createVideoItem(videoList) {
             </a>
         </button>
             <div class="second_vd_infobox">
-                <div>${video.video_title}
-                </div>
-                <div>${video.video_channel}
+                <div>
+                  <a href ="index_video.html?video_id=${video.video_id}">
+                  ${video.video_title}
+                  </a>
                 </div>
                 <div>
-                    조회수 ${convertViews(video.views)}  •  ${date}
+                  <a href ="index_channel.html?channel_name=${video.video_channel}">
+                  ${video.video_channel}
+                  </a>
+                </div>
+                <div>
+                  ${convertViews(video.views)} views  •  ${date}
                 </div>
             </div>
         </div>
@@ -248,30 +263,25 @@ async function createVideoItem(videoList) {
 
 // 단위 변환 함수
 function convertViews(views) {
-  if (views >= 10000000) {
-    let converted = (views / 10000000).toFixed(1);
+  if (views >= 100000000) {
+    let converted = (views / 1000000000).toFixed(1);
     return converted.endsWith(".0")
-      ? converted.slice(0, -2) + "천만"
-      : converted + "천만";
+      ? converted.slice(0, -2) + "B"
+      : converted + "B";
   } else if (views >= 1000000) {
     let converted = (views / 1000000).toFixed(1);
     return converted.endsWith(".0")
-      ? converted.slice(0, -2) + "백만"
-      : converted + "백만";
-  } else if (views >= 10000) {
-    let converted = (views / 10000).toFixed(1);
-    return converted.endsWith(".0")
-      ? converted.slice(0, -2) + "만"
-      : converted + "만";
+      ? converted.slice(0, -2) + "M"
+      : converted + "M";
   } else if (views >= 1000) {
     let converted = (views / 1000).toFixed(1);
-    return converted.endsWith(".0")
-      ? converted.slice(0, -2) + "천"
-      : converted + "천";
+    return converted.endsWith("")
+      ? converted.slice(0, -2) + "K"
+      : converted + "K";
   } else {
     return views.toString();
   }
-}
+};
 
 
 function formatDate(dateString) {

@@ -1,3 +1,698 @@
+@font-face {
+    font-family: 'iceJaram-Rg';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2307-2@1.0/iceJaram-Rg.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    /* font-family: sans-serif; */
+    font-family: iceJaram-Rg;
+    font-size: x-large;
+    background-color: #83C9E7;
+    /* background-color: #212121; */
+    overflow-x: auto;
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    margin: 0;
+    justify-content: flex-start;
+}
+
+/* 클래스나 아이디는 나중에 받으셔서 쓰시면될겁니다 */
+
+header {
+    position: fixed;
+    display: flex;
+    width: 100%;
+    height: 56px;
+    flex-shrink: 0;
+    background: var(--background-color, #4b89dc);
+    top: 0;
+    left: 0;
+    /* 스크롤시 헤더는 상단위에 고정되어있는 상태에서 헤더 밑으로 스크롤*/
+    z-index: 9999
+        /* 추가 */
+}
+
+a {
+    text-decoration-line: none;
+}
+
+/* profile part */
+
+.profile_main {
+    display: flex;
+    width: 200px;
+    height: 48px;
+    margin: 8px;
+    justify-content: right;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    margin-left: 25%;
+    position: relative;
+    /* border: 1px solid grey; */
+}
+
+.profile_main>button {
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    position: relative;
+}
+
+.profile_box {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    padding: 8px;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0px;
+    /* border: 1px solid grey; */
+}
+
+/* yt logo part */
+/* yt logo 전체 부분 */
+.yt_button {
+    display: inline-flex;
+    padding-right: 9px;
+    align-items: center;
+    width: 160px;
+    height: 56px;
+    margin-left: 16px;
+}
+
+/* 유튜브 로고부분 */
+.yt_logo {
+    display: flex;
+    padding: 18px 14px 18px 16px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    width: 90px;
+    /* border: 1px solid white; */
+}
+
+/* 햄버거 그림부분 */
+.yt_icon {
+    padding: 8px;
+    margin: 8px;
+    margin-right: 0px;
+    /* border: 1px solid white; */
+}
+
+/* search box */
+/* 검색바 전체 부분 */
+.search_box_area {
+    display: flex;
+    width: 470px;
+    height: 40px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 349px;
+    gap: 1px;
+    flex-shrink: 0;
+    margin-top: 8px;
+    margin-right: 60px;
+    /* border: 1px solid white; */
+
+}
+
+/* 검색창 부분 */
+.search_box {
+    width: 362px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid #303030;
+    border-radius: 2px 0px 0px 2px;
+    background: #121212;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: black;
+    border-radius: 10px;
+    background-color: #83C9E7;
+    padding-left: 5px;
+    font-family: iceJaram-Rg;
+}
+
+.search_box::placeholder {
+    font-family: iceJaram-Rg;
+    font-size: 25px;
+    color: black;
+}
+
+/* 돋보기 모양 안쪽 부분 */
+.search_box_icon {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    padding: 6px 13px;
+    justify-content: center;
+    align-items: center;
+    background: #303030;
+    /* border: 1px solid white; */
+}
+
+/* 돋보기 모양 바깥부분 */
+#search_box_btn {
+    display: flex;
+    width: 50px;
+    height: 36px;
+    padding: 3px 7px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 1px solid var(--border-color, #303030);
+    background: var(--border-color, #303030);
+}
+
+/* 음성검색 부분 */
+.voice_box {
+    display: flex;
+    padding: 8px;
+    align-items: center;
+    gap: 10px;
+}
+
+/* side bar */
+/* 사이드바 전체 부분 */
+.sidebar {
+    position: fixed;
+    top: 56px;
+    display: flex;
+    width: 240px;
+    height: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-shrink: 0;
+    background-color: #4b89dc;
+    overflow-y: auto;
+    left: 0;
+    transition: font-size 0.4s ease, width 0.4s ease;
+    /* 추가 */
+
+}
+
+
+/* sidebar top 1,2 내용이 같아서 통합함. */
+
+/* 사이드바 한 파트 전체 */
+.sidebar_top {
+    display: flex;
+    padding: 12px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 240px;
+    /* justify-content: flex-start; */
+    border-bottom: 1px solid #1263CE;
+    /* border: 1px solid white; */
+
+    justify-content: center;
+}
+
+/* 사이드바 아이콘 부분 */
+.sidebar_top>div {
+    display: flex;
+    padding: 8px 8px 8px 24px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    /* border: 1px solid white; */
+}
+
+
+/* 사이드바 아이콘 뒤에 이름 부분 */
+.sidebar>div>div>a {
+    color: white;
+    width: 144px;
+    height: 16px;
+    padding: 4px 0px;
+}
+
+
+/* sub 부분 */
+.sidebarSub {
+    display: flex;
+    padding: 12px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    /* border: 1px solid white; */
+    gap: 12px;
+    width: 240px;
+    justify-content: center;
+    border-bottom: 1px solid #1263CE;
+}
+
+.sidebarSub_del{
+    border: 0;
+}
+
+/* sub 아이콘 부분 */
+.sidebarSub>div {
+    display: flex;
+    padding: 8px 8px 8px 24px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    /* border: 1px solid white; */
+}
+
+.sidebarSub>div>img {
+    width: 25px;
+    height:25px;
+    border-radius: 70px;
+}
+
+/* sub 이름 부분 */
+
+
+/* sidebarMore 부분 */
+.sidebarMore {
+    display: flex;
+    padding: 12px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    /* border: 1px solid white; */
+    width: 224px;
+    justify-content: center;
+
+}
+
+/* sidebarMore 아이콘 부분 */
+.sidebarMore>div {
+    display: flex;
+    padding: 8px 8px 8px 24px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    /* border: 1px solid white; */
+}
+
+
+/* sidebarMore 이름 부분 */
+
+
+.subTitle {
+    display: flex;
+    width: 134px;
+    height: 32px;
+    padding-right: 0px;
+    align-items: center;
+    
+}
+
+.subTitle>a {
+    display: flex;
+    padding: 8px 10px;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--gray-color, #AAA);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+/* sidebar_hidden 부분 */
+.sidebarMore .sidebar_hidden {
+    display: none;
+    padding: 12px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    /* border: 1px solid white; */
+    width: 224px;
+    justify-content: center;
+    padding-left: 2px;
+}
+
+.hidden_menu {
+    display: none;
+}
+
+/* sidebar_hidden 아이콘 부분 */
+.sidebar_hidden>div {
+    display: flex;
+    padding: 8px 8px 8px 24px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+/* sidebar Footer 부분*/
+.sidebarFooter {
+    display: flex;
+    padding: 12px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 224px;
+    justify-content: center;
+}
+
+/* /-------------------------- 햄버거 버튼 (aside 크기 변경)--------------------------------------/ */
+.sidebarHidden {
+    width: 100px;
+    font-size: 15px;
+    transition: font-size 0.4s ease, width 0.4s ease;
+    
+}
+/*  */
+.sidebarHidden>div>div {
+    max-height: 40px;
+
+}
+
+.sidebarHidden>div>div>a {
+    margin: 2px;
+    padding-top: 1px;
+    
+    display: flex;
+    flex-direction: column;
+    /* 사이드바가 숨겨질 때 요소들을 세로로 배치 */
+    align-items: flex-start;
+    /* / 요소들을 왼쪽 정렬 / */
+}
+
+#hamburger {
+    border: none;
+    /* / 버튼의 기본 테두리 제거 / */
+    background-color: transparent;
+    /* / 배경색을 투명으로 설정 / */
+    border-radius: 50%;
+    /* / 버튼을 동그랗게 만듭니다. / */
+    padding: 8px;
+    /* / 원하는 크기로 버튼 크기 조절 / */
+    cursor: pointer;
+    /* / 마우스를 올렸을 때 커서 모양 변경 / */
+}
+
+#hamburger:hover {
+    background-color: #bebcbcb7;
+    /* / 마우스를 올렸을 때 버튼 색상 변경 / */
+}
+
+@media(max-width:1500px) {
+    .profile_main {
+        margin-left: 10px;
+    }
+}
+
+
+@media (min-width:800px) and (max-width:1000px) {
+    .search_box_area {
+        margin-left: 100px;
+    }
+
+    .search_box {
+        width: 180px;
+    }
+}
+
+@media(max-width:799px) {
+    .search_box_area {
+        display: none;
+    }
+
+    .profile_main {
+        margin-left: 25%;
+    }
+}
+
+#yt_logo:hover::before {
+    content: "YouTubeHome";
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f0f0f0;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+#apps:hover::before {
+    content: "test";
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f0f0f0;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+#create_btn:hover::before {
+    content: "create";
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f0f0f0;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+
+#alarm_btn:hover::before {
+    content: "alarm";
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f0f0f0;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+#profile_btn:hover::before {
+    content: "profile";
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f0f0f0;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.hiddenMenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: -36px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 8px;
+}
+
+.hiddenMenu:nth-child(4) {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 8px;
+}
+
+.hiddenMenu:nth-child(6) {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 51px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 8px;
+}
+
+.hiddenMenu:nth-child(8) {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 102px;
+    background-color: white;
+    border: 1px solid black;
+    padding: 8px;
+}
+
+.hiddenUl {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.hiddenA {
+    margin-bottom: 5px;
+    display: block;
+}
+
+.hiddenMenu.showMenu {
+    display: block;
+    /* showMenu 클래스가 적용되면 보이도록 설정 */
+}
+
+.profile_user {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0px;
+    border-radius: 50%;
+}
+
+/* nav바 */
+.navigation {
+    position: fixed;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    top: 56px;
+    /* header 아래에 위치하도록 설정 */
+    background-color: #44ADDA;
+    width: 100%;
+    height: 60px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 5px;
+    color: #fff;
+    left: 240px;
+    /* border-bottom: 1px solid #303030; */
+    /* 변경: 1px 1px solid */
+    overflow-x: hidden;
+    transition: left 0.4s ease;
+}
+
+/*  */
+.navbarLonger {
+    left: 100px;
+    transition: left 0.4s ease;
+}
+
+.items {
+    overflow-x: hidden;
+    white-space: nowrap;
+    /* 변경: overflow-x를 hidden에서 visible로 수정 */
+    transition: transform 0.3s ease;
+    /* 추가: 스크롤 시 애니메이션 효과 */
+    width: 420px;
+}
+
+.items:hover {
+    overflow-x: auto;
+}
+
+.items::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll {
+    display: block;
+    /* 스크롤 버튼 스타일 설정 */
+}
+
+/* nav 바 item */
+.item {
+    width: auto;
+    height: 40px;
+    border-radius: 45%;
+    background-color: #1263CE;
+    display: inline-block;
+    text-align: center;
+    line-height: 40px;
+    cursor: pointer;
+    margin: 0 5px;
+    margin-right: 10px;
+    color: #fff;
+}
+
+.item>a {
+    display: block;
+    margin: 10px;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    text-decoration: none;
+}
+
+
+/* 비디오 썸네일 */
+.Thumbnail {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin-top: 140px;
+    margin-left: 40px;
+    flex: 1;
+    color: black;
+    transition: left 0.3s ease;
+}
+
+.Thumbnail_art {
+    width: 300px;
+    height: 360px;
+    /* border: 1px solid #ccc; */
+    border-radius: 4px;
+    /* padding: 30px; */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.Thumbnail_art>div {
+    display: flex;
+    flex-direction: row;
+}
+
+.ThumbnailInfo {
+    color:midnightblue ;
+    font-size: 24px;
+    margin: 5px 0px 5px 5px;
+    font-weight: 600;
+}
+
+.Thumbnail_img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.Thumbnail_profile_img {
+    width: 50px;
+    height: 50px;
+    border-radius: 70%;
+    margin: 10px;
+}
+
+.Thumbnail_h3 {
+    margin: 0;
+    color: black;
+    font-size: 27px;
+}
+
+main {
+    display: flex;
+    gap: 20px;
+}
+
+.main_box {
+    margin-left: 240px;
+    transition: margin-left 0.4s ease;
+}
+
+.ThumbnailWider {
+    margin-left: 100px;
+    transition: margin-left 0.4s ease; 
+}
+
 .Channel {
     display: flex;
     flex-direction: column;
@@ -85,13 +780,13 @@
 }
 
 .Channel-Profile-Name span:nth-child(1) {
-    font-size: 30px;
+    font-size: 37px;
     /* 적당한 크기로 조정 */
     font-weight: bold;
 }
 
 .Channel-Profile-Name span:nth-child(2) {
-    font-size: 15px;
+    font-size: 23px;
     /* 적당한 크기로 조정 */
     font-weight: normal;
 }
@@ -114,6 +809,21 @@
     font-size: 14px; 
     font-weight: 700;
  }
+
+ /* .subscribe>div {
+    display: flex;
+    padding: 8px 8px 8px 24px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+ }
+
+ .subscribe>div>img {
+    width: 30px;
+    height: 30px;
+    border-radius: 70px;
+ } */
 
 /* ChannelToolbar 채널페잊 탑 메뉴 바 부분 */
 .ChannelToolbar {
