@@ -137,7 +137,7 @@ async function createVideoItem(videoList) {
 
   // 유사도 측정결과 가져오기
   async function getSimilarity(firstWord, secondWord) {
-    const openApiURL = "https://aiopen.etri.re.kr:8000/WiseWWN/WordRel";
+    const openApiURL = "http://aiopen.etri.re.kr:8000/WiseWWN/WordRel";
     const access_key = "c7f0233c-aa50-4b62-9d20-60731732014c";
 
     let requestJson = {
