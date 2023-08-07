@@ -14,7 +14,7 @@ body {
     margin-top: 54px;
     /* margin-left: 220px; */
     /* padding-left: 20px; */
-    width: 70%;
+    width: 640px;
     color: black;
     font-weight: 600;
     font-size: x-large;
@@ -82,7 +82,7 @@ body {
     width: 100%;
     height: 16px;
     padding: 12px 0px;
-    font-size: x-large;
+    font-size: large;
     gap: 5px;
 
 }
@@ -193,7 +193,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     margin-left: 15px;
-    margin-right: 70%;
+    margin-right: 40%;
 }
 
 /* .channel_title>button {
@@ -244,11 +244,13 @@ body {
     background-color: transparent;
     cursor: pointer;
     padding-right: 50px;
+    
 }
 
 .channel_btn>img {
     width: 40px;
     height: 40px;
+    border-radius: 50%;
 }
 
 .channel_name {
@@ -450,7 +452,7 @@ body {
 
 .second_vd_infobox {
     display: flex;
-    width: auto;
+    width: 400px;
     height: 94px;
     padding: 5px 5px 0px 0px;
     flex-direction: column;
@@ -470,12 +472,14 @@ body {
     padding: 8px 12px;
     margin: 5px;
     flex-direction: column;
-    align-items: flex-start;
+    align-items:center;
     gap: 10px;
     border-radius: 32px;
     color: white;
     background: #687CE1;
     cursor: pointer;
+    width: 50px;
+    font-size: 20px;
 }
 
 .second_topmenu:hover {
@@ -497,20 +501,23 @@ body {
 }
 
 .comment_profile_img {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
     margin-right: 10px;
     margin-left: 10px;
+    border-radius: 50%;
 }
 
 .comment_username {
-    font-weight: 1700;
-    color: rgb(247, 242, 1);
+    font-weight: 700;
+    color: black;
+    font-size: 25px;
 }
 
 .comment-output {
     color: black;
-    font-size: 35px;
+    font-size: 25px;
+    font-weight: 300;
 }
 
 #edit_btn {
