@@ -5,12 +5,16 @@ function toggleSidebar() {
     sidebarHidden = !sidebarHidden;//버튼 눌러서 숨김으로 반전
     const sidebar = document.querySelector('.sidebar');
     const channel = document.querySelector('.Channel');
+    const sidebarsub = document.querySelector('.sidebarSub')
+    
     if (sidebarHidden) {
         sidebar.classList.add('sidebarHidden');
         channel.classList.add('channelLonger');
+        sidebarsub.classList.add('sidebarSub_del');
     } else {
         sidebar.classList.remove('sidebarHidden');
         channel.classList.remove('channelLonger');
+        sidebarsub.classList.remove('sidebarSub_del');
     }
 
 

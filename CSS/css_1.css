@@ -251,6 +251,7 @@ a {
     background-color: #4b89dc;
     overflow-y: auto;
     left: 0;
+    transition: font-size 0.4s ease, width 0.4s ease;
     /* 추가 */
 
 }
@@ -321,6 +322,10 @@ a {
     /* border: 1px solid white; */
 }
 
+.sidebarSub>div>img {
+    border-radius: 70px;
+}
+
 /* sub 이름 부분 */
 
 
@@ -384,8 +389,12 @@ a {
     padding-left: 2px;
 }
 
+.hidden_menu {
+    display: none;
+}
+
 /* sidebar_hidden 아이콘 부분 */
-.sidebarMore .sidebar_hidden>div {
+.sidebar_hidden>div {
     display: flex;
     padding: 8px 8px 8px 24px;
     flex-direction: row;

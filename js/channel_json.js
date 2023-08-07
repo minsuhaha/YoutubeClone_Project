@@ -13,6 +13,8 @@ window.addEventListener('DOMContentLoaded', async (event) => {
     const channelCover = document.querySelector('.Channel-Cover');
     channelCover.innerHTML = `<img src="${channelInfo.channel_banner}" class="cover-image" alt="Channel Banner">`;
 
+    const tapName = document.querySelector('.tapName');
+    tapName.innerHTML = `${channelInfo.channel_name} - YouTube`
     const channelTitle = document.querySelector('.Channel-Title');
 
     channelTitle.innerHTML = `
@@ -78,17 +80,23 @@ window.addEventListener('DOMContentLoaded', async (event) => {
                             >
                         </a>
                         <div>
-                            <img
-                                class="Thumbnail_profile_img"
-                                src="${data.channel_profile}"
-                                alt="Channel Avatar"
-                            >
+                            <a href="index_channel.html?channel_name=${encodeURIComponent(video.video_channel)}">
+                                <img 
+                                    class="Thumbnail_profile_img"
+                                    src="${channelInfo.channel_profile}"
+                                    alt="Channel Avatar"
+                                >
+                            </a>
                             <div>
-                                <h3 class="Thumbnail_h3">${video.video_title}</h3>
-                                <a href="index_channel.html?channel_name=${encodeURIComponent(video.video_channel)}">
+                                <h3 class="ThumbnailInfo">
+                                    <a  class="Thumbnail_h3" href="index_video.html?video_id=${video.video_id}">
+                                    ${video.video_title}
+                                    </a>
+                                </h3>
+                                <a class="ThumbnailInfo" href="index_channel.html?channel_name=${encodeURIComponent(video.video_channel)}">
                                     ${video.video_channel}
                                 </a>
-                                <p>${date} • ${video.views} views.</p>
+                                <p class="ThumbnailInfo">${date} • ${video.views} views.</p>
                             </div>
                         </div>
                     </article>

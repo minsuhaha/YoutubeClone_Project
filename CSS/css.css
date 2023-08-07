@@ -175,25 +175,47 @@ a {
 }
 
 /* 검색창 부분 */
+.search_box_area {
+    display: flex;
+    width: 470px;
+    height: 40px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 349px;
+    gap: 1px;
+    flex-shrink: 0;
+    margin-top: 8px;
+    margin-right: 60px;
+    /* border: 1px solid white; */
+
+}
+
+/* 검색창 부분 */
 .search_box {
     width: 362px;
     height: 40px;
+    align-items: center;
+    justify-content: center;
     flex-shrink: 0;
     border: 1px solid #303030;
     border-radius: 2px 0px 0px 2px;
     background: #121212;
-    font-size: 16px;
+    font-size: 25px;
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     line-height: normal;
-    color: var(--gray-color, #AAA);
+    color: black;
     border-radius: 10px;
-    background-color: #83C9E7
+    background-color: #83C9E7;
+    padding-left: 5px;
+    font-family: iceJaram-Rg;
 }
 
 .search_box::placeholder {
     font-family: iceJaram-Rg;
     font-size: 25px;
+    color: black;
 }
 
 /* 돋보기 모양 안쪽 부분 */
@@ -311,7 +333,9 @@ a {
     /* border: 1px solid white; */
 }
 
-/* sub 이름 부분 */
+.sidebarSub>div>img {
+    border-radius: 70px;
+}
 
 
 /* sidebarMore 부분 */

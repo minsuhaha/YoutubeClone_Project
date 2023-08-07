@@ -44,6 +44,8 @@ function createVideoItem(video_id,container) {
         if (xhr.readyState === xhr.DONE && xhr.status === 200) {
         // 가져온 응답 처리
         let data = JSON.parse(xhr.responseText);
+        let tapName = document.querySelector('.tapName');
+        tapName.innerHTML = `${data.video_title} - YouTube`
         // 날짜 포맷팅
         let date = formatDate(data.upload_date);
         // 데이터 있는지 확인

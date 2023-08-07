@@ -97,31 +97,35 @@ function search() {
         .then((data) => {
             videoDiv.innerHTML = `
                 <article class="Thumbnail_art">
-                    <a href="index_video.html?video_id=${video.video_id}">
-                        <img
-                            class="Thumbnail_img"
-                            src='${video.image_link}'
-                            alt='Video Thumbnail'
-                        >
-                    </a>
-                    <div>
-                        <a href="index_channel.html?channel_name=${encodeURIComponent(video.video_channel)}">
-                            <img 
-                                class="Thumbnail_profile_img"
-                                src="${data.channel_profile}"
-                                alt="Channel Avatar"
+                        <a href="index_video.html?video_id=${searchData}">
+                            <img
+                                class="Thumbnail_img"
+                                src='${video.image_link}'
+                                alt='Video Thumbnail'
                             >
                         </a>
                         <div>
-                            <h3 class="Thumbnail_h3">${video.video_title}</h3>
                             <a href="index_channel.html?channel_name=${encodeURIComponent(video.video_channel)}">
-                                ${video.video_channel}
+                                <img 
+                                    class="Thumbnail_profile_img"
+                                    src="${data.channel_profile}"
+                                    alt="Channel Avatar"
+                                >
                             </a>
-                            <p>${date} • ${video.views} views.</p>
+                            <div>
+                                <h3 class="ThumbnailInfo">
+                                    <a  class="Thumbnail_h3" href="index_video.html?video_id=${searchData}">
+                                    ${video.video_title}
+                                    </a>
+                                </h3>
+                                <a class="ThumbnailInfo" href="index_channel.html?channel_name=${encodeURIComponent(video.video_channel)}">
+                                    ${video.video_channel}
+                                </a>
+                                <p class="ThumbnailInfo">${date} • ${video.views} views.</p>
+                            </div>
                         </div>
-                    </div>
-                </article>
-                `;
+                    </article>
+                    `;
                 videoContainer.appendChild(videoDiv);
             });
     }

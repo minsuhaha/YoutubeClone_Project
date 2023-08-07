@@ -16,23 +16,29 @@
     /* border-bottom: 1px solid #303030; */
     /* 변경: 1px 1px solid */
     overflow-x: hidden;
+    transition: left 0.4s ease;
 }
 /*  */
 .navbarLonger {
     left: 100px;
+    transition: left 0.4s ease;
 }
 
 .items {
+    overflow-x: hidden;
     white-space: nowrap;
-    overflow: hidden;
     /* 변경: overflow-x를 hidden에서 visible로 수정 */
     transition: transform 0.3s ease;
     /* 추가: 스크롤 시 애니메이션 효과 */
-    width: auto;
+    width: 420px;
 }
 
 .items:hover {
     overflow-x: auto;
+}
+
+.items::-webkit-scrollbar {
+    display: none;
 }
 
 .scroll {
@@ -64,6 +70,7 @@
     text-decoration: none;
 }
 
+
 /* 비디오 썸네일 */
 .Thumbnail {
     display: flex;
@@ -73,6 +80,7 @@
     margin-left: 40px;
     flex: 1;
     color: black;
+    transition: left 0.3s ease;
 }
 
 .Thumbnail_art {
@@ -90,8 +98,8 @@
 }
 
 .ThumbnailInfo {
-    color:lightslategray ;
-    font-size: 20px;
+    color:midnightblue ;
+    font-size: 22px;
     margin: 5px 0px 5px 5px;
     font-weight: 600;
 }
@@ -114,6 +122,10 @@
     font-size: 27px;
 }
 
+body {
+    justify-content: flex-start;
+}
+
 main {
     display: flex;
     gap: 20px;
@@ -121,8 +133,10 @@ main {
 
 .main_box {
     margin-left: 240px;
+    transition: margin-left 0.4s ease;
 }
 
 .ThumbnailWider {
     margin-left: 100px;
+    transition: margin-left 0.4s ease; 
 }
