@@ -17,22 +17,26 @@
     /* 변경: 1px 1px solid */
     overflow-x: hidden;
 }
+
 /*  */
-.navbarLonger {
-    left: 100px;
-}
+
+
 
 .items {
+    overflow-x: hidden;
     white-space: nowrap;
-    overflow: hidden;
     /* 변경: overflow-x를 hidden에서 visible로 수정 */
     transition: transform 0.3s ease;
     /* 추가: 스크롤 시 애니메이션 효과 */
-    width: auto;
+    width: 420px;
 }
 
 .items:hover {
     overflow-x: auto;
+}
+
+.items::-webkit-scrollbar {
+    display: none;
 }
 
 .scroll {
@@ -90,7 +94,7 @@
 }
 
 .ThumbnailInfo {
-    color:lightslategray ;
+    color: lightslategray;
     font-size: 20px;
     margin: 5px 0px 5px 5px;
     font-weight: 600;
