@@ -1,24 +1,3 @@
-// 네비게이션
-// const showMenu = (headerToggle,navbarID) =>{
-//   const toggleBtn = document.getElementById(headerToggle);
-
-//   if (headerToggle && navbarID) {
-//     toggleBtn.addEventListener('click',() => {
-//       nav.classList.toggle('show-menu')
-//       toggleBtn.classList.toggle('x-times')
-//     })
-//   }
-// }
-// showMenu('header-toggle', 'navbar')
-
-// const linkcolor = document.querySelectorAll('.nav_link');
-
-// function colorLink() {
-//   linkcolor.forEach((1, => 1.classList.remove('active'))
-//   this.classList.add('active')
-// }
-//
-
 function displayVideos(videoIds) {
     const container = document.getElementById('videoContainer'); 
     const serachParams = window.location.search;

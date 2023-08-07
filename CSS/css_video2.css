@@ -14,7 +14,7 @@ body {
     margin-top: 54px;
     /* margin-left: 220px; */
     /* padding-left: 20px; */
-    width: 640px;
+    width: 70%;
     color: black;
     font-weight: 600;
     font-size: x-large;
@@ -194,7 +194,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     margin-left: 15px;
-    margin-right: 40%;
+    margin-right: 70%;
 }
 
 /* .channel_title>button {
