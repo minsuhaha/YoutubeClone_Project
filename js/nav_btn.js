@@ -10,7 +10,6 @@ function checkScrollButtons() {
     scrollButtonRight.style.display = isOverflowing ? 'block' : 'none';
 }
 
-
 scrollButtonLeft.addEventListener('click', () => {
     itemsContainer.scrollBy({
         top: 0,

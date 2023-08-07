@@ -13,6 +13,8 @@ window.addEventListener('DOMContentLoaded', async (event) => {
     const channelCover = document.querySelector('.Channel-Cover');
     channelCover.innerHTML = `<img src="${channelInfo.channel_banner}" class="cover-image" alt="Channel Banner">`;
 
+    const tapName = document.querySelector('.tapName');
+    tapName.innerHTML = `${channelInfo.channel_name} - YouTube`
     const channelTitle = document.querySelector('.Channel-Title');
 
     channelTitle.innerHTML = `
@@ -61,20 +63,47 @@ window.addEventListener('DOMContentLoaded', async (event) => {
 
     // 화면에 비디오 리스트 표시
     const videoContainer = document.getElementById('videoContainer');
-    channelData.forEach(video => {
+    channelData.forEach( video => {
+        const videoName = video.video_channel;
         let videoDiv = document.createElement('div');
-        videoDiv.innerHTML = `
-            <article class="Thumbnail_art">
-                <a href="index_video.html?video_id=${video.video_id}">
-                    <img class="Thumbnail_img" src="${video.image_link}" alt="Video Thumbnail">
-                </a>
-                <h3 class="Thumbnail_h3">${video.video_title}</h3>
-                <p>채널명: <a href="/HTML/index_channel.html?channel_name=${encodeURIComponent(video.video_channel)}">${video.video_channel}</a></p>
-                <p>등록일: ${video.upload_date}, 조회수: ${video.views}회</p>
-            </article>
-        `;
-        videoContainer.appendChild(videoDiv);
-    });
+        let date = formatDate(video.upload_date);
+        fetch(`https://oreumi.appspot.com/channel/getChannelInfo?video_channel=${videoName}`, {method: 'POST'})
+            .then((response) => response.json())
+            .then((data) => {
+                videoDiv.innerHTML = `
+                    <article class="Thumbnail_art">
+                        <a href="index_video.html?video_id=${video.video_id}">
+                            <img
+                                class="Thumbnail_img"
+                                src='${video.image_link}'
+                                alt='Video Thumbnail'
+                            >
+                        </a>
+                        <div>
+                            <a href="index_channel.html?channel_name=${encodeURIComponent(video.video_channel)}">
+                                <img 
+                                    class="Thumbnail_profile_img"
+                                    src="${channelInfo.channel_profile}"
+                                    alt="Channel Avatar"
+                                >
+                            </a>
+                            <div>
+                                <h3 class="ThumbnailInfo">
+                                    <a  class="Thumbnail_h3" href="index_video.html?video_id=${video.video_id}">
+                                    ${video.video_title}
+                                    </a>
+                                </h3>
+                                <a class="ThumbnailInfo" href="index_channel.html?channel_name=${encodeURIComponent(video.video_channel)}">
+                                    ${video.video_channel}
+                                </a>
+                                <p class="ThumbnailInfo">${date} • ${video.views} views.</p>
+                            </div>
+                        </div>
+                    </article>
+                    `;
+                    videoContainer.appendChild(videoDiv);
+                });
+        });
 });
 
 // 채널 정보
@@ -107,6 +136,29 @@ function findRepresentativeVideo(channelData) {
 
     return representativeVideo;
 }
+
+function formatDate(dateString) {
+    const uploadDate = new Date(dateString);
+    const now = new Date();
+    const diffTime = Math.abs(now - uploadDate);
+    const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+
+    let formattedDate;
+
+    if (diffDays < 7) {
+        formattedDate = `${diffDays} days ago`;
+    } else if (diffDays < 30) {
+        const weeks = Math.floor(diffDays / 7);
+        formattedDate = `${weeks} weeks ago`;
+    } else {
+        const months = Math.floor(diffDays / 30);
+        formattedDate = `${months} months ago`;
+    }
+
+    return formattedDate;
+}
+
+
 
 // 채널 프로필 불러오기
 // window.addEventListener('DOMContentLoaded', (event) => {
