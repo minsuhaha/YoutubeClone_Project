@@ -19,7 +19,7 @@ function toggleSidebar() {
         navbar.classList.remove('navbarLonger');
         thmbox.classList.remove('ThumbnailWider');
         sidebarsub.classList.remove('sidebarSub_del');
-
+    
     }
 
 

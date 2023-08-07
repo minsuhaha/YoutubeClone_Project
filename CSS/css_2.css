@@ -16,11 +16,14 @@
     /* border-bottom: 1px solid #303030; */
     /* 변경: 1px 1px solid */
     overflow-x: hidden;
+    transition: left 0.4s ease;
 }
 
 /*  */
-
-
+.navbarLonger {
+    left: 100px;
+    transition: left 0.4s ease;
+}
 
 .items {
     overflow-x: hidden;
@@ -68,6 +71,7 @@
     text-decoration: none;
 }
 
+
 /* 비디오 썸네일 */
 .Thumbnail {
     display: flex;
@@ -77,6 +81,7 @@
     margin-left: 40px;
     flex: 1;
     color: black;
+    transition: left 0.3s ease;
 }
 
 .Thumbnail_art {
@@ -94,8 +99,8 @@
 }
 
 .ThumbnailInfo {
-    color: lightslategray;
-    font-size: 20px;
+    color:midnightblue ;
+    font-size: 22px;
     margin: 5px 0px 5px 5px;
     font-weight: 600;
 }
@@ -118,6 +123,10 @@
     font-size: 27px;
 }
 
+body {
+    justify-content: flex-start;
+}
+
 main {
     display: flex;
     gap: 20px;
@@ -125,8 +134,10 @@ main {
 
 .main_box {
     margin-left: 240px;
+    transition: margin-left 0.4s ease;
 }
 
 .ThumbnailWider {
     margin-left: 100px;
+    transition: margin-left 0.4s ease; 
 }

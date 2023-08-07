@@ -21,11 +21,12 @@ body {
     margin-right: 20px;
     /* border: 1px solid black; */
     margin-left: 5%;
+    transition: margin-left 0.4s ease;
 }
 
 .thumbnailWider {
     margin-left: 210px;
-
+    transition: margin-left 0.4s ease;
 }
 
 /* 영상부분 css */

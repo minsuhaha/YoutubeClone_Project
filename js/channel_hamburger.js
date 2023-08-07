@@ -6,7 +6,7 @@ function toggleSidebar() {
     const sidebar = document.querySelector('.sidebar');
     const channel = document.querySelector('.Channel');
     const sidebarsub = document.querySelector('.sidebarSub')
-
+    
     if (sidebarHidden) {
         sidebar.classList.add('sidebarHidden');
         channel.classList.add('channelLonger');
