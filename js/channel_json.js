@@ -32,12 +32,14 @@ window.addEventListener('DOMContentLoaded', async (event) => {
         </div>
     `;
 
-    let subs_Btn = document.querySelector('#subscribe-button')
+    let subs_Btn = document.querySelector('#subscribe-button');
+    const subscription = document.querySelector('.subTitle');
 
     subs_Btn.addEventListener('click', function(b) {
     if(subs_Btn.innerText === 'SUBSCRIBES'){
         subs_Btn.innerText = 'SUBSCRIBED';
         b.target.style.backgroundColor = 'darkgray';
+        subscription
     } else {
         subs_Btn.innerText = 'SUBSCRIBES';
         b.target.style.backgroundColor = '#cc0000';
