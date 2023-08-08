@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
 function submit() {
     const commentInput = document.getElementById('commentInput');
     const commentText = commentInput.value.trim();
-
+    
     // 댓글 입력 없이 확인 누를 시 얼럿 출력
     if (commentInput.value === '') {
         alert("댓글을 입력해주세요.");
@@ -52,6 +52,8 @@ function submit() {
         saveCommentsToLocalStorage();
     }
 
+    
+    
     // 현재 비디오에 해당하는 댓글만 보여주도록 업데이트
     loadComments();
 }
@@ -59,14 +61,16 @@ function submit() {
 // 댓글 추가 작성 함수
 function commentsAdd(comments) {
     const box = document.getElementById("comment_add");
-
+    
     // 기존의 댓글 요소를 모두 제거합니다.
     while (box.firstChild) {
         box.removeChild(box.firstChild);
     }
 
     const userName = "오르미";
-
+    c_count=document.getElementById("comment_count")
+    
+    c_count.innerText=`${videoComments[videoId].length} comments`
     comments.forEach((comment, index) => {
         // \n을 <br>로 변경하여 줄바꿈 적용
         comment = comment.replace(/\n/g, '<br>');
@@ -142,6 +146,7 @@ function editComment(index) {
 
     confirmButton.addEventListener("click", function () {
         const newComment = editInput.value.trim();
+        
         if (newComment !== '') {
             videoComments[videoId][index] = newComment;
             saveCommentsToLocalStorage();
@@ -187,6 +192,7 @@ function unlikeComment(index) {
     unlike = !unlike;
     let unlike_img = document.getElementById(`unlike_img_${index}`);
     let uncount = document.getElementById(`uncount_${index}`);
+    
     if (unlike) {
         unlike_img.src = "./Image/etc/down.svg";
         uncount.innerText = 0;
