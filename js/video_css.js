@@ -240,7 +240,7 @@ async function createVideoItem(videoList) {
             </a>
         </button>
             <div class="second_vd_infobox">
-                <div>
+                <div class="second_vd_title">
                   <a href ="index_video.html?video_id=${video.video_id}">
                   ${video.video_title}
                   </a>

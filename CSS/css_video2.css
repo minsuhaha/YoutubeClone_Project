@@ -28,6 +28,11 @@ body {
 .thumbnailWider {
     margin-left: 210px;
     transition: margin-left 0.4s ease;
+    opacity: 0.5;
+}
+
+.sideContentDarker {
+    opacity: 0.5;
 }
 
 /* 영상부분 css */
@@ -60,7 +65,8 @@ body {
     height: 21px;
     padding-top: 3px;
     padding-bottom: 2px;
-    font-size: xx-large;
+    font-size: 40px;
+    margin-bottom: 10px;
     /* border: 1px solid black; */
 }
 
@@ -84,9 +90,10 @@ body {
     width: 100%;
     height: 16px;
     padding: 12px 0px;
-    font-size: large;
+    font-size: 30px;
     gap: 5px;
-
+    margin-bottom: 10px;
+    font-weight: 300;
 }
 
 /* 구독 관련 전체 박스 css */
@@ -457,17 +464,26 @@ body {
 
 .second_vd_infobox {
     display: flex;
-    width: 400px;
+    width: 170px;
     height: 94px;
     padding: 5px 5px 0px 0px;
     flex-direction: column;
     align-items: flex-start;
     font-size: 80%;
+    /* border: 1px solid black; */
 }
 
 .second_vd_infobox>div>a {
-    color: black;
+    color: midnightblue;
 }
+
+.second_vd_title {
+    color: black;
+    font-size: 23px;
+    font-weight: 600;
+}
+
+
 
 
 .second_topbox {
