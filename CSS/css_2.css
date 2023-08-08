@@ -76,6 +76,26 @@
     text-decoration: none;
 }
 
+#reverseScrollButton {
+    display: block;
+    background-color: #44ADDA;
+    height: 40px;
+    width: 30px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    color: white;
+}
+
+#xscroll {
+    display: block;
+    background-color: #44ADDA;
+    height: 40px;
+    width: 30px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    color: white;
+}
+
 
 /* 비디오 썸네일 */
 .Thumbnail {

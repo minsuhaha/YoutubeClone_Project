@@ -573,9 +573,10 @@ a {
     position: absolute;
     top: 100%;
     left: -36px;
-    background-color: white;
-    border: 1px solid black;
+    background-color: #83C9E7;
+    border: 1px solid white;
     padding: 8px;
+    border-radius: 5px;
 }
 
 .hiddenMenu:nth-child(4) {
@@ -583,8 +584,8 @@ a {
     position: absolute;
     top: 100%;
     left: 0px;
-    background-color: white;
-    border: 1px solid black;
+    background-color: #83C9E7;
+    border: 1px solid white;
     padding: 8px;
 }
 
@@ -593,8 +594,8 @@ a {
     position: absolute;
     top: 100%;
     left: 51px;
-    background-color: white;
-    border: 1px solid black;
+    background-color: #83C9E7;
+    border: 1px solid white;
     padding: 8px;
 }
 
@@ -603,8 +604,8 @@ a {
     position: absolute;
     top: 100%;
     left: 102px;
-    background-color: white;
-    border: 1px solid black;
+    background-color: #83C9E7;
+    border: 1px solid white;
     padding: 8px;
 }
 
@@ -617,6 +618,13 @@ a {
 .hiddenA {
     margin-bottom: 5px;
     display: block;
+    background-color: #83C9E7;
+    color: black;
+    font-weight: 300;
+}
+
+.hiddenA:hover {
+    background-color: #4b89dc;
 }
 
 .hiddenMenu.showMenu {
