@@ -195,7 +195,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     margin-left: 15px;
-    margin-right: 70%;
+    margin-right: 550px;
 }
 
 /* .channel_title>button {
@@ -256,7 +256,7 @@ body {
 }
 
 .channel_name {
-    width: auto;
+    width: 200px;
     font-size: 40px;
     margin-bottom: 20px;
     color: black;
