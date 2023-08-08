@@ -86,7 +86,7 @@ function commentsAdd(comments) {
                     <button class="like_btn" onclick="likeComment(${index})"><img id="like_img_${index}" class="like_btn_img" src="./Image/etc/up.svg"></button>
                     <span id="count_${index}">0</span>
                     <button class="like_btn" onclick="unlikeComment(${index})"><img id="unlike_img_${index}" class="like_btn_img" src="./Image/etc/down.svg"></button>
-                    <span id="count_${index}">0</span>
+                    <span id="uncount_${index}">0</span>
                 </div>
                 <div>
                     <button id="edit_btn" onclick="editComment(${index})">수정</button>
