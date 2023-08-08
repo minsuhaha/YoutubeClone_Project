@@ -173,19 +173,26 @@ let unlike = true;
 function likeComment(index) {
     like = !like;
     let like_img = document.getElementById(`like_img_${index}`);
+    let count = document.getElementById(`count_${index}`);
     if (like) {
         like_img.src = "./Image/etc/up.svg";
+        count.innerText = 0;
     } else {
         like_img.src = "./Image/etc/upfull.png";
+        count.innerText = 1;
+
     }
 }
 function unlikeComment(index) {
     unlike = !unlike;
     let unlike_img = document.getElementById(`unlike_img_${index}`);
+    let uncount = document.getElementById(`uncount_${index}`);
     if (unlike) {
         unlike_img.src = "./Image/etc/down.svg";
+        uncount.innerText = 0;
     } else {
         unlike_img.src = "./Image/etc/downfull.png";
+        uncount.innerText = 1;
     }
 }
 function handleEnter(event) {
