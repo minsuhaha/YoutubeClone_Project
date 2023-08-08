@@ -124,6 +124,22 @@ a {
 
 }
 
+.ch_search_box_area {
+    display: flex;
+    width: 470px;
+    height: 40px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: 349px;
+    gap: 1px;
+    flex-shrink: 0;
+    margin-top: 8px;
+    margin-right: 60px;
+    /* border: 1px solid white; */
+
+}
+
 /* 검색창 부분 */
 .search_box {
     width: 362px;
@@ -145,10 +161,38 @@ a {
     font-family: iceJaram-Rg;
 }
 
+.ch_search_box {
+    width: 100px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border: 1px solid #44ADDA;
+    border-radius: 2px 0px 0px 2px;
+    background: #44ADDA;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    color: white;
+    border-radius: 10px;
+    border-bottom: 1px solid white;
+    background-color: #44ADDA;
+    padding-left: 5px;
+    font-family: iceJaram-Rg;
+    margin-bottom: 10px;
+}
+
 .search_box::placeholder {
     font-family: iceJaram-Rg;
     font-size: 25px;
     color: black;
+}
+
+.ch_search_box::placeholder {
+    font-family: iceJaram-Rg;
+    font-size: 25px;
+    color: white;
 }
 
 /* 돋보기 모양 안쪽 부분 */
@@ -160,6 +204,17 @@ a {
     justify-content: center;
     align-items: center;
     background: #303030;
+    /* border: 1px solid white; */
+}
+
+.ch_search_box_icon {
+    display: flex;
+    width: 24px;
+    height: 24px;
+    padding: 6px 13px;
+    justify-content: center;
+    align-items: center;
+    background-color: #44ADDA;
     /* border: 1px solid white; */
 }
 
@@ -176,6 +231,19 @@ a {
     border-radius: 10px;
     border: 1px solid var(--border-color, #303030);
     background: var(--border-color, #303030);
+}
+
+#ch_search_box_btn {
+    display: flex;
+    width: 50px;
+    height: 36px;
+    padding: 3px 7px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    background-color: #44ADDA;
 }
 
 /* 음성검색 부분 */

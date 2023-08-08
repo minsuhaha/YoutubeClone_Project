@@ -157,7 +157,7 @@
     gap: 18rem;
 }
 
-.ChannelToolbar ul a {
+.ChannelToolbarIcon {
     padding-left: 2rem;
     /* 조정 가능한 값 */
     padding-right: 2rem;

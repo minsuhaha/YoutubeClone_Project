@@ -81,13 +81,16 @@
             <!--  채널명 아래 버튼 부분 -->
             <div class="ChannelToolbar">
                 <ul> 
-                    <a href="#">HOME</a>
-                    <a href="#">VIDEOS</a>
-                    <a href="#">PLAYLISTS</a>
-                    <a href="#">COMMUNITY</a>
-                    <a href="#">CHANNELS</a>
-                    <a href="#">ABOUT</a>
-                    <a href="#"><img src="./Image/SearchBar/search.png"></img></a>
+                    <a class="ChannelToolbarIcon" href="#">HOME</a>
+                    <a class="ChannelToolbarIcon" href="#">VIDEOS</a>
+                    <a class="ChannelToolbarIcon" href="#">PLAYLISTS</a>
+                    <a class="ChannelToolbarIcon" href="#">COMMUNITY</a>
+                    <a class="ChannelToolbarIcon" href="#">CHANNELS</a>
+                    <a class="ChannelToolbarIcon" href="#">ABOUT</a>
+                    <span class="ChannelToolbarIcon" id="ch_search_box_btn">
+                        <input class="ch_search_box_icon" type="image" src="./Image/SearchBar/search.png">
+                    </span>
+                    <input class="ch_search_box" id="search" placeholder=" Search">
                 </ul>
                 <!-- <div class="ChannelToolbar-Button">
                     <div><img src="../Image/SearchBar/search.png"></img></div>
@@ -269,6 +272,7 @@
 <script src="./js/hamburger.js"></script>
 <script src="./js/showMore.js"></script>
 <script src="./js/search.js"></script>
+<script src="./js/search2.js"></script>
 <script src="./js/channel_hamburger.js"></script>
 <script src="./js/button.js"></script>
 
