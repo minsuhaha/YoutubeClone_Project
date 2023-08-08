@@ -61,6 +61,10 @@ a {
     position: relative;
 }
 
+.profile_main>button:hover {
+    background-color: #1263CE;
+}
+
 .profile_box {
     display: inline-block;
     width: 24px;
@@ -234,11 +238,18 @@ a {
 /* 사이드바 아이콘 뒤에 이름 부분 */
 .sidebar>div>div>a {
     color: white;
-    width: 144px;
+    width: 220px;
     height: 16px;
     padding: 4px 0px;
 }
 
+.sidebar_btn:hover {
+    background-color: #1263CE;
+}
+
+.sidebar_btn {
+    width: 240px;
+}
 
 /* sub 부분 */
 .sidebarSub {
@@ -306,11 +317,14 @@ a {
 
 .subTitle {
     display: flex;
-    width: 134px;
+    width: 220px;
     height: 32px;
     padding-right: 0px;
     align-items: center;
-    
+}
+
+.subTitle:hover {
+    background-color: #1263CE;
 }
 
 .subTitle>a {

@@ -28,7 +28,7 @@ window.addEventListener('DOMContentLoaded', async (event) => {
                 <span>${convertViews(channelInfo.subscribers)} subscribers</span>
             </div>
             </div>
-            <button id="subscribe-button">SUBSCRIBES</button>
+            <button id="subscribe-button">SUBSCRIBE</button>
         </div>
     `;
    
@@ -40,12 +40,12 @@ window.addEventListener('DOMContentLoaded', async (event) => {
             `;
     subscription.style.display = 'none';
     subs_Btn.addEventListener('click', function(b) {
-    if(subs_Btn.innerText === 'SUBSCRIBES'){
+    if(subs_Btn.innerText === 'SUBSCRIBE'){
         subs_Btn.innerText = 'SUBSCRIBED';
         b.target.style.backgroundColor = 'darkgray';
         subscription.style.display = 'block';
     } else {
-        subs_Btn.innerText = 'SUBSCRIBES';
+        subs_Btn.innerText = 'SUBSCRIBE';
         b.target.style.backgroundColor = '#cc0000';
         subscription.style.display = 'none';
     }});
@@ -193,7 +193,7 @@ function subscribe() {
         subsAdd = !subsAdd;
         if (subsAdd) {
             subsName.innerHTML =`
-            <div>
+            <div class="sidebar_btn">
                 <img src="${channelInfo.channel_profile}">
                 <a href="#">${channelInfo.channel_name}</a>
             </div>

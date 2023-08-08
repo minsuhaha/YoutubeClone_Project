@@ -107,7 +107,7 @@ async function createVideoItem(videoList) {
             <span class="channel_name">${currentChannelInfo.channel_name}</span>
             <span class="subscribers">${convertViews(currentChannelInfo.subscribers)} Subscribers </span>
         </div>
-        <button id="subscribe-button">SUBSCRIBES</button>
+        <button id="subscribe-button">SUBSCRIBE</button>
     </div>
     `;
 
@@ -119,12 +119,12 @@ async function createVideoItem(videoList) {
             `;
     subscription.style.display = 'none';
     subs_Btn.addEventListener('click', function(b) {
-    if(subs_Btn.innerText === 'SUBSCRIBES'){
+    if(subs_Btn.innerText === 'SUBSCRIBE'){
         subs_Btn.innerText = 'SUBSCRIBED';
         b.target.style.backgroundColor = 'darkgray';
         subscription.style.display = 'block';
     } else {
-        subs_Btn.innerText = 'SUBSCRIBES';
+        subs_Btn.innerText = 'SUBSCRIBE';
         b.target.style.backgroundColor = '#cc0000';
         subscription.style.display = 'none';
     }});
