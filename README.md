@@ -1,7 +1,7 @@
 # Youtube Clone Project
 ## 개발 기간
 #### 2023.07.24 ~ 2023.08.07
-[사이트 바로가기 예정]
+[사이트 바로가기](https://minsuhaha.github.io/YoutubeClone_Project/)
 <br>
 
 ## 팀원
