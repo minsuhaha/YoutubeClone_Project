@@ -77,8 +77,8 @@
 <br>
 
 ## 팀 커뮤니케이션
-<img width="412" alt="스크린샷 2023-08-10 오후 11 12 39" src="https://github.com/minsuhaha/YoutubeClone_Project/assets/105342203/e17d8499-102a-4bd0-ad86-5a8646e76d64">
-<img width="460" alt="스크린샷 2023-08-10 오후 11 12 39" src="https://github.com/minsuhaha/YoutubeClone_Project/assets/105342203/44ae87ad-8008-4560-94ed-64d0382d6b1d">
+<img width="402" alt="스크린샷 2023-08-10 오후 11 12 39" src="https://github.com/minsuhaha/YoutubeClone_Project/assets/105342203/e17d8499-102a-4bd0-ad86-5a8646e76d64">
+<img width="450" alt="스크린샷 2023-08-10 오후 11 12 39" src="https://github.com/minsuhaha/YoutubeClone_Project/assets/105342203/44ae87ad-8008-4560-94ed-64d0382d6b1d">
 <br>
 
 
